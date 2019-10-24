@@ -32,7 +32,8 @@ mongoose.connect(
             country: 'France',
             experiences: 0,
             email: 'anna@mail',
-            password: 'pass'
+            password: 'pass',
+            passwordConfirmation: 'pass'
           }
         ])
       })
@@ -49,7 +50,8 @@ mongoose.connect(
             age: 35,
             gender: 'Female',
             email: 'mona@mail',
-            password: 'pass'
+            password: 'pass',
+            passwordConfirmation: 'pass'
           }
         ])
       })

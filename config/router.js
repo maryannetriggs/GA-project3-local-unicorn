@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const cities = require('')
+const cities = require('../controllers/cities')
 
 const secureRoute = require('../lib/secureRoute')
 

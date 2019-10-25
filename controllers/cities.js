@@ -7,6 +7,17 @@ function index(req, res) {
     .catch(() => res.status(404).json({ message: 'Not Found' }))
 }
 
+function show(req, res) {
+  City
+    .findById(req.params.id)
+    .then(city => {
+      if (!city) return res.status(404).json({ message: 'City not found' })
+      res.status(200).json(city)
+    })
+    .catch(() => res.status(404).json({ message: 'Something went wrong' }))
+}
+
 module.exports = {
-  index
+  index,
+  show
 }

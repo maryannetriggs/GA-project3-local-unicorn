@@ -6,7 +6,7 @@ const travellerSchema = new mongoose.Schema({
   profilePicture: { type: String, required: true },
   about: { type: String, required: true, maxlength: 300 },
   country: { type: String, required: true },
-  experiences: { type: String, required: true },
+  experiences: { type: Number, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true }
 
@@ -15,6 +15,7 @@ const travellerSchema = new mongoose.Schema({
 })
 
 travellerSchema.set('toJSON', {
+  virtuals: true,
   transform(doc, json) {
     delete json.password
     delete json.email
@@ -48,6 +49,8 @@ travellerSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password)
 }
 
-module.export = mongoose.model('Traveler', travellerSchema)
+travellerSchema.plugin(require('mongoose-unique-validator'))
+
+module.exports = mongoose.model('Traveler', travellerSchema)
 
 

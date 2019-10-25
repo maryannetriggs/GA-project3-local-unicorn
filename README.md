@@ -1,3 +1,4 @@
 # sei-group-project
-Mary-Anne
-gerardo siebels
+
+A project completed by Felicia Hjertman, Mary-Anne Triggs and 
+Gerardo Siebels

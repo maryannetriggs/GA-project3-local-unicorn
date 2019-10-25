@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import CityCard from './CityCard'
+
 class CitiesIndex extends React.Component {
   constructor() {
     super()
@@ -21,10 +23,7 @@ class CitiesIndex extends React.Component {
     return (
       <div className="city-wrapper">
         {this.state.cities.map(city => (
-          <>
-            <h2>{this.state.city.name}</h2>
-            <img src={city.image} alt={city.name}/>
-          </>
+          <CityCard key={city._id} {...city}/>
         ))}
       </div>
     )

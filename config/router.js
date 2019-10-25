@@ -4,8 +4,9 @@ const travellers = require('../controllers/travellers')
 const unicorns = require('../controllers/unicorns')
 const experiences = require('../controllers/experiences')
 
-// ADD IN THE SECURE ROUTE LATER (and add to relevant routes below)!
-// const secureRoute = require('../lib/secureRoute')
+// GO THROUGH WHICH OF THE BELOW ROUTES NEED TO BE A SECURE ROUTE ONCE WE HAVE FINISHED TESTING IN INSOMNIA!
+const secureRoute = require('../lib/secureRoute')
+const secureRouteUnicorn = require('../lib/secureRouteUnicorn')
 
 router.route('/cities')
   .get(cities.index)
@@ -13,12 +14,26 @@ router.route('/cities')
 router.route('/cities/:id')
   .get(cities.show)
 
+router.route('/register')
+  .post(travellers.register)
+
+router.route('/login')
+  .post(travellers.login)
+  
 // we should make sure people cannot get to this index page by typing in that url later - block it/remove it?
 router.route('/travellers')
   .get(travellers.index)
 
 router.route('/travellers/:id')
   .get(travellers.profile)
+  .put(secureRoute, travellers.updateProfile)
+  .delete(secureRoute, travellers.deleteProfile)
+
+router.route('/registerunicorn/')
+  .post(unicorns.registerUnicorn)
+
+router.route('/loginunicorn')
+  .post(unicorns.loginUnicorn)
 
 // we should make sure people cannot get to this index page by typing in that url later - block it/remove it?
 router.route('/unicorns')
@@ -26,6 +41,8 @@ router.route('/unicorns')
 
 router.route('/unicorns/:id')  
   .get(unicorns.profile)
+  .put(secureRouteUnicorn, unicorns.updateUnicornProfile)
+  .delete(secureRouteUnicorn, unicorns.deleteUnicornProfile)
 
 // we should make sure people cannot get to this index page by typing in that url later - block it/remove it?
 router.route('/experiences')
@@ -41,6 +58,7 @@ router.route('/experiences/:id/reviews')
   .post(experiences.reviewCreate)
 
 router.route('/experiences/:id/reviews/:reviewId')
+  .put(experiences.reviewUpdate)
   .delete(experiences.reviewDelete)
 
 

@@ -13,7 +13,7 @@ class CitiesIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://localhost:4000/cities')
+    axios.get('/api/cities')
       .then(res => this.setState({ cities: res.data }))
       .catch(err => console.log(err))
   }

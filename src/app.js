@@ -3,28 +3,36 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 // import 'spectre'
-// import './styles/style.scss'
+// import './style.scss'
 
 import Home from './components/common/Home'
-// import Navbar from './components/common/Navbar'
+import Navbar from './components/common/Navbar'
 
-import Login from './components/auth/Login'
+import LoginTraveller from './components/auth/LoginTraveller'
+import RegisterTraveller from './components/auth/RegisterTraveller'
 
 import CitiesIndex from './components/cities/CitiesIndex'
+import CitiesShow from './components/cities/CitiesShow'
 
 const App = () => (
-  <BrowserRouter>
-    
-    <>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/login" component={Login}/>
-        <Route exact path="/cities" component={CitiesIndex}/>
-      </Switch>
-    </>
+  <>
   
-  </BrowserRouter>
+    <BrowserRouter>
+      <>
+        <Navbar/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/login" component={LoginTraveller}/>
+          <Route path="/register" component={RegisterTraveller}/>
+          <Route path="/cities/:id" component={CitiesShow}/>
+          <Route exact path="/cities" component={CitiesIndex}/>
+        </Switch>
+      </>
+  
+    </BrowserRouter>
+  </>
 )
+
 
 ReactDOM.render(
   <App />,

@@ -1,18 +1,12 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import Auth from '../../lib/auth'
+// import Auth from '../../lib/auth'
 
 
 class Navbar extends React.Component {
   constructor() {
     super()
 
-    this.handleLogout = this.handleLogout.bind(this)
-  }
-
-  handleLogout() {
-    Auth.logout()
-    this.props.history.push('/')
   }
 
   render() {
@@ -21,8 +15,10 @@ class Navbar extends React.Component {
         <div className="logo-wrapper">
           <Link className="logo" to="/">Logo</Link>
         </div>
-        {!Auth.isAuthenticated() && <Link to="/login">Register/Login</Link>}
-        {Auth.isAuthenticated() && <a onClick={this.handleLogout}>Logout</a>}
+        <Link to="/register">Register</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/cities">See all the cities</Link>
+        <a>Logout</a>
       </nav>
     )
   }

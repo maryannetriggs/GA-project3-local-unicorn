@@ -39,6 +39,7 @@ function update(req, res, next) {
     .catch(next)
 }
 
+// update with obligation to be logged in as a traveller to be able to delete YOUR experience!
 function remove(req, res) {
   Exp
     .findById(req.params.id)
@@ -57,6 +58,20 @@ function reviewCreate(req, res, next) {
       return experience.save()
     })
     .then(experience => res.status(201).json(experience))
+    .catch(next)
+}
+
+// update with obligation to be logged in as a traveller to be able to delete YOUR review! And add the populate part!
+function reviewUpdate(req, res, next) {
+  Exp
+    .findById(req.params.id)
+    .then(experience => {
+      if (!experience) return res.status(404).json({ message: 'Review not found' })
+      const review = experience.reviews.id(req.params.reviewId)
+      review.set(req.body)
+      return experience.save() 
+    })
+    .then(experience => res.status(202).json(experience))
     .catch(next)
 }
 
@@ -81,5 +96,6 @@ module.exports = {
   update,
   remove,
   reviewCreate,
+  reviewUpdate,
   reviewDelete
 }

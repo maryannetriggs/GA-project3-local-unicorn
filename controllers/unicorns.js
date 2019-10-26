@@ -32,6 +32,7 @@ function profile(req, res) {
     .catch(() => res.status(404).json({ message: 'Something went wrong' }))
 }
 
+// SECURE ROUTE FOR LOGGED IN UNICORN ONLY:
 function updateUnicornProfile(req, res, next) {
   Unicorn
     .findById(req.currentUnicorn._id)
@@ -44,6 +45,7 @@ function updateUnicornProfile(req, res, next) {
     .catch(next)
 }
 
+// SECURE ROUTE FOR LOGGED IN UNICORN ONLY:
 function deleteUnicornProfile(req, res) {
   Unicorn
     .findById(req.currentUnicorn._id)

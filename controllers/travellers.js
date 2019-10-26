@@ -22,16 +22,18 @@ function login(req, res) {
     .catch(() => res.status(401).json({ message: 'Unauthorized' }))
 }
 
+// SECURE ROUTE FOR LOGGED IN TRAVELLER ONLY:
 function profile(req, res) {
   Traveller
-    .findById(req.params.id)
+    .findById(req.currentTraveller._id)
     .then(traveller => {
-      if (!traveller) return res.status(404).json({ message: 'Traveller not found' })
+      if (!traveller.equals(req.currentTraveller._id)) return res.status(401).json({ message: 'You are not authorized to see this profile' })
       res.status(200).json(traveller)
     })
     .catch(() => res.status(404).json({ message: 'Something went wrong' }))
 }
 
+// SECURE ROUTE FOR LOGGED IN TRAVELLER ONLY:
 function updateProfile(req, res, next) {
   Traveller
     .findById(req.currentTraveller._id)
@@ -44,6 +46,7 @@ function updateProfile(req, res, next) {
     .catch(next)
 }
 
+// SECURE ROUTE FOR LOGGED IN TRAVELLER ONLY:
 function deleteProfile(req, res) {
   Traveller
     .findById(req.currentTraveller._id)
@@ -55,6 +58,7 @@ function deleteProfile(req, res) {
     .catch(err => res.satus(400).json(err))
 }
 
+// WE NEED TO MAKE THIS PAGE UNACCESSIBLE! 
 function index(req, res) {
   Traveller
     .find()

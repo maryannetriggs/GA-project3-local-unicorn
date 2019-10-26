@@ -13,7 +13,7 @@ class Navbar extends React.Component {
     return (
       <nav>
         <div className="logo-wrapper">
-          <Link className="logo" to="/">Logo</Link>
+          <Link className="logo" to="/">🦄</Link>
         </div>
         <Link to="/register">Register</Link>
         <Link to="/login">Login</Link>

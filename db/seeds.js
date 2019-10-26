@@ -307,8 +307,8 @@ mongoose.connect(
           },
           {
             name: 'Aito Tanaka',
-            profilePicture: 'Just book a tour with me already',
-            about: 'https://images.unsplash.com/photo-1552358155-515e264cb8b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            profilePicture: 'https://images.unsplash.com/photo-1552358155-515e264cb8b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'Just book a tour with me already',
             city: 'Tokyo',
             country: 'Japan',
             region: 'Asia',

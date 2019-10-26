@@ -41,3 +41,16 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 // ALTERNATIVE 2 - still image:
 // background: url('https://i.dailymail.co.uk/i/pix/2015/11/19/17/2E9971C500000578-3325659-image-a-48_1447953828909.jpg');
 // background-size: cover;
+
+.unicorn-wrapper img {
+  height: 300px;
+}
+
+.unicorn-wrapper h3 {
+  color: black;
+  text-decoration: none;
+}
+
+.unicorn-wrapper {
+  border: black 1px solid;
+}

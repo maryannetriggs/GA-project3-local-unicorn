@@ -14,6 +14,12 @@ import RegisterTraveller from './components/auth/RegisterTraveller'
 import CitiesIndex from './components/cities/CitiesIndex'
 import CitiesShow from './components/cities/CitiesShow'
 
+import ExpIndex from './components/experiences/ExpIndex'
+import ExpShow from './components/experiences/ExpShow'
+
+import UnicornIndex from './components/unicorns/UnicornIndex'
+import UnicornShow from './components/unicorns/UnicornShow'
+
 const App = () => (
   <>
   
@@ -26,6 +32,10 @@ const App = () => (
           <Route path="/register" component={RegisterTraveller}/>
           <Route path="/cities/:id" component={CitiesShow}/>
           <Route exact path="/cities" component={CitiesIndex}/>
+          <Route path="/experiences/:id" component={ExpShow}/>
+          <Route exact path="/experiences" component={ExpIndex}/>
+          <Route path="/unicorns/:id" component={UnicornShow}/>
+          <Route exact path="/unicorns" component={UnicornIndex}/>
         </Switch>
       </>
   

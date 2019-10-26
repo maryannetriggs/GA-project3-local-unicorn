@@ -18,6 +18,8 @@ class Navbar extends React.Component {
         <Link to="/register">Register</Link>
         <Link to="/login">Login</Link>
         <Link to="/cities">See all the cities</Link>
+        <Link to="/experiences">See all the experiences</Link>
+        <Link to="/unicorns">See all the unicorns</Link>
         <a>Logout</a>
       </nav>
     )

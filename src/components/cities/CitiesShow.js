@@ -26,6 +26,7 @@ class CitiesShow extends React.Component {
       <section>
         <div className="city-wrapper">
           <h3>{city.name}</h3>
+          <img src={city.image} alt={name}/>
         </div>
       </section >
     )

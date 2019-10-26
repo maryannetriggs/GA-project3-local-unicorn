@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 // import 'spectre'
-// import './style.scss'
+import './style.scss'
 
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'

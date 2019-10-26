@@ -1,3 +1,39 @@
 * {
   box-sizing: border-box;
 }
+
+
+
+
+
+
+// PROPOSED STYLING FOR HOMEPAGE. 
+// It took me wuite a while to figure out how to do this, and now that I hage done it - I LOVE IT! 
+// I think if we keep the rest of the page white and sleek, with a few light grey lines to separate the search boxes, 
+// and maybe ad a turqoise/pink (to pick up on one "masquline" and one "feminie" colour from the moving background)
+// as an underline to the navbar items on hover; then alltogether I think it could look really cool!
+// What do you guys think?
+
+.homeTitle {
+  background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 220px;
+    height: auto;
+    width: 70%;
+    margin: 20px;
+  }
+  
+  .logo {
+    background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    padding: 0px;
+  }

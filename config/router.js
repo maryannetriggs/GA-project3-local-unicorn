@@ -63,8 +63,6 @@ router.route('/api/experiences')
 
 router.route('/api/experiences/:id')
   .get(experiences.show)
-
-  // PROBLEMS IN INSOMNIA:
   .put(secureRouteUnicorn, experiences.update)
   .delete(secureRouteUnicorn, experiences.remove)
 

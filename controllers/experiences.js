@@ -3,6 +3,8 @@ const Exp = require('../models/Exp')
 function index(req, res) {
   Exp
     .find()
+    .populate('unicorn')
+    .populate('reviews.traveller')
     .then(experiences => res.status(200).json(experiences))
     .catch(() => res.status(404).json({ message: 'Not Found' }))
 }
@@ -10,6 +12,8 @@ function index(req, res) {
 function show(req, res) {
   Exp
     .findById(req.params.id)
+    .populate('unicorn')
+    .populate('reviews.traveller')
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Experience not found' })
       res.status(200).json(experience)
@@ -22,6 +26,7 @@ function create(req, res, next) {
   req.body.unicorn = req.currentUnicorn
   Exp
     .create(req.body)
+    .populate('unicorn')
     .then(experience => res.status(201).json(experience))
     .catch(next)
 }
@@ -31,6 +36,7 @@ function update(req, res, next) {
   req.body.unicorn = req.currentUnicorn
   Exp
     .findById(req.params.id)
+    .populate('unicorn')
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Experience not found' })
       // if (!experience.unicorn.equals(req.currentUnicorn._id)) return res.status(401).json({ message: 'You are not authorized to edit this experience' })
@@ -62,6 +68,7 @@ function reviewCreate(req, res, next) {
   req.body.traveller = req.currentTraveller
   Exp
     .findById(req.params.id)
+    .populate('reviews.traveller')
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Experience not available for review' })
       experience.reviews.push(req.body)
@@ -75,6 +82,7 @@ function reviewCreate(req, res, next) {
 function reviewShow(req, res) {
   Exp
     .findById(req.params.id)
+    .populate('reviews.traveller')
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Experience not found' })
       const review = experience.reviews.id(req.params.reviewId)
@@ -90,6 +98,7 @@ function reviewUpdate(req, res, next) {
   req.body.traveller = req.currentTraveller
   Exp
     .findById(req.params.id)
+    .populate('reviews.traveller')
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Review not found' })
       // if (!review.traveller.equals(req.currentTraveller._id)) return res.status(401).json({ message: 'You are not authorized to edit this review' })

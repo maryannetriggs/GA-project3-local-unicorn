@@ -33,7 +33,7 @@ function update(req, res, next) {
     .findById(req.params.id)
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Experience not found' })
-      if (!experience.unicorn.equals(req.currentUnicorn._id)) return res.status(401).json({ message: 'You are not authorized to edit this experience' })
+      // if (!experience.unicorn.equals(req.currentUnicorn._id)) return res.status(401).json({ message: 'You are not authorized to edit this experience' })
       return experience.set(req.body)
     })
     .then(experience => experience.save())
@@ -47,14 +47,14 @@ function remove(req, res) {
   Exp
     .findById(req.params.id)
     .then(experience => {
-      if (!experience.unicorn.equals(req.currentUnicorn._id)) return res.status(401).json({ message: 'You are not authorized to delete this experience' })
+      // if (!experience.unicorn.equals(req.currentUnicorn._id)) return res.status(401).json({ message: 'You are not authorized to delete this experience' })
       return experience.remove()
     })
     .then(() => res.sendStatus(204))
     .catch(err => res.status(400).json(err))
 }
 
-// CAN WE MAKE IT SO THAT YOU CAN ONLY REVIEW EXPERIENCES YOU HAVE BOOKED? 
+// CAN WE MAKE IT SO THAT YOU CAN ONLY REVIEW EXPERIENCES YOU HAVE BOOKED? HOW
 // And add the populate part!
 
 // SECURE ROUTE FOR LOGGED IN TRAVELLER ONLY:
@@ -74,9 +74,10 @@ function reviewCreate(req, res, next) {
 // IM NOT SURE THIS WILL WORK:
 function reviewShow(req, res) {
   Exp
-    .findById(req.params.reviewId)
-    .then(review => {
-      if (!review) return res.status(404).json({ message: 'Review not found' })
+    .findById(req.params.id)
+    .then(experience => {
+      if (!experience) return res.status(404).json({ message: 'Experience not found' })
+      const review = experience.reviews.id(req.params.reviewId)
       res.status(200).json(review)
     })
     .catch(() => res.status(404).json({ message: 'Something went wrong'  }))
@@ -91,8 +92,8 @@ function reviewUpdate(req, res, next) {
     .findById(req.params.id)
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Review not found' })
+      // if (!review.traveller.equals(req.currentTraveller._id)) return res.status(401).json({ message: 'You are not authorized to edit this review' })
       const review = experience.reviews.id(req.params.reviewId)
-      if (!review.traveller.equals(req.currentTraveller._id)) return res.status(401).json({ message: 'You are not authorized to edit this review' })
       review.set(req.body)
       return experience.save() 
     })
@@ -108,7 +109,7 @@ function reviewDelete(req, res) {
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Review not found' })
       const review = experience.reviews.id(req.params.reviewId)
-      if (!review.traveller.equals(req.currentTraveller._id)) return res.status(401).json({ message: 'You are not authorized to delete this review' })
+      // if (!review.traveller.equals(req.currentTraveller._id)) return res.status(401).json({ message: 'You are not authorized to delete this review' })
       review.remove()
       return experience.save()
     })
@@ -127,3 +128,4 @@ module.exports = {
   reviewUpdate,
   reviewDelete
 }
+

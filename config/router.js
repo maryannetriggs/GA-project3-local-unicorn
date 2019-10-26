@@ -4,38 +4,46 @@ const travellers = require('../controllers/travellers')
 const unicorns = require('../controllers/unicorns')
 const experiences = require('../controllers/experiences')
 
-// GO THROUGH WHICH OF THE BELOW ROUTES NEED TO BE A SECURE ROUTE ONCE WE HAVE FINISHED TESTING IN INSOMNIA!
 const secureRoute = require('../lib/secureRoute')
 const secureRouteUnicorn = require('../lib/secureRouteUnicorn')
 
+
+
+// **********************************   CITY ROUTERS   **********************************
 router.route('/api/cities')
   .get(cities.index)
 
 router.route('/api/cities/:id')
   .get(cities.show)
 
-router.route('/api/register')
+
+
+// **********************************   TRAVELLER ROUTERS   **********************************
+router.route('/api/registertraveller')
   .post(travellers.register)
 
-router.route('/api/login')
+router.route('/api/logintraveller')
   .post(travellers.login)
   
-// we should make sure people cannot get to this index page by typing in that url later - block it/remove it?
+// WE WANT TO BLOCK THIS PAGE SO THAT NO-ONE CAN SEE THE PAGE WITH ALL TRAVELLERS - go back over code to see how jack did this before with unauthorised pages.
 router.route('/api/travellers')
   .get(travellers.index)
 
 router.route('/api/travellers/:id')
-  .get(travellers.profile)
+  .get(secureRoute, travellers.profile)
   .put(secureRoute, travellers.updateProfile)
   .delete(secureRoute, travellers.deleteProfile)
 
+
+
+// **********************************   UNICORN ROUTERS   **********************************
 router.route('/api/registerunicorn/')
   .post(unicorns.registerUnicorn)
 
 router.route('/api/loginunicorn')
   .post(unicorns.loginUnicorn)
 
-// we should make sure people cannot get to this index page by typing in that url later - block it/remove it?
+// DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE UNICORNS? Or should be block it/make it secure to unicorns only?
 router.route('/api/unicorns')
   .get(unicorns.index)
 
@@ -44,22 +52,35 @@ router.route('/api/unicorns/:id')
   .put(secureRouteUnicorn, unicorns.updateUnicornProfile)
   .delete(secureRouteUnicorn, unicorns.deleteUnicornProfile)
 
-// we should make sure people cannot get to this index page by typing in that url later - block it/remove it?
+
+
+// **********************************   EXPERIENCE ROUTERS   **********************************
+
+// DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE EXPERIENCES? Or should be block it/make it secure to unicorns only?
 router.route('/api/experiences')
   .get(experiences.index)
-  .post(experiences.create)
+  .post(secureRouteUnicorn, experiences.create)
 
 router.route('/api/experiences/:id')
   .get(experiences.show)
-  .put(experiences.update)
-  .delete(experiences.remove)
 
+  // PROBLEMS IN INSOMNIA:
+  .put(secureRouteUnicorn, experiences.update)
+  .delete(secureRouteUnicorn, experiences.remove)
+
+
+
+// **********************************   REVIEW ROUTERS   **********************************
 router.route('/api/experiences/:id/reviews')
-  .post(experiences.reviewCreate)
+  .post(secureRoute, experiences.reviewCreate)
 
 router.route('/api/experiences/:id/reviews/:reviewId')
-  .put(experiences.reviewUpdate)
-  .delete(experiences.reviewDelete)
+  .get(experiences.reviewShow)
+  .put(secureRoute, experiences.reviewUpdate)
+  .delete(secureRoute, experiences.reviewDelete)
+
+
+
 
 
 module.exports = router

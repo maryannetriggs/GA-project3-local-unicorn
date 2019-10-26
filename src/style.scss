@@ -4,9 +4,6 @@
 
 
 
-
-
-
 // PROPOSED STYLING FOR HOMEPAGE. 
 // It took me wuite a while to figure out how to do this, and now that I hage done it - I LOVE IT! 
 // I think if we keep the rest of the page white and sleek, with a few light grey lines to separate the search boxes, 
@@ -15,7 +12,7 @@
 // What do you guys think?
 
 .homeTitle {
-  background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
+background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -28,7 +25,7 @@
   }
   
   .logo {
-    background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
+background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -38,6 +35,12 @@
     padding: 0px;
   }
 
+// ALTERNATIVE 1 - moving gif:
+// background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
+
+// ALTERNATIVE 2 - still image:
+// background: url('https://i.dailymail.co.uk/i/pix/2015/11/19/17/2E9971C500000578-3325659-image-a-48_1447953828909.jpg');
+// background-size: cover;
 
 .unicorn-wrapper img {
   height: 300px;

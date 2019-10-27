@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Traveller = require('../models/Traveller')
 
-// Add traveller to this (and make required) later!
 const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true },
   traveller: { type: mongoose.Schema.ObjectId, ref: Traveller, required: true }
@@ -12,7 +11,7 @@ const reviewSchema = new mongoose.Schema({
 const expSchema = new mongoose.Schema({
   name: { type: String, required: true },
   image: { type: String, required: true },
-  description: { type: String, required: true, maxlength: 300 },
+  description: { type: String, required: true, maxlength: 500 },
   category: { type: [String], required: true, enum: ['Sport', 'Food', 'Drink', 'Culture', 'Outdoors', 'Music', 'Social'] },
   intensity: { type: String, enum: ['High', 'Medium', 'Low'] },
   price: { type: Number, required: true },

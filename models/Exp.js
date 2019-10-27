@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
+const Traveller = require('../models/Traveller')
 
 // Add traveller to this (and make required) later!
 const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true },
-  traveller: { type: mongoose.Schema.ObjectId, ref: 'Traveller', required: true }
+  traveller: { type: mongoose.Schema.ObjectId, ref: Traveller, required: true }
 }, {
   timestamps: true
 })

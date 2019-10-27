@@ -4,7 +4,7 @@ function index(req, res) {
   Exp
     .find()
     .populate('unicorn')
-    .populate('reviews.traveller')
+    // .populate('reviews.traveller')
     .then(experiences => res.status(200).json(experiences))
     .catch(() => res.status(404).json({ message: 'Not Found' }))
 }

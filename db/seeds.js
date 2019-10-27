@@ -13,6 +13,110 @@ mongoose.connect(
     if (err) return console.log(err)
     db.dropDatabase()
       .then(() => {
+        return Traveller.create([
+          {
+            name: 'Anna',
+            profilePicture: 'https://vetstreet-brightspot.s3.amazonaws.com/b5/28/52c040a04792a7379f5ed6124d43/cat-drinking-water-thinkstock-160612852-335sm9313.jpg',
+            about: 'Crazy cat lady',
+            country: 'France',
+            experiences: 0,
+            email: 'anna@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'John',
+            profilePicture: 'https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'Motorbike lover, if it war for me I would travel the world on my bike',
+            country: 'Austria',
+            experiences: 2,
+            email: 'john@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Petra',
+            profilePicture: 'https://live.staticflickr.com/5028/5788609294_a18777f8cc_b.jpg',
+            about: 'Looking for a new adventure.',
+            country: 'Greece',
+            experiences: 4,
+            email: 'petra@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Alba',
+            profilePicture: 'https://www.missfreedomusa.com/wp-content/uploads/2018/02/Cassandra-Dobbins.jpg',
+            about: 'Citizen of the world',
+            country: 'USA',
+            experiences: 9,
+            email: 'alba@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Marco',
+            profilePicture: 'https://images.unsplash.com/photo-1552642986-ccb41e7059e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'Pizza, Pizza, Pizza',
+            country: 'Itali',
+            experiences: 5,
+            email: 'marco@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Antonio',
+            profilePicture: 'https://i.pinimg.com/originals/74/0e/7a/740e7a48d16bfa9d73002653464f96e2.jpg',
+            about: 'Cray traveller and animal lover',
+            country: 'Spain',
+            experiences: 2,
+            email: 'antonio@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Ciara',
+            profilePicture: 'https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'Passionate for traveling and meeting new people',
+            country: 'Ireland',
+            experiences: 3,
+            email: 'ciara@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Lukas',
+            profilePicture: 'https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            about: 'A troubled man from Europe who can only walk by day, I am built to have fun 🤩.',
+            country: 'England',
+            experiences: 4,
+            email: 'lukas@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Paula',
+            profilePicture: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'My purpose in life is to pursue happiness and good food.',
+            country: 'Argentina',
+            experiences: 1,
+            email: 'paula@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Lara',
+            profilePicture: 'https://i.pinimg.com/originals/af/ca/19/afca19ae4411bf2ad8793e9bda7acd2a.jpg',
+            about: 'A generous radiologist who finds it hard to say no to new adventure',
+            country: 'Germany',
+            experiences: 7,
+            email: 'lara@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          }
+        ])
+      })
+      .then(() => {
         return City.create([
           {
             name: 'London',
@@ -92,11 +196,11 @@ mongoose.connect(
             region: 'Europe'
           },
           {
-            name: 'Sydney',
-            image: 'https://lonelyplanetimages.imgix.net/mastheads/65830387.jpg?sharp=10&vib=20&w=1200',
-            description: 'Sydney, capital of New South Wales and one of Australia\'s largest cities, is best known for its harbourfront Sydney Opera House, with a distinctive sail-like design. Sydney Tower’s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.',
-            country: 'Australia',
-            region: 'Oceania'
+            name: 'Singapore',
+            image: 'https://handluggageonly.co.uk/wp-content/uploads/2015/07/Hand-Luggage-Only-17-1.jpg',
+            description: 'Even though Singapore is one of the smallest countries in the world, its capital with the same name is known as a melting pot of cultures. It is a great place for tourists as it offers fantastic food, unparalleled safety and clenliness, and has a facinating history.',
+            country: 'Singapore',
+            region: 'Asia'
           },
           {
             name: 'Wellington',
@@ -114,117 +218,13 @@ mongoose.connect(
           }
         ])
       })
-      .then(() => {
-        return Traveller.create([
-          {
-            name: 'Anna',
-            profilePicture: 'https://vetstreet-brightspot.s3.amazonaws.com/b5/28/52c040a04792a7379f5ed6124d43/cat-drinking-water-thinkstock-160612852-335sm9313.jpg',
-            about: 'Crazy cat lady',
-            country: 'France',
-            experiences: 0,
-            email: 'anna@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'John',
-            profilePicture: 'https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-            about: 'Motorbike lover, if it war for me I would travel the world on my bike',
-            country: 'Austria',
-            experiences: 2,
-            email: 'john@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Petra',
-            profilePicture: 'https://live.staticflickr.com/5028/5788609294_a18777f8cc_b.jpg',
-            about: 'Looking for a new adventure.',
-            country: 'Greece',
-            experiences: 4,
-            email: 'petra@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Alba',
-            profilePicture: 'https://www.missfreedomusa.com/wp-content/uploads/2018/02/Cassandra-Dobbins.jpg',
-            about: 'Citicen of the world',
-            country: 'USA',
-            experiences: 9,
-            email: 'alba@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Marco',
-            profilePicture: 'https://images.unsplash.com/photo-1552642986-ccb41e7059e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-            about: 'Pizza, Pizza, Pizza',
-            country: 'Itali',
-            experiences: 5,
-            email: 'marco@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Antonio',
-            profilePicture: 'https://i.pinimg.com/originals/74/0e/7a/740e7a48d16bfa9d73002653464f96e2.jpg',
-            about: 'Cray traveller and animal lover',
-            country: 'Spain',
-            experiences: 2,
-            email: 'antonio@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Ciara',
-            profilePicture: 'https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-            about: 'Passionate for traveling and meeting new people',
-            country: 'Ireland',
-            experiences: 3,
-            email: 'ciara@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Lukas',
-            profilePicture: 'https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            about: 'A troubled man from Europe who can only walk by day, I am built to have fun 🤩.',
-            country: 'England',
-            experiences: 4,
-            email: 'lukas@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Paula',
-            profilePicture: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-            about: 'My purpose in life is to pursue happiness and good food.',
-            country: 'Argentina',
-            experiences: 1,
-            email: 'paula@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          },
-          {
-            name: 'Lara',
-            profilePicture: 'https://i.pinimg.com/originals/af/ca/19/afca19ae4411bf2ad8793e9bda7acd2a.jpg',
-            about: 'A generous radiologist who finds it hard to say no to new adventure',
-            country: 'Germany',
-            experiences: 7,
-            email: 'lara@mail',
-            password: 'pass',
-            passwordConfirmation: 'pass'
-          }
-        ])
-      })
-      .then(() => {
+      .then(cities => {
         return Unicorn.create([
           {
             name: 'Mona Smith',
             profilePicture: 'https://images.unsplash.com/photo-1554780336-390462301acf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
             about: 'Bubbly and social, I love showing off Tokyo to visitors.',
-            city: 'Tokyo',
+            city: cities[4],
             country: 'Japan',
             region: 'Asia',
             language: ['English', 'French', 'Japanese'],
@@ -238,7 +238,7 @@ mongoose.connect(
             name: 'Georgios Andino',
             profilePicture: 'https://images.unsplash.com/photo-1556135063-eba17c48d523?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'A Greek currently living and working in London. Travel is my passion, I want to share some of my favourite discoveries with you.',
-            city: 'London',
+            city: cities[0],
             country: 'United Kingdom',
             region: 'Europe',
             language: ['English', 'Greek'],
@@ -252,7 +252,7 @@ mongoose.connect(
             name: 'Emma Brown',
             profilePicture: 'https://images.unsplash.com/photo-1546422401-68b415cbf8de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
             about: 'I believe the best things in the world come from living outside your comfort zone. Let me introduce you to the wonders of New York.',
-            city: 'New York',
+            city: cities[1],
             country: 'United States',
             region: 'North America',
             language: ['English', 'Italian'],
@@ -266,7 +266,7 @@ mongoose.connect(
             name: 'Maria Orta',
             profilePicture: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'A day in the life of me - eat avocado toast, post instagram photos and drink strong coffee.',
-            city: 'Madrid',
+            city: cities[3],
             country: 'Spain',
             region: 'Europe',
             language: ['English', 'Portuguese', 'Spanish'],
@@ -280,7 +280,7 @@ mongoose.connect(
             name: 'Anthony Perez',
             profilePicture: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'Currently saying yes to new adventures, come along with me!',
-            city: 'Mexico City',
+            city: cities[8],
             country: 'Mexico',
             region: 'Central America',
             language: ['English', 'Spanish', 'Maya'],
@@ -294,7 +294,7 @@ mongoose.connect(
             name: 'Mary-Anne Jones',
             profilePicture: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'Traveller ✈️, book lover 📖 and obsessed with tacos 🌮.',
-            city: 'Wellington',
+            city: cities[12],
             country: 'New Zealans',
             region: 'Oceania',
             language: ['English'],
@@ -308,7 +308,7 @@ mongoose.connect(
             name: 'Felicia Ulvefeldt',
             profilePicture: 'https://images.unsplash.com/photo-1563178406-4cdc2923acbc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'Let me show you around the best city in the world. I\'ll take you off the tourist route and show you the real Stockholm.',
-            city: 'Stockhom',
+            city: cities[10],
             country: 'Sweden',
             region: 'Europe',
             language: ['English', 'Swedish'],
@@ -322,7 +322,7 @@ mongoose.connect(
             name: 'Gerardo Alfaro',
             profilePicture: 'https://images.unsplash.com/photo-1563240619-44ec0047592c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'The best stories are found in the pages of your passport, providing a local\'s view of La Paz since 2016.',
-            city: 'La Paz',
+            city: cities[13],
             country: 'Bolivia',
             region: 'South America',
             language: ['English', 'Spanish'],
@@ -336,7 +336,7 @@ mongoose.connect(
             name: 'Celeste Bisset',
             profilePicture: 'https://images.unsplash.com/photo-1567520660079-4773823badac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'I enjoy making connections and making friends from across the world, lets make memories together.',
-            city: 'Paris',
+            city: cities[2],
             country: 'France',
             region: 'Europe',
             language: ['French'],
@@ -350,7 +350,7 @@ mongoose.connect(
             name: 'Sundaresh Loong',
             profilePicture: 'https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80',
             about: 'Contact me for a one-of-its kind tour around the beautiful city-state of Singapore.',
-            city: 'Singapore',
+            city: cities[11],
             country: 'Singapore',
             region: 'Asia',
             language: ['English', 'Tamil', 'Mandarin'],
@@ -364,7 +364,7 @@ mongoose.connect(
             name: 'Abu Belcaid',
             profilePicture: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'Marrakech is always a good idea - let me show you the hidden gems',
-            city: 'Marrakech',
+            city: cities[9],
             country: 'Morocco',
             region: 'Caribbean',
             language: ['English', 'Arabic'],
@@ -378,7 +378,7 @@ mongoose.connect(
             name: 'Katina Petrova',
             profilePicture: 'https://images.unsplash.com/photo-1568622262086-042cc612f363?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'Just a wandering soul, in need of an exciting new adventure.',
-            city: 'Moscow',
+            city: cities[7],
             country: 'Russia',
             region: 'Asia',
             language: ['English', 'Russian', 'German'],
@@ -392,7 +392,7 @@ mongoose.connect(
             name: 'Yin Qiang',
             profilePicture: 'https://images.unsplash.com/photo-1525875975471-999f65706a10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'It\'s said that a journey is best measured in friends rather than miles. An experience booked with me is guaranteed to include both.',
-            city: 'Shanghai',
+            city: cities[6],
             country: 'China',
             region: 'Asia',
             language: ['English', 'Mandarin'],
@@ -406,7 +406,7 @@ mongoose.connect(
             name: 'Odila Laurent',
             profilePicture: 'https://images.unsplash.com/photo-1487573884658-a5d3c667584e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'It\'s always worth taking the scenic route. I\'ll be your guide through the beauties of my favourite city (and I\'ve seen a few)!',
-            city: 'Paris',
+            city: cities[2],
             country: 'France',
             region: 'Europe',
             language: ['English', 'French', 'Spanish', 'Dutch', 'Urdu', 'Arabic'],
@@ -420,7 +420,7 @@ mongoose.connect(
             name: 'Majid Iravani',
             profilePicture: 'https://images.unsplash.com/photo-1487529236533-f2b78c0c9344?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'Welcome to Iran, home of beautiful poetry, luxurious rugs and lush gardens.',
-            city: 'Tehran',
+            city: cities[5],
             country: 'Iran',
             region: 'Asia',
             language: ['English', 'Persian', 'Arabic'],
@@ -434,7 +434,7 @@ mongoose.connect(
             name: 'Mark Saunders',
             profilePicture: 'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'If you like busy cities, football and staying up late, I\'ve got the perfect day planned for you!',
-            city: 'London',
+            city: cities[0],
             country: 'United Kingdom',
             region: 'Europe',
             language: ['English', 'French'],
@@ -448,7 +448,7 @@ mongoose.connect(
             name: 'Kelly Stone',
             profilePicture: 'https://images.unsplash.com/photo-1516239482977-b550ba7253f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'I already know we\'re going to have the most amazing time. Allow me to show you the most fun you can have in New York without getting arrested!',
-            city: 'New York',
+            city: cities[1],
             country: 'United States',
             region: 'North America',
             language: ['English'],
@@ -462,7 +462,7 @@ mongoose.connect(
             name: 'Louise Williams',
             profilePicture: 'https://images.unsplash.com/photo-1531528329400-a5b98b2c3b83?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'Be my guest, be my guest, put my service to the test - you\'re singing along aren\'t you?',
-            city: 'London',
+            city: cities[0],
             country: 'United Kingdom',
             region: 'Europe',
             language: ['English', 'German'],
@@ -476,7 +476,7 @@ mongoose.connect(
             name: 'Angel Velez',
             profilePicture: 'https://images.unsplash.com/photo-1546672657-366775449156?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'People lover, dedicated to showing people the magic of Madrid.',
-            city: 'Madrid',
+            city: cities[3],
             country: 'Spain',
             region: 'Europe',
             language: ['English', 'Spanish'],
@@ -490,7 +490,7 @@ mongoose.connect(
             name: 'Aito Tanaka',
             profilePicture: 'https://images.unsplash.com/photo-1552358155-515e264cb8b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'Just book a tour with me already',
-            city: 'Tokyo',
+            city: cities[4],
             country: 'Japan',
             region: 'Asia',
             language: ['English', 'Japanese', 'Mandarin'],
@@ -511,9 +511,9 @@ mongoose.connect(
             category: ['Food', 'Drink', 'Social'],
             intensity: 'Low',
             price: 30,
+            unicorn: unicorns[0],
             availability: ['Friday', 'Saturday'],
-            time: 'Evening',
-            unicorn: unicorns[0]
+            time: 'Evening'
           }
         ])
       })

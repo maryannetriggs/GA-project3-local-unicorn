@@ -516,6 +516,50 @@ mongoose.connect(
             time: 'Evening'
           },
           {
+            name: 'Distillery tours and tastings in central London',
+            image: 'http://www.maketh-the-man.com/wp-content/uploads/2014/12/2014-12-06-14.52.44.jpg',
+            description: 'Thought you had to travel to the countryside for a distillery tour? Not anymore! Let me take you to some of London\'s most exciting indepepndent distilleries, including the East London Liqour Company.',
+            category: ['Drink', 'Social'],
+            intensity: 'Low',
+            price: 20,
+            unicorn: unicorns[15],
+            availability: ['Thursday', 'Friday', 'Saturday'],
+            time: 'Afternoon'
+          },
+          {
+            name: 'A new kind of theatre',
+            image: 'https://d2qqnmbwcdc6ya.cloudfront.net/wp-content/uploads/2018/04/08181058/Bridge-Theatre-Exterior.jpg',
+            description: 'There are lots of fantastic theatres in London, but have you hear of places like Bridge Theatre? If not, let me show you some of London\'s most interesting new theatres and what they have to offer.',
+            category: ['Culture', 'Social'],
+            intensity: 'Low',
+            price: 0,
+            unicorn: unicorns[17],
+            availability: ['Thursday', 'Friday', 'Saturday'],
+            time: 'Evening'
+          },
+          {
+            name: 'Jazz in style',
+            image: 'https://benumu.com/numuimage/by_id/1945',
+            description: 'Love jazz but don\'t know where to go for an authentic and high quality experience? I\'ll show you all of my favourite jazz bars, including the institutions Ronnie Scott\'s and Vortex.',
+            category: ['Culture', 'Social', 'Music'],
+            intensity: 'Low',
+            price: 20,
+            unicorn: unicorns[1],
+            availability: ['Thursday', 'Friday', 'Saturday'],
+            time: 'Evening'
+          },
+          {
+            name: 'Eat your way through east London',
+            image: 'https://i.pinimg.com/originals/1f/c6/b5/1fc6b56bf39d28b2f2a0d63a3eebe636.jpg',
+            description: 'Do you identify as a trendy foodie (or at least wish you did)? Then this tour is for you! Let me take you to the tastiest places in East London. From pretty pastries at Pophams to a snazzy dinner at BISTROTHEQUE.',
+            category: ['Food', 'Social'],
+            intensity: 'Low',
+            price: 50,
+            unicorn: unicorns[1],
+            availability: ['Thursday', 'Friday', 'Saturday'],
+            time: ['Morning', 'Afternoon', 'Evening'] 
+          },
+          {
             name: 'Food crawl',
             image: 'https://xyuandbeyond.com/wp-content/uploads/2018/03/borough-market-stalls.jpg',
             description: 'Like a pub crawl but with food, mostly street food and various hole-in-the-wall places. We will start off at Borough market and eat our way across London from there. ',
@@ -657,6 +701,17 @@ mongoose.connect(
             unicorn: unicorns[13],
             availability: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             time: ['Morning', 'Afternoon']
+          },
+          {
+            name: 'Best independent boutiques in Paris',
+            image: 'https://media.architecturaldigest.com/photos/5a3d3fc738bb817b7ffe1f32/master/pass/RL_GAS_BIJOUX_11_1_2017-1346.jpg',
+            description: 'Love shopping but bored of the mainstream stuff? Come with me as I show you my personal favourites, spread across the city. Stops will include my favourite jewelry brand - Gas Bijoux.',
+            category: ['Social', 'Culture', 'Outdoors'],
+            intensity: 'Medium',
+            price: 0,
+            unicorn: unicorns[13],
+            availability: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            time: ['Afternoon']
           },
           {
             name: 'Sacred beauty',

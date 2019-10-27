@@ -25,6 +25,7 @@ function loginUnicorn(req, res) {
 function profile(req, res) {
   Unicorn
     .findById(req.params.id)
+    .populate('city')
     .then(unicorn => {
       if (!unicorn) return res.status(404).json({ message: 'No unicorn found' })
       res.status(200).json(unicorn)
@@ -60,6 +61,7 @@ function deleteUnicornProfile(req, res) {
 function index(req, res) {
   Unicorn
     .find()
+    .populate('city')
     .then(unicorns => res.status(200).json(unicorns))
     .catch(() => res.status(400).json({ message: 'Not found' }))
 }

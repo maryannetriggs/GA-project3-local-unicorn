@@ -43,7 +43,7 @@ router.route('/api/registerunicorn/')
 router.route('/api/loginunicorn')
   .post(unicorns.loginUnicorn)
 
-// DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE UNICORNS? Or should be block it/make it secure to unicorns only?
+// ?? DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE UNICORNS? Or should be block it/make it secure to unicorns only?
 router.route('/api/unicorns')
   .get(unicorns.index)
 
@@ -56,7 +56,7 @@ router.route('/api/unicorns/:id')
 
 // **********************************   EXPERIENCE ROUTERS   **********************************
 
-// DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE EXPERIENCES? Or should be block it/make it secure to unicorns only?
+// ?? DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE EXPERIENCES? Or should be block it/make it secure to unicorns only?
 router.route('/api/experiences')
   .get(experiences.index)
   .post(secureRouteUnicorn, experiences.create)

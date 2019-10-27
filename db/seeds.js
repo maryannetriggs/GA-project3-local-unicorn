@@ -921,6 +921,39 @@ mongoose.connect(
             unicorn: unicorns[0],
             availability: ['Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday'],
             time: ['Morning']
+          },
+          {
+            name: 'Sample the best pizza in New York',
+            image: 'https://assets3.thrillist.com/v1/image/1808335/size/tmg-venue_carousel_mobile.jpg',
+            description: 'Lover of pizza? I will guide you through the jungle of pizza places and take you to the very BEST pizza places the city has to offer, including of course Roberta\'s which all of new york is infatuated with.',
+            category: ['Social', 'Food'],
+            intensity: 'Low',
+            price: 10,
+            unicorn: unicorns[2],
+            availability: ['Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday'],
+            time: ['Afternoon', 'Evening']
+          },
+          {
+            name: 'Coffee shop hopping',
+            image: 'https://www.rd.com/wp-content/uploads/2019/03/shutterstock_129339416.jpg',
+            description: 'Who can resist a really good cup of coffee? And with so much to see in this city, knowing where to pick up an amazing coffee will serve you well.',
+            category: ['Social', 'Drink'],
+            intensity: 'Low',
+            price: 5,
+            unicorn: unicorns[2],
+            availability: ['Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['Morning', 'Afternoon']
+          },
+          {
+            name: 'Bowling 2.0',
+            image: 'https://www.brooklynbowl.com/assets/img/carousel-34-808x494-3a3870de2b.jpg',
+            description: 'Thought bowling was boring? Think again. Brooklyn bowl has taken the classic game and amped it up with amazing cocktails, food, and live music. Let me show you this and many of Brooklyn\'s other institution on this one-of-a-kind tours!',
+            category: ['Social', 'Drink', 'Music', 'Food'],
+            intensity: 'Medium',
+            price: 20,
+            unicorn: unicorns[16],
+            availability: ['Friday', 'Saturday'],
+            time: ['Evening']
           }
         ])
       })

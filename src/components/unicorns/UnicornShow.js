@@ -28,7 +28,7 @@ class UnicornShow extends React.Component {
           <h3>{unicorn.name}</h3>
           <img src={unicorn.profilePicture} alt={name}/>
           <h3>{unicorn.about}</h3>
-          <h3>{unicorn.city}</h3>
+          {/* <h3>{unicorn.city}</h3> */}
           <h3>{unicorn.country}</h3>
           <h3>{unicorn.region}</h3>
           <h3>{unicorn.language}</h3>

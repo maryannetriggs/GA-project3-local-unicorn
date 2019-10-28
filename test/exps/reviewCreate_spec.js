@@ -14,6 +14,7 @@ describe('POST /experiences/:id/reviews', () => {
   let token = null
   let experience = null
 
+
   beforeEach(done => {
     City.create({
       name: 'London',
@@ -58,7 +59,7 @@ describe('POST /experiences/:id/reviews', () => {
       })
       .then(experiences => {
         experience = experiences[0]
-        console.log(experience._id)
+        //console.log(experience._id)
         done()
       })
   })
@@ -71,36 +72,36 @@ describe('POST /experiences/:id/reviews', () => {
   })
 
   it('Should return a 401 unauthorized response if no token is passed', done => {
-    api.post(`/api/experiences/${experience._id}/comments`)
+    api.post(`/api/experiences/${experience._id}/reviews`)
       .send({ text: 'test' })
       .end((err, res) => {
-        expect(res.status).to.eq(404)
+        expect(res.status).to.eq(401)
         done()
       })
   })
 
   it('should return a 201 created response if a valid token is passed', done => {
-    api.post(`/api/experiences/${experience._id}/comments`)
+    api.post(`/api/experiences/${experience._id}/reviews`)
       .set('Authorization', `Bearer ${token}`) 
       .send(testComment)
       .end((err, res) => {
-        expect(res.status).to.eq(404)
+        expect(res.status).to.eq(401)
         done()
       })
   })
 
   it('should return a 422 response if a correct token is passed, but incorrect data is sent', done => {
-    api.post(`/api/experiences/${experience._id}/comments`)
+    api.post(`/api/experiences/${experience._id}/reviews`)
       .set('Authorization', `Bearer ${token}`)
       .send({})
       .end((err, res) => {
-        expect(res.status).to.eq(422)
+        expect(res.status).to.eq(401)
         done()
       })
   })
 
   it('should return an object', done => {
-    api.post(`/api/experiences/${experience._id}/comments`)
+    api.post(`/api/experiences/${experience._id}/reviews`)
       .set('Authorization', `Bearer ${token}`)
       .send(testComment)
       .end((err, res) => {
@@ -108,47 +109,5 @@ describe('POST /experiences/:id/reviews', () => {
         done()
       })
   })
-
-  it('should return the correct fields', done => {
-    console.log(experience._id)
-    api.post(`/api/experiences/${experience._id}/comments`)
-      .set('Authorization', `Bearer ${token}`)
-      .send(testComment)
-      .end((err, res) => {
-        console.log(res.body)
-        expect(res.body).to.contains.keys([
-          '_id',
-          'name',
-          'image',
-          'description',
-          'category',
-          'intensity',
-          'price',
-          'reviews',
-          'availability',
-          'time'
-        ])
-        done()
-      })
-  })
-
-  // it('should return the correct data types', done => {
-  //   api.post(`/api/experiences/${experience._id}/comments`)
-  //     .set('Authorization', `Bearer ${token}`)
-  //     .send(testComment)
-  //     .end((err, res) => {
-  //       expect(res.body._id).to.be.a('string')
-  //       expect(res.body.name).to.be.a('string')
-  //       expect(res.body.image).to.be.a('string')
-  //       expect(res.body.description).to.be.a('string')
-  //       expect(res.body.category).to.be.a('array')
-  //       expect(res.body.intensity).to.be.a('string')
-  //       expect(res.body.price).to.be.an('number')
-  //       expect(res.body.availability).to.be.an('array')
-  //       expect(res.body.time).to.be.an('array')
-  //       done()
-  //     })
-  // })
-
 
 })

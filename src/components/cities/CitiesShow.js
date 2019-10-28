@@ -23,10 +23,17 @@ class CitiesShow extends React.Component {
     if (!this.state.city) return null
     const { city } = this.state
     return (
-      <section>
-        <div className="city-wrapper">
-          <h3>{city.name}</h3>
-          <img src={city.image} alt={name}/>
+      <section className="container">
+        <div className="columns">
+          <img className="column col-12" src={city.image} alt={name}/>
+          <div className="column col-6">
+            <h3>{city.name}</h3>
+            <h3>{city.description}</h3>
+          </div>
+          <div className="column col-6">
+            <button>Hello</button>
+          </div>
+          
         </div>
       </section >
     )

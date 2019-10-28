@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-// import 'spectre'
+import 'spectre.css'
 import './style.scss'
 
 import Home from './components/common/Home'

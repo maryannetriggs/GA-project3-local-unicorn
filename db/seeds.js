@@ -985,7 +985,7 @@ mongoose.connect(
             intensity: 'High',
             price: 100,
             unicorn: unicorns[5],
-            availability: ['Saturdays'],
+            availability: ['Saturday'],
             time: ['All-Day']
           },
           {

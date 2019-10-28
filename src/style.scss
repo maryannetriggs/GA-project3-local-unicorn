@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+body {
+  padding: 0px;
+}
 
 
 // PROPOSED STYLING FOR HOMEPAGE. 
@@ -43,8 +46,9 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 // background-size: cover;
 
 .city-card {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
 }
 
 .unicorn-wrapper h3 {
@@ -61,6 +65,22 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
   object-fit: cover;
 }
 
+<<<<<<< HEAD
 img {
   height: 300px;
+=======
+.column {
+  padding: 0px;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+h3 {
+  text-decoration: none;
+>>>>>>> development
 }

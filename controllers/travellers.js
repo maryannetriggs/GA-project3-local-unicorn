@@ -10,9 +10,11 @@ function register(req, res, next) {
 }
 
 function login(req, res) {
+  console.log(req.body)
   Traveller
     .findOne({ email: req.body.email })
     .then(traveller => {
+      console.log(traveller)
       if (!traveller || !traveller.validatePassword(req.body.password)) {
         return res.status(401).json({ message: 'Please check your details' })
       }

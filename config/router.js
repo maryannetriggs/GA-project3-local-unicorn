@@ -36,7 +36,7 @@ router.route('/logintraveller')
 router.route('/travellers')
   .get(secureRouteAdmin, travellers.index)
 
-router.route('/travellers/:id')
+router.route('/travellerprofile')
   .get(secureRoute, travellers.profile)
   .put(secureRoute, travellers.updateProfile)
   .delete(secureRoute, travellers.deleteProfile)

@@ -1,18 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ExpCard = ({ name, image, description, category, intensity, price, availability, time, _id }) => (
-  <div>
+const ExpCard = ({ name, image, category, price, _id }) => (
+  <div className="column col-3">
     <Link to={`/experiences/${_id}`}>
       <div>
-        <img src={image} alt={name}/>
+        <img className="city-card" src={image} alt={name}/>
         <h3>{name}</h3>
-        <h3>{description}</h3>
-        <h3>{category}</h3>
-        <h3>{intensity}</h3>
-        <h3>{price}</h3>
-        <h3>{availability}</h3>
-        <h3>{time}</h3>
+        <h3>Category: {`${category} `}</h3>
+        <h3>Price: {price}</h3>
       </div>
     </Link>
   </div>

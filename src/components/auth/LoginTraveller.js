@@ -22,9 +22,7 @@ class LoginTraveller extends React.Component {
     e.preventDefault()
 
     axios.post('/api/logintraveller', this.state.data)
-    // console.log('help')
       .then(res => {
-        console.log('help')
         Auth.setToken(res.data.token)
         this.props.history.push('/cities')
       })
@@ -37,9 +35,22 @@ class LoginTraveller extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <div className="form-group">
           <label className="form-label" htmlFor="email">Email</label>
-          <input className="form-input" type="text" id="email" placeholder="Email" onChange={this.handleChange}/>
+          <input 
+            className="form-input" 
+            name="email" 
+            type="text" 
+            id="email" 
+            placeholder="Email" 
+            onChange={this.handleChange}/>
           <label className="form-label" htmlFor="password">Password</label>
-          <input className="form-input" type="text" id="password" placeholder="Password" onChange={this.handleChange}/>
+          <input 
+            className="form-input" 
+            name="password" 
+            type="text" 
+            id="password" 
+            placeholder="Password" 
+            onChange={this.handleChange}/>
+          <br />
           <button className="btn" type="submit">Log in</button>
         </div>
       </form>

@@ -58,6 +58,7 @@ describe('POST /experiences/:id/reviews', () => {
       })
       .then(experiences => {
         experience = experiences[0]
+        console.log(experience._id)
         done()
       })
   })
@@ -93,7 +94,7 @@ describe('POST /experiences/:id/reviews', () => {
       .set('Authorization', `Bearer ${token}`)
       .send({})
       .end((err, res) => {
-        expect(res.status).to.eq(404)
+        expect(res.status).to.eq(422)
         done()
       })
   })
@@ -108,26 +109,28 @@ describe('POST /experiences/:id/reviews', () => {
       })
   })
 
-  // it('should return the correct fields', done => {
-  //   api.post(`/api/experiences/${experience._id}/comments`)
-  //     .set('Authorization', `Bearer ${token}`)
-  //     .send(testComment)
-  //     .end((err, res) => {
-  //       expect(res.body).to.contains.keys([
-  //         '_id',
-  //         'name',
-  //         'image',
-  //         'description',
-  //         'category',
-  //         'intensity',
-  //         'price',
-  //         'reviews',
-  //         'availability',
-  //         'time'
-  //       ])
-  //       done()
-  //     })
-  // })
+  it('should return the correct fields', done => {
+    console.log(experience._id)
+    api.post(`/api/experiences/${experience._id}/comments`)
+      .set('Authorization', `Bearer ${token}`)
+      .send(testComment)
+      .end((err, res) => {
+        console.log(res.body)
+        expect(res.body).to.contains.keys([
+          '_id',
+          'name',
+          'image',
+          'description',
+          'category',
+          'intensity',
+          'price',
+          'reviews',
+          'availability',
+          'time'
+        ])
+        done()
+      })
+  })
 
   // it('should return the correct data types', done => {
   //   api.post(`/api/experiences/${experience._id}/comments`)

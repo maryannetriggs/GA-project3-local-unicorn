@@ -10,26 +10,26 @@ const secureRouteUnicorn = require('../lib/secureRouteUnicorn')
 
 
 // **********************************   CITY ROUTERS   **********************************
-router.route('/api/cities')
+router.route('/cities')
   .get(cities.index)
 
-router.route('/api/cities/:id')
+router.route('/cities/:id')
   .get(cities.show)
 
 
 
 // **********************************   TRAVELLER ROUTERS   **********************************
-router.route('/api/registertraveller')
+router.route('/registertraveller')
   .post(travellers.register)
 
-router.route('/api/logintraveller')
+router.route('/logintraveller')
   .post(travellers.login)
   
 // WE WANT TO BLOCK THIS PAGE SO THAT NO-ONE CAN SEE THE PAGE WITH ALL TRAVELLERS - go back over code to see how jack did this before with unauthorised pages.
-router.route('/api/travellers')
+router.route('/travellers')
   .get(travellers.index)
 
-router.route('/api/travellers/:id')
+router.route('/travellers/:id')
   .get(secureRoute, travellers.profile)
   .put(secureRoute, travellers.updateProfile)
   .delete(secureRoute, travellers.deleteProfile)
@@ -37,17 +37,17 @@ router.route('/api/travellers/:id')
 
 
 // **********************************   UNICORN ROUTERS   **********************************
-router.route('/api/registerunicorn/')
+router.route('/registerunicorn/')
   .post(unicorns.registerUnicorn)
 
-router.route('/api/loginunicorn')
+router.route('/loginunicorn')
   .post(unicorns.loginUnicorn)
 
 // ?? DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE UNICORNS? Or should be block it/make it secure to unicorns only?
-router.route('/api/unicorns')
+router.route('/unicorns')
   .get(unicorns.index)
 
-router.route('/api/unicorns/:id')  
+router.route('/unicorns/:id')  
   .get(unicorns.profile)
   .put(secureRouteUnicorn, unicorns.updateUnicornProfile)
   .delete(secureRouteUnicorn, unicorns.deleteUnicornProfile)
@@ -57,11 +57,11 @@ router.route('/api/unicorns/:id')
 // **********************************   EXPERIENCE ROUTERS   **********************************
 
 // ?? DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE EXPERIENCES? Or should be block it/make it secure to unicorns only?
-router.route('/api/experiences')
+router.route('/experiences')
   .get(experiences.index)
   .post(secureRouteUnicorn, experiences.create)
 
-router.route('/api/experiences/:id')
+router.route('/experiences/:id')
   .get(experiences.show)
   .put(secureRouteUnicorn, experiences.update)
   .delete(secureRouteUnicorn, experiences.remove)
@@ -69,10 +69,10 @@ router.route('/api/experiences/:id')
 
 
 // **********************************   REVIEW ROUTERS   **********************************
-router.route('/api/experiences/:id/reviews')
+router.route('/experiences/:id/reviews')
   .post(secureRoute, experiences.reviewCreate)
 
-router.route('/api/experiences/:id/reviews/:reviewId')
+router.route('/experiences/:id/reviews/:reviewId')
   .get(experiences.reviewShow)
   .put(secureRoute, experiences.reviewUpdate)
   .delete(secureRoute, experiences.reviewDelete)

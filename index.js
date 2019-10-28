@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 app.use(logger)
 
-app.use('/', router)
+app.use('/api', router)
 
 app.use('/*', (req, res) => res.status(404).json({ message: 'not found' }))
 

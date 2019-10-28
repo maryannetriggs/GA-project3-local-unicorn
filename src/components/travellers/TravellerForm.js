@@ -6,6 +6,7 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
       <label>Name</label>
       <div>
         <input 
+          className="input"
           placeholder="Name"
           name="name"
           onChange={handleChange}
@@ -17,7 +18,8 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
     <div>
       <label>Profile Picture</label>
       <div>
-        <imput 
+        <input 
+          className="input"
           placeholder="Profile Picture"
           name="profilePicture"
           onChange={handleChange}
@@ -29,7 +31,8 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
     <div>
       <label>About</label>
       <div>
-        <imput 
+        <textarea 
+          className="textarea"
           placeholder="About"
           name="about"
           onChange={handleChange}
@@ -41,7 +44,8 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
     <div>
       <label>Country</label>
       <div>
-        <imput 
+        <input
+          className="input" 
           placeholder="Country"
           name="country"
           onChange={handleChange}
@@ -53,8 +57,9 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
     <div>
       <label>Expreriences</label>
       <div>
-        <imput 
-          placeholder="Number of Experiences"
+        <input 
+          className="input"
+          placeholder="Number of experiences booked"
           name="experiences"
           onChange={handleChange}
           value={data.experiences}
@@ -65,7 +70,7 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
     <div>
       <label>Email</label>
       <div>
-        <imput 
+        <input 
           placeholder="Email"
           name="email"
           onChange={handleChange}
@@ -73,7 +78,7 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
         />
       </div>
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit" className="btn btn-success">SUBMIT</button>
   </form>
 )
 

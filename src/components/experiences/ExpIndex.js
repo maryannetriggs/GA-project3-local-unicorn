@@ -21,10 +21,15 @@ class ExpsIndex extends React.Component {
   render() {
     if (!this.state.experiences) return null
     return (
-      <div className="experience-wrapper">
-        {this.state.experiences.map(exp => (
-          <ExpCard key={exp._id} {...exp}/>
-        ))}
+      <div>
+        <h1>All experiences</h1>
+        <div className="container">
+          <div className="columns">
+            {this.state.experiences.map(exp => (
+              <ExpCard key={exp._id} {...exp}/>
+            ))}
+          </div>
+        </div>
       </div>
     )
   }

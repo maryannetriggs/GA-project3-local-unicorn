@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const CityCard = ({ name, image, _id }) => (
-
   <div className="column col-3">
     <Link to={`/cities/${_id}`}>
       <div className="">
@@ -11,7 +10,6 @@ const CityCard = ({ name, image, _id }) => (
       </div>
     </Link>
   </div>
-  
 )
 
 export default CityCard

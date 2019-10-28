@@ -4,6 +4,7 @@ const City = require('../models/City')
 const Traveller = require('../models/Traveller')
 const Unicorn = require('../models/Unicorn')
 const Exp = require('../models/Exp')
+const Admin = require('../models/Admin')
 
 
 mongoose.connect(
@@ -12,6 +13,16 @@ mongoose.connect(
   (err, db) => {
     if (err) return console.log(err)
     db.dropDatabase()
+      .then(() => {
+        return Admin.create([
+          {
+            name: 'Admin',
+            email: 'admin@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          }
+        ])
+      })
       .then(() => {
         return Traveller.create([
           {
@@ -1086,6 +1097,61 @@ mongoose.connect(
             unicorn: unicorns[9],
             availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             time: ['Morning', 'Afternoon']
+          },
+          {
+            name: 'Walkthough The Witches Market',
+            image: 'http://pinkplankton.com/wp-content/uploads/2015/11/witchmarket1.jpg',
+            description: 'The Witches Market, also known as El Mercado de las Brujas and La Hechiceria, is a popular tourist attraction located in Cerro Cumbre, a mountain clearing in La Paz.',
+            category: ['Outdoors', 'Culture'],
+            intensity: 'Medium',
+            price: 10,
+            unicorn: unicorns[7],
+            availability: ['Monday', 'Wednesday', 'Friday'],
+            time: ['Afternoon']
+          },
+          {
+            name: 'The Moon Valley Adventure',
+            image: 'https://live.staticflickr.com/7849/47054529721_d3c4d49a89_b.jpg',
+            description: ' It consists of an area where erosion has worn away the majority of a mountain, composed primarily of clay rather than rock, leaving tall spires.',
+            category: ['Outdoors'],
+            intensity: 'Medium',
+            price: 20,
+            unicorn: unicorns[7],
+            availability: ['Monday', 'Wednesday', 'Friday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Discover The Calle Jaen',
+            image: 'https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/789181_Viator_Shutterstock_460107.jpg',
+            description: 'Steep, narrow cobblestone alley lined with brightly colored colonial houses, cafes & museums.',
+            category: ['Outdoors', 'Culture', 'Food'],
+            intensity: 'Low',
+            price: 5,
+            unicorn: unicorns[7],
+            availability: ['Tuesday', 'Thursday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Discover The Calle Jaen',
+            image: 'https://www.magriturismo.com/magritours/wp-content/uploads/revslider/bolivia/Teleferico-Reduced_V1.jpg',
+            description: 'As of September 2018, the system consists of 25 stations along eight lines: Red, Yellow, Green, Blue, Orange, White, Sky Blue, and Purple.',
+            category: ['Outdoors'],
+            intensity: 'High',
+            price: 10,
+            unicorn: unicorns[7],
+            availability: ['Tuesday', 'Thursday'],
+            time: ['Afternoon']
+          },
+          {
+            name: 'Cycling The Dead Road',
+            image: 'https://www.lapazlife.com/wp-content/uploads/2014/06/death-road-bolivia.jpg',
+            description: 'The Yungas Road is a cycle route about 60 km long which links the city of La Paz and the Yungas region of Bolivia.',
+            category: ['Outdoors'],
+            intensity: 'High',
+            price: 50,
+            unicorn: unicorns[7],
+            availability: ['Sunday'],
+            time: ['All-Day']
           }
         ])
       })

@@ -4,6 +4,7 @@ const City = require('../models/City')
 const Traveller = require('../models/Traveller')
 const Unicorn = require('../models/Unicorn')
 const Exp = require('../models/Exp')
+const Admin = require('../models/Admin')
 
 
 mongoose.connect(
@@ -12,6 +13,16 @@ mongoose.connect(
   (err, db) => {
     if (err) return console.log(err)
     db.dropDatabase()
+      .then(() => {
+        return Admin.create([
+          {
+            name: 'Admin',
+            email: 'admin@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          }
+        ])
+      })
       .then(() => {
         return Traveller.create([
           {
@@ -985,7 +996,7 @@ mongoose.connect(
             intensity: 'High',
             price: 100,
             unicorn: unicorns[5],
-            availability: ['Saturdays'],
+            availability: ['Saturday'],
             time: ['All-Day']
           },
           {

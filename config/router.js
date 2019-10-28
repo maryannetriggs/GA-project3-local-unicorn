@@ -3,9 +3,17 @@ const cities = require('../controllers/cities')
 const travellers = require('../controllers/travellers')
 const unicorns = require('../controllers/unicorns')
 const experiences = require('../controllers/experiences')
+const admin = require('../controllers/admin')
 
 const secureRoute = require('../lib/secureRoute')
 const secureRouteUnicorn = require('../lib/secureRouteUnicorn')
+const secureRouteAdmin = require('../lib/secureRouteAdmin')
+
+
+
+// **********************************   ADMIN ROUTERS   **********************************
+router.route('/loginadmin')
+  .post(admin.loginAdmin)
 
 
 
@@ -25,9 +33,8 @@ router.route('/registertraveller')
 router.route('/logintraveller')
   .post(travellers.login)
   
-// WE WANT TO BLOCK THIS PAGE SO THAT NO-ONE CAN SEE THE PAGE WITH ALL TRAVELLERS - go back over code to see how jack did this before with unauthorised pages.
 router.route('/travellers')
-  .get(travellers.index)
+  .get(secureRouteAdmin, travellers.index)
 
 router.route('/travellers/:id')
   .get(secureRoute, travellers.profile)

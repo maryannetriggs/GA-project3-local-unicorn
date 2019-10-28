@@ -954,6 +954,138 @@ mongoose.connect(
             unicorn: unicorns[16],
             availability: ['Friday', 'Saturday'],
             time: ['Evening']
+          },
+          {
+            name: 'Seal Coast Safari',
+            image: 'https://images.unsplash.com/photo-1457542553555-6331c3c0855f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            description: 'A true off-road scenic adventure. Exclusive tours of New Zealand\'s rugged coast line, enjoy a coffee and a muffin whilst observing fur seals up close.',
+            category: ['Outdoors'],
+            intensity: 'Medium',
+            price: 25,
+            unicorn: unicorns[5],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            time: ['Morning', 'Afternoon']
+          },
+          {
+            name: 'Hike Mount Kaukau',
+            image: 'https://images.unsplash.com/photo-1489996833391-87afa2532240?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            description: 'Come scale the heights of Mount Kaukau, the highest point in Wellington with stunning views across the city, harbour and even as far as the south Island.',
+            category: ['Outdoors'],
+            intensity: 'High',
+            price: 10,
+            unicorn: unicorns[5],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Train with the All Blacks',
+            image: 'https://media.apnarm.net.au/media/images/2018/11/19/imagev1fb26a19dc80e5ea79d79836db1330759-t4fprwprvb41we9hbr2_t1880.jpg',
+            description: 'Experience the power and might of the world famous New Zealand rugby team. View the training stadium, meet the players, play some rubgy and learn the haka.',
+            category: ['Sport', 'Outdoors'],
+            intensity: 'High',
+            price: 100,
+            unicorn: unicorns[5],
+            availability: ['Saturdays'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Cuba Street',
+            image: 'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/06/15064973444_035b8b5c3e_k.jpg',
+            description: 'The bustling jewel at the centre of the capital. Join me for a day of touring the metropolitan, independant wonder that is Cuba Street. We\'ll frequent bars, coffee shops, thrift store, art galleries and take in the local live music scene.',
+            category: ['Food', 'Drink', 'Music', 'Social', 'Culture'],
+            intensity: 'Medium',
+            price: 150,
+            unicorn: unicorns[5],
+            availability: ['Friday', 'Saturday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Intro to Special Effects Make-Up at the Weta Workshop',
+            image: 'https://resources.stuff.co.nz/content/dam/images/1/f/4/l/n/i/image.related.StuffLandscapeSixteenByNine.620x350.1f4i3i.png/1477709186409.jpg',
+            description: 'Learn the art of mixing fake blood and sculpting your own scars and scrapes. Price includes tour of the whole workshop, who\'s special effect work encompasses Lord of the Rings, Avatar and the Marvel Franchise',
+            category: ['Culture', 'Social'],
+            intensity: 'Low',
+            price: 100,
+            unicorn: unicorns[5],
+            availability: ['Monday', 'Wednesday', 'Friday'],
+            time: ['Evening']
+          },
+          {
+            name: 'Glow Worm viewing in Zealandia',
+            image: 'https://i.ytimg.com/vi/JC41M7RPSec/maxresdefault.jpg',
+            description: 'Set in the world\'s first eco-sanctuary you can tour the depths of an old gold mine, home to New Zealand\'s indigenous glow worms. You might even glimpse sight of the elusive kiwi bird.',
+            category: ['Culture', 'Outdoors'],
+            intensity: 'Medium',
+            price: 30,
+            unicorn: unicorns[5],
+            availability: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['Evening']
+          },
+          {
+            name: 'Empire Cinema and Eatery',
+            image: 'https://media-cdn.tripadvisor.com/media/photo-s/0a/5e/27/2b/empire-cinema-eatery.jpg',
+            description: 'The perfect date location. Snuggle into double sofa seats and watch the latest blockbuster and indie movies. Enjoy a delicious dinner beforehand and take your drinks into the screening for the ultimate luxury movie experience.',
+            category: ['Culture', 'Drink'],
+            intensity: 'Low',
+            price: 10,
+            unicorn: unicorns[5],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['Evening']
+          },
+          {
+            name: 'Car Horn Beeping in the Mount Victoria Tunnel',
+            image: 'https://arc-anglerfish-syd-prod-nzme.s3.amazonaws.com/public/6KPXK4JUSVBONNN3J5YZZLI6S4.jpg',
+            description: 'Come and be part of a Wellington resident tradition - it\'s said the mood of the city can be determined by the car horn beeping in Mount Victoria tunnel - come and be part of it!',
+            category: ['Outdoors', 'Social'],
+            intensity: 'Low',
+            price: 0,
+            unicorn: unicorns[5],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Marina Bay Sands Rooftop Infinity Pool',
+            image: 'https://images.unsplash.com/photo-1536625737227-92a1fc042e7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            description: 'Feel like you\'re floating above the city in a watery paradise, with views for miles. Order a Singapore Sling and don\'t forget your suncream',
+            category: ['Outdoors', 'Culture', 'Social'],
+            intensity: 'Low',
+            price: 30,
+            unicorn: unicorns[9],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Hawker Food Markets',
+            image: 'http://www.asiaone.com/sites/default/files/original_images/May2019/hawkercentre_st.jpg',
+            description: 'Taste the flavours of the Orient, Come explore the world-famous Hawker Markets and find you new favourite flavour.',
+            category: ['Food', 'Culture'],
+            intensity: 'Medium',
+            price: 5,
+            unicorn: unicorns[9],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['Evening']
+          },
+          {
+            name: 'Gardens by the Bay',
+            image: 'https://images.unsplash.com/photo-1441805983468-f5a1a9f985fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            description: 'Located by the Marina Bay Waterfront in the heart of Singapore. Escape the city buzz, don\'t miss the indoor waterfall, flower dome or the iconic supertree walkway',
+            category: ['Culture', 'Outdoors'],
+            intensity: 'Medium',
+            price: 20,
+            unicorn: unicorns[9],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Soek Seng 1954 Bicycle Cafe',
+            image: 'https://3.bp.blogspot.com/-t3VzPAxXaOg/VvqigdOPYUI/AAAAAAABKzQ/j6HdCK9KFgg_88YOQsGPQbgG4uS_H5DyQ/s1600/06%2BSGD_9670%2BSoek%2BSeng%2B1954%2BBicycle%2BCafe%2B%2540%2BMAJ%2BAviation%2BBuilding%2B%2528Beside%2BSeletar%2BAirport%2529%2B%2528Large%2529.JPG',
+            description: 'Dine alfresco whilst watching the private planes take off and land from the neighbouring Seletar Airport',
+            category: ['Outdoors', 'Food'],
+            intensity: 'Low',
+            price: 20,
+            unicorn: unicorns[9],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['Morning', 'Afternoon']
           }
         ])
       })

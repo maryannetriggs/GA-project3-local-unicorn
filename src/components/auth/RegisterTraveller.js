@@ -8,6 +8,8 @@ class RegisterTraveller extends React.Component {
     this.state = {
       data: {}
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
@@ -25,7 +27,6 @@ class RegisterTraveller extends React.Component {
   render() {
     return (
       <section>
-        <h2>hello</h2>
         <form>
           <h2>Register</h2>
           <div className="form-group">

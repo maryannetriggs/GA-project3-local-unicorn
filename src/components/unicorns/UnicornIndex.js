@@ -42,13 +42,9 @@ class UnicornIndex extends React.Component {
     const { region, gender, language } = this.state
     if (!this.state.unicorns) return null
     return this.state.unicorns.filter(unicorn => {
-      // console.log(unicorn.language)
       return (unicorn.region === region || region === 'All') && 
       (unicorn.gender === gender || gender === 'All') &&
-      unicorn.language.map(lang => {
-        // console.log(lang)
-        return (unicorn.language === lang)
-      })
+      (unicorn.language.includes(language) || language === 'All')
     })
   }
 

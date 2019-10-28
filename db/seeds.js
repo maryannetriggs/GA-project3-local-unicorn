@@ -377,7 +377,7 @@ mongoose.connect(
             about: 'Marrakech is always a good idea - let me show you the hidden gems',
             city: cities[9],
             country: 'Morocco',
-            region: 'Caribbean',
+            region: 'Africa',
             language: ['English', 'Arabic'],
             age: 37,
             gender: 'Male',

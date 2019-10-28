@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-// import 'spectre'
+import 'spectre.css'
 import './style.scss'
 
 import Home from './components/common/Home'
@@ -10,6 +11,7 @@ import Navbar from './components/common/Navbar'
 
 import LoginTraveller from './components/auth/LoginTraveller'
 import RegisterTraveller from './components/auth/RegisterTraveller'
+import TravellerShow from './components/travellers/TravellerShow'
 
 import CitiesIndex from './components/cities/CitiesIndex'
 import CitiesShow from './components/cities/CitiesShow'
@@ -28,8 +30,9 @@ const App = () => (
         <Navbar/>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/login" component={LoginTraveller}/>
+          <Route path="/logintraveller" component={LoginTraveller}/>
           <Route path="/register" component={RegisterTraveller}/>
+          <Route path="/travellers/:id" component={TravellerShow}/>
           <Route path="/cities/:id" component={CitiesShow}/>
           <Route exact path="/cities" component={CitiesIndex}/>
           <Route path="/experiences/:id" component={ExpShow}/>

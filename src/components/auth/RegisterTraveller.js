@@ -1,11 +1,134 @@
 import React from 'react'
-// import Auth from '../../lib/auth'
+import axios from 'axios'
 
-const RegisterTraveller = () => (
-  <>
-    <h1>Register In Page for the Travellers</h1>
-    <button>Register</button>
-  </>
-)
+class RegisterTraveller extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      data: {}
+    }
+  }
+
+  handleChange(e) {
+    const data = { ...this.state.data, [e.target.name]: e.target.value }
+    this.setState({ data })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    axios.post('/api/registertraveller', this.state.data)
+      .then(() => this.props.history.puch('/login'))
+      .catch(err => console.log(err))
+  }
+
+  render() {
+    return (
+      <section>
+        <h2>hello</h2>
+        <form>
+          <h2>Register</h2>
+          <div className="form-group">
+            <label>Name</label>
+            <div>
+              <input 
+                className="input"
+                name="name"
+                placeholder="Name"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>Profile Picture</label>
+            <div>
+              <input 
+                className="input"
+                name="profilePicture"
+                placeholder="Profile Picture (URL)"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>About</label>
+            <div>
+              <input 
+                className="input"
+                name="about"
+                placeholder="About"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>Country</label>
+            <div>
+              <input 
+                className="input"
+                name="country"
+                placeholder="Country"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>Experiences</label>
+            <div>
+              <input 
+                className="input"
+                name="expericences"
+                placeholder="Number of Experiences"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>email</label>
+            <div>
+              <input 
+                className="input"
+                name="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>Parword</label>
+            <div>
+              <input 
+                className="input"
+                name="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>Password Confirmation</label>
+            <div>
+              <input 
+                className="input"
+                name="passwordConfirmation"
+                placeholder="Password Confirmation"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+        </form>
+        <button type="submit">Register</button>
+      </section>
+    )
+  }
+}
+
 
 export default RegisterTraveller

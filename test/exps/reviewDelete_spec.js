@@ -42,31 +42,30 @@
 //           password: 'pass',
 //           passwordConfirmation: 'pass'
 //         })
-//       })
-//       .then(unicorns => {
-//         token = jwt.sign({ sub: unicorns[0]._id }, secret, { expiresIn: '6h' })
-//         incorrectToken = jwt.sign({ sub: unicorns[1]._id }, secret, { expiresIn: '6h' })
-//         return Exp.create({
-//           name: 'Supper Club',
-//           image: 'https://media.timeout.com/images/103546092/630/472/image.jpg',
-//           description: 'Pop-up restaurant in someone\'s home',
-//           category: ['Food', 'Drink', 'Social'],
-//           intensity: 'Low',
-//           price: 30,
-//           availability: ['Friday', 'Saturday'],
-//           time: 'Evening',
-//           unicorn: unicorns[0]
-//         })
-//       })
-
-//       .then(experience => {
-//         experience.reviews.push({ ...testReviews, unicorn: createdUnicorns[0] })
-//         return experience.save()
-//       })
-//       .then(createdExp => {
-//         experience = createdExp
-//         review = createdExp.reviews[0]
-//         done()
+//           .then(unicorn => {
+//             token = jwt.sign({ sub: unicorn[0]._id }, secret, { expiresIn: '6h' })
+//             incorrectToken = jwt.sign({ sub: unicorn[1]._id }, secret, { expiresIn: '6h' })
+//             return Exp.create({
+//               name: 'Supper Club',
+//               image: 'https://media.timeout.com/images/103546092/630/472/image.jpg',
+//               description: 'Pop-up restaurant in someone\'s home',
+//               category: ['Food', 'Drink', 'Social'],
+//               intensity: 'Low',
+//               price: 30,
+//               availability: ['Friday', 'Saturday'],
+//               time: 'Evening',
+//               unicorn
+//             }) 
+//           })
+//           .then(experience => {
+//             experience.reviews.push({ ...testReviews, unicorn: createdUnicorns[0] })
+//             return experience.save()
+//           })
+//           .then(createdExp => {
+//             experience = createdExp
+//             review = createdExp.reviews[0]
+//             done()
+//           })
 //       })
 //   })
 

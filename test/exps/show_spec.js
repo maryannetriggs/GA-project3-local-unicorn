@@ -1,26 +1,38 @@
 /* global api, describe, it, expect, beforeEach, afterEach */
 const Exp = require('../../models/Exp')
 const Unicorn = require('../../models/Unicorn')
+const City = require('../../models/City')
 
 describe('GET /experiences/:id', () => {
 
   let experience = null 
 
   beforeEach(done => {
-    Unicorn.create({
-      name: 'Mona',
-      profilePicture: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/31/10/lion-face.jpg?w968h681',
-      about: 'Foodie',
-      city: 'Stockholm',
-      country: 'Boston',
-      region: 'North America',
-      language: ['English, French, Japanese'],
-      age: 35,
-      gender: 'Female',
-      email: 'mona@mail',
-      password: 'pass',
-      passwordConfirmation: 'pass'
+    City.create({
+      name: 'London',
+      image: 'https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg',
+      description: 'London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.',
+      country: 'United Kingdom',
+      region: 'Europe'
     })
+
+      .then(city => {
+        return Unicorn.create({
+          name: 'Mona',
+          profilePicture: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/31/10/lion-face.jpg?w968h681',
+          about: 'Foodie',
+          city: city,
+          country: 'Boston',
+          region: 'North America',
+          language: ['English, French, Japanese'],
+          age: 35,
+          gender: 'Female',
+          email: 'mona@mail',
+          password: 'pass',
+          passwordConfirmation: 'pass'
+        })
+      })
+    
       .then(unicorn => {
         return Exp.create([
           {
@@ -44,12 +56,13 @@ describe('GET /experiences/:id', () => {
 
   afterEach(done => {
     Unicorn.deleteMany()
+      .then(() => City.deleteMany())
       .then(() => Exp.deleteMany())
       .then(() => done())
   })
 
   it('Should return a 404 not found for an invalid experience id', done => {
-    api.get(`/experiences${experience._id}`)
+    api.get(`/api/experiences${experience._id}`)
       .end((err, res) => {
         expect(res.status).to.eq(404)
         done()
@@ -57,7 +70,7 @@ describe('GET /experiences/:id', () => {
   })
 
   it('should return a 200 response', done => {
-    api.get(`/experiences/${experience._id}`) // <=== and using that animal we have created and stored in the requests
+    api.get(`/api/experiences/${experience._id}`) // <=== and using that animal we have created and stored in the requests
       .end((err, res) => {
         expect(res.status).to.eq(200)
         done()
@@ -65,7 +78,7 @@ describe('GET /experiences/:id', () => {
   })
 
   it('should return an object', done => {
-    api.get(`/experiences/${experience._id}`) // <=== and using that animal we have created and stored in the requests
+    api.get(`/api/experiences/${experience._id}`) // <=== and using that animal we have created and stored in the requests
       .end((err, res) => {
         expect(res.body).to.be.an('object')
         done()
@@ -73,7 +86,7 @@ describe('GET /experiences/:id', () => {
   })
 
   it('Should return the correnct fields', done => {
-    api.get(`/experiences/${experience._id}`)
+    api.get(`/api/experiences/${experience._id}`)
       .end((err, res) => {
         expect(res.body).to.contain.keys([
           '_id',
@@ -92,7 +105,7 @@ describe('GET /experiences/:id', () => {
   })
 
   it('Should return the correnct data types', done => {
-    api.get(`/experiences/${experience._id}`)
+    api.get(`/api/experiences/${experience._id}`)
       .end((err, res) => {
         expect(res.body._id).to.be.a('string')
         expect(res.body.name).to.be.a('string')

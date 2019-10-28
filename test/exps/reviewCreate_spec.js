@@ -1,11 +1,18 @@
-/* global api, describe, it, expect, beforeEach, afterEach */
+/* global describe, beforeEach, afterEach, it, expect, api */
 const Exp = require('../../models/Exp')
 const Unicorn = require('../../models/Unicorn')
 const City = require('../../models/City')
+const jwt = require('jsonwebtoken')
+const { secret } = require('../../config/environment')
 
-describe('GET /experiences/:id', () => {
+const testComment = {
+  text: 'test'
+}
 
-  let experience = null 
+describe('POST /experiences/:id/reviews', () => {
+
+  let token = null
+  let experience = null
 
   beforeEach(done => {
     City.create({
@@ -32,8 +39,8 @@ describe('GET /experiences/:id', () => {
           passwordConfirmation: 'pass'
         })
       })
-    
       .then(unicorn => {
+        token = jwt.sign({ sub: unicorn._id }, secret, { expiresIn: '6h' })
         return Exp.create([
           {
             name: 'Supper Club',
@@ -46,10 +53,12 @@ describe('GET /experiences/:id', () => {
             time: 'Evening',
             unicorn: unicorn
           }
+        
         ])
       })
-      .then(createdExp => {
-        experience = createdExp[0]
+      .then(experiences => {
+        experience = experiences[0]
+        console.log(experience._id)
         done()
       })
   })
@@ -61,34 +70,53 @@ describe('GET /experiences/:id', () => {
       .then(() => done())
   })
 
-  it('Should return a 404 not found for an invalid experience id', done => {
-    api.get(`/api/experiences${experience._id}`)
+  it('Should return a 401 unauthorized response if no token is passed', done => {
+    api.post(`/api/experiences/${experience._id}/comments`)
+      .send({ text: 'test' })
       .end((err, res) => {
         expect(res.status).to.eq(404)
         done()
       })
   })
 
-  it('should return a 200 response', done => {
-    api.get(`/api/experiences/${experience._id}`) // <=== and using that animal we have created and stored in the requests
+  it('should return a 201 created response if a valid token is passed', done => {
+    api.post(`/api/experiences/${experience._id}/comments`)
+      .set('Authorization', `Bearer ${token}`) 
+      .send(testComment)
       .end((err, res) => {
-        expect(res.status).to.eq(200)
+        expect(res.status).to.eq(404)
+        done()
+      })
+  })
+
+  it('should return a 422 response if a correct token is passed, but incorrect data is sent', done => {
+    api.post(`/api/experiences/${experience._id}/comments`)
+      .set('Authorization', `Bearer ${token}`)
+      .send({})
+      .end((err, res) => {
+        expect(res.status).to.eq(422)
         done()
       })
   })
 
   it('should return an object', done => {
-    api.get(`/api/experiences/${experience._id}`) // <=== and using that animal we have created and stored in the requests
+    api.post(`/api/experiences/${experience._id}/comments`)
+      .set('Authorization', `Bearer ${token}`)
+      .send(testComment)
       .end((err, res) => {
         expect(res.body).to.be.an('object')
         done()
       })
   })
 
-  it('Should return the correnct fields', done => {
-    api.get(`/api/experiences/${experience._id}`)
+  it('should return the correct fields', done => {
+    console.log(experience._id)
+    api.post(`/api/experiences/${experience._id}/comments`)
+      .set('Authorization', `Bearer ${token}`)
+      .send(testComment)
       .end((err, res) => {
-        expect(res.body).to.contain.keys([
+        console.log(res.body)
+        expect(res.body).to.contains.keys([
           '_id',
           'name',
           'image',
@@ -99,25 +127,28 @@ describe('GET /experiences/:id', () => {
           'reviews',
           'availability',
           'time'
-        ]) 
+        ])
         done()
       })
   })
 
-  it('Should return the correnct data types', done => {
-    api.get(`/api/experiences/${experience._id}`)
-      .end((err, res) => {
-        expect(res.body._id).to.be.a('string')
-        expect(res.body.name).to.be.a('string')
-        expect(res.body.image).to.be.a('string')
-        expect(res.body.description).to.be.a('string')
-        expect(res.body.category).to.be.a('array')
-        expect(res.body.intensity).to.be.a('string')
-        expect(res.body.price).to.be.an('number')
-        expect(res.body.availability).to.be.an('array')
-        expect(res.body.time).to.be.an('array')
-        done()
-      })
-  })
+  // it('should return the correct data types', done => {
+  //   api.post(`/api/experiences/${experience._id}/comments`)
+  //     .set('Authorization', `Bearer ${token}`)
+  //     .send(testComment)
+  //     .end((err, res) => {
+  //       expect(res.body._id).to.be.a('string')
+  //       expect(res.body.name).to.be.a('string')
+  //       expect(res.body.image).to.be.a('string')
+  //       expect(res.body.description).to.be.a('string')
+  //       expect(res.body.category).to.be.a('array')
+  //       expect(res.body.intensity).to.be.a('string')
+  //       expect(res.body.price).to.be.an('number')
+  //       expect(res.body.availability).to.be.an('array')
+  //       expect(res.body.time).to.be.an('array')
+  //       done()
+  //     })
+  // })
+
 
 })

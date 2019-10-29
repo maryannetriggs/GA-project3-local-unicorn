@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import Auth from '../../lib/auth'
 
-// import TravellerShow from './TravellerShow'
 
 class TravellerIndex extends React.Component {
   constructor() {
@@ -13,7 +13,9 @@ class TravellerIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/travellers')
+    axios.get('/api/travellers', {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
       .then(res => this.setState({ travellers: res.data }))
       .catch(err => console.log(err))
   }
@@ -22,7 +24,7 @@ class TravellerIndex extends React.Component {
     console.log(this.state)
     if (!this.state.travellers) return null
     return (
-      <h1>Nothing here to see</h1>
+      <h1>Nothing here to see!</h1>
     )
   }
 }

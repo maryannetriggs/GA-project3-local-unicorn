@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 // import Auth from '../../lib/auth'
 
 class CitiesShow extends React.Component {
@@ -31,15 +33,20 @@ class CitiesShow extends React.Component {
             <h3>{city.description}</h3>
           </div>
           <div className="column col-6">
-            <button>FIND MY UNICORN</button>
+            <Link to={{ pathname: '/unicorns', state: { from: city.name } }}>
+              <button>FIND MY UNICORN</button>
+            </Link>
             <br />
             <br />
-            <button>BACK TO CITIES</button>
+            <Link to="/cities">
+              <button>BACK TO CITIES</button>
+            </Link>
           </div>
         </div>
       </section >
     )
   }
 }
+
 
 export default CitiesShow

@@ -61,8 +61,8 @@ const App = () => (
           <SecureRoute path="/traveller/edit" component={TravellerEdit} />
           <SecureRoute path="/traveller" component={TravellerShow}/>
 
-          {/* <SecureRoute path="/unicorn/edit" component={UnicornEdit} />
-          <SecureRoute path="/unicorn" component={UnicornProfile}/>  */}
+          {/* <SecureRoute path="/unicorn/edit" component={UnicornEdit} /> */}
+          {/* <SecureRoute path="/unicorn" component={UnicornProfile}/>  */}
 
           <Route path="/cities/:id" component={CitiesShow}/>
           <Route path="/cities" component={CitiesIndex}/>

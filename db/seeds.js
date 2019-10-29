@@ -38,7 +38,7 @@ mongoose.connect(
           {
             name: 'John',
             profilePicture: 'https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-            about: 'Motorbike lover, if it war for me I would travel the world on my bike',
+            about: 'Motorbike lover, if it were up to me I would travel the world on my bike',
             country: 'Austria',
             experiences: 2,
             email: 'john@mail',
@@ -59,7 +59,7 @@ mongoose.connect(
             name: 'Alba',
             profilePicture: 'https://www.missfreedomusa.com/wp-content/uploads/2018/02/Cassandra-Dobbins.jpg',
             about: 'Citizen of the world',
-            country: 'USA',
+            country: 'United States',
             experiences: 9,
             email: 'alba@mail',
             password: 'pass',
@@ -69,7 +69,7 @@ mongoose.connect(
             name: 'Marco',
             profilePicture: 'https://images.unsplash.com/photo-1552642986-ccb41e7059e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
             about: 'Pizza, Pizza, Pizza',
-            country: 'Itali',
+            country: 'Italy',
             experiences: 5,
             email: 'marco@mail',
             password: 'pass',
@@ -78,7 +78,7 @@ mongoose.connect(
           {
             name: 'Antonio',
             profilePicture: 'https://i.pinimg.com/originals/74/0e/7a/740e7a48d16bfa9d73002653464f96e2.jpg',
-            about: 'Cray traveller and animal lover',
+            about: 'Crazy traveller and animal lover',
             country: 'Spain',
             experiences: 2,
             email: 'antonio@mail',
@@ -88,7 +88,7 @@ mongoose.connect(
           {
             name: 'Ciara',
             profilePicture: 'https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-            about: 'Passionate for traveling and meeting new people',
+            about: 'Passionate for travel and meeting new people',
             country: 'Ireland',
             experiences: 3,
             email: 'ciara@mail',
@@ -107,7 +107,7 @@ mongoose.connect(
           },
           {
             name: 'Paula',
-            profilePicture: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            profilePicture: 'https://images.unsplash.com/photo-1554140381-125b895a9f08?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             about: 'My purpose in life is to pursue happiness and good food.',
             country: 'Argentina',
             experiences: 1,
@@ -140,7 +140,7 @@ mongoose.connect(
             name: 'New York',
             image: 'https://i.ytimg.com/vi/CsxkGDhf2Rw/maxresdefault.jpg',
             description: 'New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers.',
-            country: 'USA',
+            country: 'United States',
             region: 'North America'
           },
           {
@@ -190,12 +190,12 @@ mongoose.connect(
             image: 'https://www.fodors.com/wp-content/uploads/2019/03/FridaandDiegoMexicoCity__HERO_shutterstock_1005708952.jpg',
             description: 'Mexico City is the densely populated, high-altitude capital of Mexico. It\'s known for its Templo Mayor (a 13th-century Aztec temple), the baroque Catedral Metropolitana de México of the Spanish conquistadors and the Palacio Nacional, which houses historic murals by Diego Rivera.',
             country: 'Mexico',
-            region: 'North America'
+            region: 'Central America'
           },
           {
-            name: 'Marrakesh',
+            name: 'Marrakech',
             image: 'https://cdn.matthewwilliamson.com/wp-content/uploads/2015/10/Marrakech-1140x726.jpg',
-            description: 'Marrakesh, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens. A symbol of the city, and visible for miles, is the Moorish minaret of 12th-century Koutoubia Mosque.',
+            description: 'Marrakech, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens. A symbol of the city, and visible for miles, is the Moorish minaret of 12th-century Koutoubia Mosque.',
             country: 'Morocco',
             region: 'Africa'
           },
@@ -391,7 +391,7 @@ mongoose.connect(
             about: 'A wandering soul in need of an exciting new adventure.',
             city: cities[7],
             country: 'Russia',
-            region: 'Asia',
+            region: 'Europe',
             language: ['English', 'Russian', 'German'],
             age: 26,
             gender: 'Female',
@@ -510,6 +510,104 @@ mongoose.connect(
             email: 'aito@mail',
             password: 'pass',
             passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Annika Ivanov',
+            profilePicture: 'https://images.unsplash.com/photo-1551803091-e20673f15770?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80',
+            about: 'Living one day at a time, with a fresh baked cookie. Okay.  And with a coffee.  And maybe some chocolate. But I promise to take my vitamins.',
+            city: cities[7],
+            country: 'Russia',
+            region: 'Europe',
+            language: ['English', 'Russian'],
+            age: 33,
+            gender: 'Female',
+            email: 'annika@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Gan Chen',
+            profilePicture: 'https://images.unsplash.com/photo-1497280485314-be775e3e2316?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'Fascinated by transactional nature of counterknowledge & public discourse in socially mediated spaces which simulate (but don’t engender) counter-public spheres.',
+            city: cities[6],
+            country: 'China',
+            region: 'Asia',
+            language: ['English', 'Mandarin'],
+            age: 27,
+            gender: 'Male',
+            email: 'gan@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Halima Farhi',
+            profilePicture: 'https://images.unsplash.com/photo-1549836938-d278c5d46d20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'I have a dream to help people through new lands, helping then to grow through experiences; achieving their dreams and freedom.',
+            city: cities[5],
+            country: 'Iran',
+            region: 'Asia',
+            language: ['English', 'Persian', 'Arabic', 'German'],
+            age: 28,
+            gender: 'Female',
+            email: 'halima@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Omar Harrak',
+            profilePicture: 'https://images.unsplash.com/photo-1520451160208-a741e481c527?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'The great loves of my life are people, travel, fine dining, cooking, writing, photography, art and hiking. Being a generous person, I am keen to share my discoveries with others who have similar interests.',
+            city: cities[9],
+            country: 'Morocco',
+            region: 'Africa',
+            language: ['English', 'Arabic', 'French'],
+            age: 24,
+            gender: 'Male',
+            email: 'omar@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Martin Beaumont',
+            profilePicture: 'https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'Rugby is my passion, Wellington is my world!',
+            city: cities[12],
+            country: 'New Zealand',
+            region: 'Oceania',
+            language: ['English', 'Dutch'],
+            age: 37,
+            gender: 'Male',
+            email: 'martin@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Linnea Nilsson',
+            profilePicture: 'https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+            about: 'I’ve learned I don’t know anything. Have also learned that people will pay for what I know. Life is good.',
+            city: cities[10],
+            country: 'Sweden',
+            region: 'Europe',
+            language: ['English', 'Swedish', 'German'],
+            age: 21,
+            gender: 'Female',
+            email: 'linnea@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            name: 'Diego Herbas',
+            profilePicture: 'https://images.unsplash.com/photo-1476657680631-c07285ff2581?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'Passion led me here.',
+            city: cities[13],
+            country: 'Bolivia',
+            region: 'South America',
+            language: ['English', 'Spanish', 'Aymara'],
+            age: 30,
+            gender: 'Male',
+            email: 'diego@mail',
+            password: 'pass',
+            passwordConfirmation: 'pass'
           }
         ])
       })
@@ -518,7 +616,7 @@ mongoose.connect(
           {
             name: 'Supper Club',
             image: 'https://media.timeout.com/images/103546092/630/472/image.jpg',
-            description: 'Pop-up restaurant in someone\'s home. It is a great way to meet new people, enjoy good food at a reasonable price, and you get a taste for what a local dinner party might be like. They are spread out all over London with different themes and I am happy to find the right one for the type of ambience and experience you are looking for.',
+            description: 'Pop-up restaurant in someone\'s home. A great way to meet new people, enjoy good food at a reasonable price, and get a taste of what a local dinner party is like. Spread all over London with different themes. I am happy to find the right ambience and experience you are looking for.',
             category: ['Food', 'Drink', 'Social'],
             intensity: 'Low',
             price: 50,
@@ -621,7 +719,7 @@ mongoose.connect(
             category: ['Social'],
             intensity: 'Medium',
             price: 0,
-            unicorn: unicorns[17],
+            unicorn: unicorns[15],
             availability: ['Thursday', 'Friday', 'Saturday'],
             time: ['Morning', 'Afternoon']
           },
@@ -632,7 +730,7 @@ mongoose.connect(
             category: ['Food', 'Drink', 'Social'],
             intensity: 'Low',
             price: 60,
-            unicorn: unicorns[17],
+            unicorn: unicorns[15],
             availability: ['Thursday', 'Friday', 'Saturday'],
             time: ['Evening']
           },
@@ -654,7 +752,7 @@ mongoose.connect(
             category: ['Food', 'Drink'],
             intensity: 'Low',
             price: 20,
-            unicorn: unicorns[11],
+            unicorn: unicorns[20],
             availability: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
             time: ['Evening']
           },
@@ -676,7 +774,7 @@ mongoose.connect(
             category: ['Social', 'Drink', 'Music'],
             intensity: 'High',
             price: 20,
-            unicorn: unicorns[11],
+            unicorn: unicorns[20],
             availability: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
             time: ['Evening']
           },
@@ -819,7 +917,7 @@ mongoose.connect(
             category: ['Social', 'Food'],
             intensity: 'Medium',
             price: 50,
-            unicorn: unicorns[6],
+            unicorn: unicorns[25],
             availability: ['Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday'],
             time: ['Morning']
           },
@@ -918,7 +1016,7 @@ mongoose.connect(
             category: ['Social', 'Drink'],
             intensity: 'Low',
             price: 40,
-            unicorn: unicorns[0],
+            unicorn: unicorns[19],
             availability: ['Thursday', 'Friday', 'Saturday'],
             time: ['Evening']
           },
@@ -1006,7 +1104,7 @@ mongoose.connect(
             category: ['Food', 'Drink', 'Music', 'Social', 'Culture'],
             intensity: 'Medium',
             price: 150,
-            unicorn: unicorns[5],
+            unicorn: unicorns[24],
             availability: ['Friday', 'Saturday'],
             time: ['All-Day']
           },
@@ -1017,7 +1115,7 @@ mongoose.connect(
             category: ['Culture', 'Social'],
             intensity: 'Low',
             price: 100,
-            unicorn: unicorns[5],
+            unicorn: unicorns[24],
             availability: ['Monday', 'Wednesday', 'Friday'],
             time: ['Evening']
           },
@@ -1028,7 +1126,7 @@ mongoose.connect(
             category: ['Culture', 'Outdoors'],
             intensity: 'Medium',
             price: 30,
-            unicorn: unicorns[5],
+            unicorn: unicorns[24],
             availability: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             time: ['Evening']
           },
@@ -1039,7 +1137,7 @@ mongoose.connect(
             category: ['Culture', 'Drink'],
             intensity: 'Low',
             price: 10,
-            unicorn: unicorns[5],
+            unicorn: unicorns[24],
             availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             time: ['Evening']
           },
@@ -1050,7 +1148,7 @@ mongoose.connect(
             category: ['Outdoors', 'Social'],
             intensity: 'Low',
             price: 0,
-            unicorn: unicorns[5],
+            unicorn: unicorns[24],
             availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             time: ['All-Day']
           },
@@ -1138,7 +1236,7 @@ mongoose.connect(
             category: ['Outdoors'],
             intensity: 'High',
             price: 10,
-            unicorn: unicorns[7],
+            unicorn: unicorns[26],
             availability: ['Tuesday', 'Thursday'],
             time: ['Afternoon']
           },
@@ -1149,7 +1247,7 @@ mongoose.connect(
             category: ['Outdoors'],
             intensity: 'High',
             price: 50,
-            unicorn: unicorns[7],
+            unicorn: unicorns[26],
             availability: ['Sunday'],
             time: ['All-Day']
           }

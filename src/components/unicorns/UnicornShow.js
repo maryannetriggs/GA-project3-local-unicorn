@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-// import Auth from '../../lib/auth'
+
+import ExpCard from '../experiences/ExpCard'
+// import ReviewCard from '../reviews/ReviewCard'
 
 class UnicornShow extends React.Component {
   constructor() {
@@ -9,10 +11,13 @@ class UnicornShow extends React.Component {
     this.state = {
       unicorn: null
     }
-
   }
 
   componentDidMount() {
+    this.getUnicorn()
+  }
+
+  getUnicorn() {
     const unicornId = this.props.match.params.id
     axios.get(`/api/unicorns/${unicornId}`)
       .then(res => this.setState({ unicorn: res.data }))
@@ -22,19 +27,58 @@ class UnicornShow extends React.Component {
   render() {
     if (!this.state.unicorn) return null
     const { unicorn } = this.state
+    console.log(unicorn.experiences)
     return (
-      <section>
-        <div className="unicorn-wrapper">
-          <img src={unicorn.profilePicture} alt={name}/>
-          <h3>{unicorn.name}</h3>
-          <h3>{unicorn.about}</h3>
-          <h3>{unicorn.city.name}</h3>
-          <h3>Languages Spoken:</h3> 
-          {unicorn.language.map((lang, i) => (
-            <h4 key={i}>{lang}</h4>
-          ))}
-          <h3>Age: {unicorn.age}</h3>
-          <h3>Gender: {unicorn.gender}</h3>
+      <section className="container">
+        <div className="columns">
+          <div className="column col-12 back">
+            <button>BACK TO OTHER {unicorn.city} UNICORNS</button>
+          </div>
+          <div className="column col-6">
+            <div className="columns">
+              <div className="column col-6">
+                <h3>{unicorn.name}, {unicorn.age}</h3>
+                <img className="unicornProfilePic" src={unicorn.profilePicture} alt={name}/>
+                <h3>{unicorn.city}</h3>
+                <h3>Languages Spoken:</h3> 
+                {unicorn.language.map((lang, i) => (
+                  <h4 key={i}>{lang}</h4>
+                ))}
+              </div>
+              <div className="column col-6">
+                <div>% happy travellers</div>
+                <br />
+                <button>BOOK</button>
+              </div>
+            </div>
+          </div>
+          <div className="column col-6">
+            <h3>About {unicorn.name}</h3>
+            <p>{unicorn.about}</p>
+          </div>
+          <div className="column col-12">
+            <h3>Experiences</h3>
+            <div className="container">
+              <div className="columns">
+                {unicorn.experiences.map(exp => (
+                  <ExpCard key={exp._id} {...exp} />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="column col-12">
+            <h3>MAP</h3>
+          </div>
+          <div className="column col-12">
+            <h3>Reviews</h3>
+            <div className="container">
+              {/* <div className="columns">
+                {unicorn.experiences.reviews.map(review => (
+                  <ReviewCard key={review._id} {...review} />
+                ))}
+              </div> */}
+            </div>
+          </div>
         </div>
       </section >
     )

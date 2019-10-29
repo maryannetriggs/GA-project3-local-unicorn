@@ -17,6 +17,12 @@ const unicornSchema = new mongoose.Schema({
   timestamps: true
 })
 
+unicornSchema.virtual('experiences', {
+  ref: 'Exp',
+  localField: '_id',
+  foreignField: 'unicorn'
+})
+
 unicornSchema.set('toJSON', {
   virtuals: true,
   transform(doc, json) {

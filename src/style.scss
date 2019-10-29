@@ -69,6 +69,7 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
   padding: 0px;
   height: 40vh;
   object-fit: cover;
+  border: solid;
 }
 
 .container {
@@ -78,4 +79,14 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 
 h3 {
   text-decoration: none;
+}
+
+.back {
+  height: 5vh;
+}
+
+.unicornProfilePic {
+  height: 150px;
+  width: 150px;
+  // object-fit: cover;
 }

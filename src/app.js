@@ -6,25 +6,41 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import 'spectre.css'
 import './style.scss'
 
+// COMMON:
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
+import SecureRoute from './components/common/SecureRoute'
 
-import LoginTraveller from './components/auth/LoginTraveller'
+// REGISTER:
 import RegisterTraveller from './components/auth/RegisterTraveller'
-import TravellerShow from './components/travellers/TravellerShow'
+
+// LOGIN:
+import LoginTraveller from './components/auth/LoginTraveller'
+
+// TRAVELLER PROFILE:
 import TravellerEdit from './components/travellers/TravellerEdit'
+import TravellerShow from './components/travellers/TravellerShow'
+
+// UNICORN PROFILE:
+
+
+// CITIES:
+import CitiesShow from './components/cities/CitiesShow'
+import CitiesIndex from './components/cities/CitiesIndex'
+
+
+// UNICORN SHOW:
+import UnicornShow from './components/unicorns/UnicornShow'
+import UnicornIndex from './components/unicorns/UnicornIndex'
+
+// EXPERIENCES:
+import ExpShow from './components/experiences/ExpShow'
+import ExpIndex from './components/experiences/ExpIndex'
+
+// TRAVELLER INDEX (HIDDEN APART FROM ADMIN)
 import TravellerIndex from './components/travellers/TravellerIndex'
 
-import CitiesIndex from './components/cities/CitiesIndex'
-import CitiesShow from './components/cities/CitiesShow'
 
-import ExpIndex from './components/experiences/ExpIndex'
-import ExpShow from './components/experiences/ExpShow'
-
-import UnicornIndex from './components/unicorns/UnicornIndex'
-import UnicornShow from './components/unicorns/UnicornShow'
-
-import SecureRoute from './components/common/SecureRoute'
 
 const App = () => (
   <>
@@ -35,21 +51,33 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Home}/>
 
-          
-          <SecureRoute path="/travellerprofile/:id/edit" component={TravellerEdit} />
-          <Route path="/travellerprofile" component={TravellerShow}/>
-          <Route path="/travellers" component={TravellerIndex}/>
+          <Route path="/registerunicorn" component={RegisterUnicorn}/>
           <Route path="/registertraveller" component={RegisterTraveller}/>
+
+          <Route path="/loginunicorn" component={LoginUnicorn}/>
           <Route path="/logintraveller" component={LoginTraveller}/>
+          <Route path="/loginadmin" component={LoginAdmin}/>
+
+          <SecureRoute path="/traveller/edit" component={TravellerEdit} />
+          <SecureRoute path="/traveller" component={TravellerShow}/>
+
+          <SecureRoute path="/unicorn/edit" component={UnicornEdit} />
+          <SecureRoute path="/unicorn" component={UnicornProfile}/> 
 
           <Route path="/cities/:id" component={CitiesShow}/>
-          <Route exact path="/cities" component={CitiesIndex}/>
-
-          <Route path="/experiences/:id" component={ExpShow}/>
-          <Route exact path="/experiences" component={ExpIndex}/>
-
+          <Route path="/cities" component={CitiesIndex}/>
+          
           <Route path="/unicorns/:id" component={UnicornShow}/>
-          <Route exact path="/unicorns" component={UnicornIndex}/>
+          <Route path="/unicorns" component={UnicornIndex}/>
+
+          <SecureRoute path="/experiences/:id/edit" component={ExpEdit}/>
+          <SecureRoute path="/experiences/new" component={ExpNew}/>
+          <Route path="/experiences/:id" component={ExpShow}/>
+          <SecureRoute path="/experiences" component={ExpIndex}/>
+
+
+          <SecureRoute path="/travellers" component={TravellerIndex}/>
+
         </Switch>
       </>
   

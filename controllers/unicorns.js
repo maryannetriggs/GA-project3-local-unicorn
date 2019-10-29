@@ -22,15 +22,12 @@ function loginUnicorn(req, res) {
     .catch(() => res.status(401).json({ message: 'Unauthorized' }))
 }
 
-function profile(req, res) {
+
+function unicornProfile(req, res) {
   Unicorn
-    .findById(req.params.id)
-    .populate('city')
-    .then(unicorn => {
-      if (!unicorn) return res.status(404).json({ message: 'No unicorn found' })
-      res.status(200).json(unicorn)
-    })
-    .catch(() => res.status(404).json({ message: 'Something went wrong' }))
+    .findById(req.currentUnicorn._id)
+    .then(unicorn => res.status(200).json(unicorn))
+    .catch(err => res.json(err))
 }
 
 // SECURE ROUTE FOR LOGGED IN UNICORN ONLY:
@@ -66,11 +63,22 @@ function index(req, res) {
     .catch(() => res.status(400).json({ message: 'Not found' }))
 }
 
+function show(req, res) {
+  Unicorn
+    .findById(req.params.id)
+    .then(unicorn => {
+      if (!unicorn) return res.status(404).json({ message: 'Unicorn not found' })
+      res.status(200).json(unicorn)
+    })
+    .catch(() => res.status(404).json({ message: 'Something went wrong' }))
+}
+
 module.exports = {
   registerUnicorn,
   loginUnicorn,
-  profile,
+  unicornProfile,
   updateUnicornProfile,
   deleteUnicornProfile,
-  index
+  index,
+  show
 }

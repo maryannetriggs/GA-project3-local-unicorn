@@ -25,18 +25,15 @@ function login(req, res) {
 }
 
 // SECURE ROUTE FOR LOGGED IN TRAVELLER ONLY:
-function profile(req, res) {
+function travellerProfile(req, res) {
   Traveller
     .findById(req.currentTraveller._id)
-    .then(traveller => {
-      if (!traveller.equals(req.currentTraveller._id)) return res.status(401).json({ message: 'You are not authorized to see this profile' })
-      res.status(200).json(traveller)
-    })
-    .catch(() => res.status(404).json({ message: 'Something went wrong' }))
+    .then(traveller => res.status(200).json(traveller))
+    .catch(err => res.json(err))
 }
 
 // SECURE ROUTE FOR LOGGED IN TRAVELLER ONLY:
-function updateProfile(req, res, next) {
+function updateTravellerProfile(req, res, next) {
   Traveller
     .findById(req.currentTraveller._id)
     .then(traveller => {
@@ -49,7 +46,7 @@ function updateProfile(req, res, next) {
 }
 
 // SECURE ROUTE FOR LOGGED IN TRAVELLER ONLY:
-function deleteProfile(req, res) {
+function deleteTravellerProfile(req, res) {
   Traveller
     .findById(req.currentTraveller._id)
     .then(traveller => {
@@ -71,8 +68,8 @@ function index(req, res) {
 module.exports = {
   register,
   login,
-  profile,
-  updateProfile,
-  deleteProfile,
+  travellerProfile,
+  updateTravellerProfile,
+  deleteTravellerProfile,
   index
 }

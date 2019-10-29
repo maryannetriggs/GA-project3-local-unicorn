@@ -25,15 +25,17 @@ class CitiesShow extends React.Component {
     return (
       <section className="container">
         <div className="columns">
-          <img className="column col-12" src={city.image} alt={name}/>
+          <img className="column col-12" src={city.image} alt={city.name}/>
           <div className="column col-6">
             <h3>{city.name}</h3>
             <h3>{city.description}</h3>
           </div>
           <div className="column col-6">
-            <button>Hello</button>
+            <button>FIND MY UNICORN</button>
+            <br />
+            <br />
+            <button>BACK TO CITIES</button>
           </div>
-          
         </div>
       </section >
     )

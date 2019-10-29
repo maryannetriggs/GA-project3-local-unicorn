@@ -25,15 +25,16 @@ class UnicornShow extends React.Component {
     return (
       <section>
         <div className="unicorn-wrapper">
-          <h3>{unicorn.name}</h3>
           <img src={unicorn.profilePicture} alt={name}/>
+          <h3>{unicorn.name}</h3>
           <h3>{unicorn.about}</h3>
-          {/* <h3>{unicorn.city}</h3> */}
-          <h3>{unicorn.country}</h3>
-          <h3>{unicorn.region}</h3>
-          <h3>{unicorn.language}</h3>
-          <h3>{unicorn.age}</h3>
-          <h3>{unicorn.gender}</h3>
+          <h3>{unicorn.city.name}</h3>
+          <h3>Languages Spoken:</h3> 
+          {unicorn.language.map((lang, i) => (
+            <h4 key={i}>{lang}</h4>
+          ))}
+          <h3>Age: {unicorn.age}</h3>
+          <h3>Gender: {unicorn.gender}</h3>
         </div>
       </section >
     )

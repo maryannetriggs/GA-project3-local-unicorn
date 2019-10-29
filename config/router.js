@@ -11,80 +11,86 @@ const secureRouteAdmin = require('../lib/secureRouteAdmin')
 
 
 
-// **********************************   ADMIN ROUTERS   **********************************
+// **********************************   REGISTER ROUTERS   **********************************
+router.route('/registerunicorn')
+  .post(unicorns.registerUnicorn)
+
+router.route('/registertraveller')
+  .post(travellers.register)
+
+
+
+// **********************************   LOGIN ROUTERS   **********************************
+router.route('/loginunicorn')
+  .post(unicorns.loginUnicorn)
+
+router.route('/logintraveller')
+  .post(travellers.login)
+
 router.route('/loginadmin')
   .post(admin.loginAdmin)
 
 
+  
+// **********************************   PROFILE ROUTERS   **********************************
+router.route('/unicorn')  
+  .get(secureRouteUnicorn, unicorns.unicornProfile)
+  .put(secureRouteUnicorn, unicorns.updateUnicornProfile)
+  .delete(secureRouteUnicorn, unicorns.deleteUnicornProfile)
+
+router.route('/traveller')
+  .get(secureRoute, travellers.travellerProfile)
+  .put(secureRoute, travellers.updateTravellerProfile)
+  .delete(secureRoute, travellers.deleteTravellerProfile)
+
+
+
 
 // **********************************   CITY ROUTERS   **********************************
-router.route('/cities')
-  .get(cities.index)
-
 router.route('/cities/:id')
   .get(cities.show)
 
+router.route('/cities')
+  .get(cities.index)
 
 
-// **********************************   TRAVELLER ROUTERS   **********************************
-router.route('/registertraveller')
-  .post(travellers.register)
 
-router.route('/logintraveller')
-  .post(travellers.login)
-  
+// **********************************   HIDDEN ROUTES   **********************************
 router.route('/travellers')
   .get(secureRouteAdmin, travellers.index)
-
-router.route('/travellerprofile')
-  .get(secureRoute, travellers.profile)
-  .put(secureRoute, travellers.updateProfile)
-  .delete(secureRoute, travellers.deleteProfile)
 
 
 
 // **********************************   UNICORN ROUTERS   **********************************
-router.route('/registerunicorn/')
-  .post(unicorns.registerUnicorn)
+router.route('/unicorns/:id')
+  .get(unicorns.show)
 
-router.route('/loginunicorn')
-  .post(unicorns.loginUnicorn)
-
-// ?? DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE UNICORNS? Or should be block it/make it secure to unicorns only?
 router.route('/unicorns')
   .get(unicorns.index)
-
-router.route('/unicorns/:id')  
-  .get(unicorns.profile)
-  .put(secureRouteUnicorn, unicorns.updateUnicornProfile)
-  .delete(secureRouteUnicorn, unicorns.deleteUnicornProfile)
 
 
 
 // **********************************   EXPERIENCE ROUTERS   **********************************
-
-// ?? DO WE WANT PEOPLE TO BE ABLE TO GO TO THIS FIRST PAGE WHERE THEY CAN SEE ALL THE EXPERIENCES? Or should be block it/make it secure to unicorns only?
-router.route('/experiences')
-  .get(experiences.index)
-  .post(secureRouteUnicorn, experiences.create)
-
 router.route('/experiences/:id')
   .get(experiences.show)
   .put(secureRouteUnicorn, experiences.update)
   .delete(secureRouteUnicorn, experiences.remove)
 
+router.route('/experiences')
+  .get(experiences.index)
+  .post(secureRouteUnicorn, experiences.create)
 
 
-// **********************************   REVIEW ROUTERS   **********************************
-router.route('/experiences/:id/reviews')
-  .post(secureRoute, experiences.reviewCreate)
 
+// **********************************   REVIEW ROUTERS   *************************************
 router.route('/experiences/:id/reviews/:reviewId')
   .get(experiences.reviewShow)
   .put(secureRoute, experiences.reviewUpdate)
   .delete(secureRoute, experiences.reviewDelete)
 
 
+router.route('/experiences/:id/reviews')
+  .post(secureRoute, experiences.reviewCreate)
 
 
 

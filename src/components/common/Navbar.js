@@ -22,7 +22,7 @@ class Navbar extends React.Component {
         <div className="logo-wrapper">
           <Link className="logo" to="/">🦄</Link>
         </div>
-        {!Auth.isAuthenticated() && <Link to="/registertraveller">Register traveller</Link>}
+        {!Auth.isAuthenticated() && <Link to="/register">Register traveller</Link>}
         {!Auth.isAuthenticated() && <Link to="/logintraveller">Login traveller</Link>}
         {Auth.isAuthenticated() && <Link to="/travellerprofile">My traveller profile</Link>}
         {!Auth.isAuthenticated() && <Link to="/cities">See all the cities</Link>}

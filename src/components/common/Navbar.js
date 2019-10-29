@@ -24,24 +24,25 @@ class Navbar extends React.Component {
         <div className="logo-wrapper">
           <Link className="logo" to="/">🦄</Link>
         </div>
+        <div className="input-group input-inline ">
+          <Link className="btn btn-link" to="/registerunicorn">Register unicorn</Link>
+          <Link className="btn btn-link" to="/registertraveller">Register traveller</Link>
 
-        <Link className="btn btn-link" to="/registerunicorn">Register unicorn</Link>
-        <Link className="btn btn-link" to="/registertraveller">Register traveller</Link>
+          <Link className="btn btn-link" to="/loginunicorn">Login unicorn</Link>
+          <Link className="btn btn-link" to="/logintraveller">Login traveller</Link>
+          <Link className="btn btn-link" to="/loginadmin">Login admin</Link>
 
-        <Link className="btn btn-link" to="/loginunicorn">Login unicorn</Link>
-        <Link className="btn btn-link" to="/logintraveller">Login traveller</Link>
-        <Link className="btn btn-link" to="/loginadmin">Login admin</Link>
+          <Link className="btn btn-link" to="/unicorn">UNICORN profile</Link>
+          <Link className="btn btn-link" to="/traveller">TRAVELLER profile</Link>
 
-        <Link className="btn btn-link" to="/unicorn">UNICORN profile</Link>
-        <Link className="btn btn-link" to="/traveller">TRAVELLER profile</Link>
+          <Link className="btn btn-link" to="/cities">CITIES</Link>
+          <Link className="btn btn-link" to="/unicorns">UNICORNS</Link>
+          <Link className="btn btn-link" to="/experiences">EXPERIENCES</Link>
 
-        <Link className="btn btn-link" to="/cities">CITIES</Link>
-        <Link className="btn btn-link" to="/unicorns">UNICORNS</Link>
-        <Link className="btn btn-link" to="/experiences">EXPERIENCES</Link>
+          <Link className="btn btn-link" to="/travellers">TRAVELLERS</Link>
 
-        <Link className="btn btn-link" to="/travellers">TRAVELLERS</Link>
-
-        <a onClick={this.handleLogout} className="btn btn-link">LOGOUT</a>
+          <a onClick={this.handleLogout} className="btn btn-link">LOGOUT</a>
+        </div>
       </nav>
     )
   }

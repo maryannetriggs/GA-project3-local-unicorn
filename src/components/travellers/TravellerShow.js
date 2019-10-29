@@ -43,24 +43,31 @@ class TravellerShow extends React.Component {
     if (!this.state.traveller) return null
     const { traveller } = this.state
     return (
-      <div>
-        <h1>Traveller profile page</h1>
-        <h2>{traveller.name}</h2>
-        <br />
-        <img src={traveller.profilePicture} alt={traveller.name}/>
-        <br />
-        <h3>My home country: {traveller.country}</h3>
-        <h3>Number of experiences booked: {traveller.experiences}</h3>
-        <p>{traveller.about}</p>
-        <hr />
-        {this.isOwner() && 
-        <>
-          <Link to={`/traveller/edit/${traveller._id}`} className="btn btn-primary">
+      <div className="columns col-oneline">
+        {/* <h1>Traveller profile page</h1> */}
+        <div>
+          <h2>{traveller.name}</h2>
+          <br />
+          <img src={traveller.profilePicture} alt={traveller.name}/>
+        </div>
+
+        <div className="columns col-oneline">
+          <div className="column col-2"></div>
+          <div className="column">
+            <h3>My home country: {traveller.country}</h3>
+            <h3>Number of experiences booked: {traveller.experiences}</h3>
+            <p>{traveller.about}</p>
+            <hr />
+            {this.isOwner() && 
+            <>
+              <Link to={`/traveller/edit/${traveller._id}`} className="btn btn-primary">
               EDIT MY PROFILE
-          </Link>
-          <button onClick={this.handleDelete} className="btn btn-error">DELETE MY PROFILE</button>
-        </>
-        }
+              </Link>
+              <button onClick={this.handleDelete} className="btn btn-error">DELETE MY PROFILE</button>
+            </>
+            }
+          </div>
+        </div>
       </div>
     )
   }

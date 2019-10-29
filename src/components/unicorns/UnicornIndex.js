@@ -10,12 +10,10 @@ class UnicornIndex extends React.Component {
 
     this.state = {
       unicorns: null,
-      city: 'All',
       gender: 'All',
       language: 'All'
     }
 
-    this.handleCity = this.handleCity.bind(this)
     this.handleGender = this.handleGender.bind(this)
     this.handleLanguage = this.handleLanguage.bind(this)
   }
@@ -24,10 +22,6 @@ class UnicornIndex extends React.Component {
     axios.get('/api/unicorns')
       .then(res => this.setState({ unicorns: res.data }))
       .catch(err => console.log(err))
-  }
-
-  handleCity(e) {
-    this.setState({ city: e.target.value })
   }
 
   handleGender(e) {
@@ -39,10 +33,11 @@ class UnicornIndex extends React.Component {
   }
 
   filteredUnicorns() {
-    const { city, gender, language } = this.state
+    const city = this.props.location.state.from
+    const { gender, language } = this.state
     if (!this.state.unicorns) return null
     return this.state.unicorns.filter(unicorn => {
-      return (unicorn.city.name === city || city === 'All') && 
+      return (unicorn.city.name === city) && 
       (unicorn.gender === gender || gender === 'All') &&
       (unicorn.language.includes(language) || language === 'All')
     })
@@ -54,7 +49,6 @@ class UnicornIndex extends React.Component {
       <>
         <div>
           <UnicornSearch 
-            handleCity={this.handleCity}
             handleGender={this.handleGender}
             handleLanguage={this.handleLanguage}
           />

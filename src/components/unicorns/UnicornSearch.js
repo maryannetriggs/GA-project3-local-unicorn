@@ -1,28 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const UnicornSearch = ({ handleCity, handleGender, handleLanguage }) => {
+const UnicornSearch = ({ handleGender, handleLanguage }) => {
   return (
     <form className="unicorn-search-wrapper" >
-      <div>
-        <h2>City</h2>
-        <select onChange={handleCity}>
-          <option value="All">All</option>
-          <option value="La Paz">La Paz</option>
-          <option value="London">London</option>
-          <option value="Madrid">Madrid</option>
-          <option value="Mexico City">Mexico City</option>
-          <option value="Marrakesh">Marrakesh</option>
-          <option value="Moscow">Moscow</option>
-          <option value="New York">New York</option>
-          <option value="Paris">Paris</option>
-          <option value="Shanghai">Shanghai</option>
-          <option value="Singapore">Singapore</option>
-          <option value="Stockholm">Stockholm</option>
-          <option value="Tehran">Tehran</option>
-          <option value="Tokyo">Tokyo</option>
-          <option value="Wellington">Wellington</option>
-        </select>
-      </div>
 
       <div>
         <h2>Gender</h2>
@@ -55,6 +36,12 @@ const UnicornSearch = ({ handleCity, handleGender, handleLanguage }) => {
           <option value="Tamil">Tamil</option>
           <option value="Urdu">Urdu</option>
         </select>
+      </div>
+
+      <div>
+        <Link to="/cities">
+          <button>PICK A DIFFERENT CITY</button>
+        </Link>
       </div>
       
     </form>

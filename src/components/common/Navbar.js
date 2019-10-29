@@ -24,7 +24,7 @@ class Navbar extends React.Component {
         </div>
         {!Auth.isAuthenticated() && <Link to="/registertraveller">Register traveller</Link>}
         {!Auth.isAuthenticated() && <Link to="/logintraveller">Login traveller</Link>}
-        {Auth.isAuthenticated() && <Link to="/travellerprofile">My traveller profile</Link>}
+        {Auth.isAuthenticated() && <Link to="/traveller/:id">My traveller profile</Link>}
         {!Auth.isAuthenticated() && <Link to="/cities">See all the cities</Link>}
         {Auth.isAuthenticated() && <Link to="/experiences">See all the experiences</Link>}
         {!Auth.isAuthenticated() && <Link to="/unicorns">See all the unicorns</Link>}

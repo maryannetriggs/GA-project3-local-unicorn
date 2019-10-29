@@ -22,7 +22,6 @@ class UnicornShow extends React.Component {
   render() {
     if (!this.state.unicorn) return null
     const { unicorn } = this.state
-    // console.log(unicorn)
     return (
       <section>
         <div className="unicorn-wrapper">

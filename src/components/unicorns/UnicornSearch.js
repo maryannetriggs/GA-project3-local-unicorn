@@ -1,20 +1,26 @@
 import React from 'react'
 
-const UnicornSearch = ({ handleRegion, handleGender, handleLanguage }) => {
+const UnicornSearch = ({ handleCity, handleGender, handleLanguage }) => {
   return (
     <form className="unicorn-search-wrapper" >
       <div>
-        <h2>Region</h2>
-        <select onChange={handleRegion}>
+        <h2>City</h2>
+        <select onChange={handleCity}>
           <option value="All">All</option>
-          <option value="Africa">Africa</option>
-          <option value="Asia">Asia</option>
-          <option value="Caribbean">Caribbean</option>
-          <option value="Central America">Central America</option>
-          <option value="Europe">Europe</option>
-          <option value="North America">North America</option>
-          <option value="Oceania">Oceania</option>
-          <option value="South America">South America</option>
+          <option value="La Paz">La Paz</option>
+          <option value="London">London</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Mexico City">Mexico City</option>
+          <option value="Marrakesh">Marrakesh</option>
+          <option value="Moscow">Moscow</option>
+          <option value="New York">New York</option>
+          <option value="Paris">Paris</option>
+          <option value="Shanghai">Shanghai</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Stockholm">Stockholm</option>
+          <option value="Tehran">Tehran</option>
+          <option value="Tokyo">Tokyo</option>
+          <option value="Wellington">Wellington</option>
         </select>
       </div>
 

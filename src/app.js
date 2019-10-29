@@ -51,18 +51,18 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Home}/>
 
-          <Route path="/registerunicorn" component={RegisterUnicorn}/>
+          {/* <Route path="/registerunicorn" component={RegisterUnicorn}/> */}
           <Route path="/registertraveller" component={RegisterTraveller}/>
 
-          <Route path="/loginunicorn" component={LoginUnicorn}/>
+          {/* <Route path="/loginunicorn" component={LoginUnicorn}/> */}
           <Route path="/logintraveller" component={LoginTraveller}/>
-          <Route path="/loginadmin" component={LoginAdmin}/>
+          {/* <Route path="/loginadmin" component={LoginAdmin}/> */}
 
           <SecureRoute path="/traveller/edit" component={TravellerEdit} />
           <SecureRoute path="/traveller" component={TravellerShow}/>
 
-          <SecureRoute path="/unicorn/edit" component={UnicornEdit} />
-          <SecureRoute path="/unicorn" component={UnicornProfile}/> 
+          {/* <SecureRoute path="/unicorn/edit" component={UnicornEdit} /> */}
+          {/* <SecureRoute path="/unicorn" component={UnicornProfile}/>  */}
 
           <Route path="/cities/:id" component={CitiesShow}/>
           <Route path="/cities" component={CitiesIndex}/>
@@ -70,8 +70,8 @@ const App = () => (
           <Route path="/unicorns/:id" component={UnicornShow}/>
           <Route path="/unicorns" component={UnicornIndex}/>
 
-          <SecureRoute path="/experiences/:id/edit" component={ExpEdit}/>
-          <SecureRoute path="/experiences/new" component={ExpNew}/>
+          {/* <SecureRoute path="/experiences/:id/edit" component={ExpEdit}/> */}
+          {/* <SecureRoute path="/experiences/new" component={ExpNew}/> */}
           <Route path="/experiences/:id" component={ExpShow}/>
           <SecureRoute path="/experiences" component={ExpIndex}/>
 

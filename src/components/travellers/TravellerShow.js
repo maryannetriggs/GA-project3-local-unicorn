@@ -15,7 +15,8 @@ class TravellerShow extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('api/travellerprofile', {
+    console.log('HELLO 123')
+    axios.get('api/traveller', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => this.setState({ traveller: res.data }))
@@ -23,7 +24,7 @@ class TravellerShow extends React.Component {
   }
 
   handleDelete() {
-    axios.delete('/api/travellerprofile', {
+    axios.delete('/api/traveller/', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(() => {
@@ -34,7 +35,7 @@ class TravellerShow extends React.Component {
   }
 
   isOwner() {
-    return Auth.getPayload().sub === this.state.traveller._id
+    return Auth.getPayload().sub === this.state.traveller.id
   }
   
 
@@ -54,7 +55,7 @@ class TravellerShow extends React.Component {
         <hr />
         {this.isOwner() && 
         <>
-          <Link to={`/travellerprofile/${traveller._id}/edit`} className="btn btn-primary">
+          <Link to={`/traveller/edit/${traveller._id}`} className="btn btn-primary">
               EDIT MY PROFILE
           </Link>
           <button onClick={this.handleDelete} className="btn btn-error">DELETE MY PROFILE</button>

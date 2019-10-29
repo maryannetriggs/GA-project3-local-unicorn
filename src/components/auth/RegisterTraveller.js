@@ -19,10 +19,10 @@ class RegisterTraveller extends React.Component {
   }
 
   handleSubmit(e) {
+    console.log('HELLO')
     e.preventDefault()
-
     axios.post('/api/registertraveller', this.state.data)
-      .then(() => this.props.history.puch('/login'))
+      .then(() => this.props.history.push('/logintraveller'))
       .catch(err => console.log(err))
   }
 
@@ -31,8 +31,9 @@ class RegisterTraveller extends React.Component {
 
       <section>
         <div className="form-group">
+          <h2>Register</h2>
+
           <form onSubmit={this.handleSubmit}>
-            <h2>Register</h2>
             
             <label>Name</label>
             <input 
@@ -48,19 +49,9 @@ class RegisterTraveller extends React.Component {
             <input 
               className="form-input"
               type="text"
-              id="profilePictuce"
+              id="profilePicture"
               name="profilePicture"
               placeholder="Profile Picture (URL)"
-              onChange={this.handleChange}
-            />
-              
-            <label>About</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="about"
-              name="about"
-              placeholder="About"
               onChange={this.handleChange}
             />
               
@@ -68,7 +59,7 @@ class RegisterTraveller extends React.Component {
             <input 
               className="form-input"
               type="text"
-              id="county"
+              id="country"
               name="country"
               placeholder="Country"
               onChange={this.handleChange}
@@ -79,11 +70,21 @@ class RegisterTraveller extends React.Component {
               className="form-input"
               type="text"
               id="experiences"
-              name="expericences"
+              name="experiences"
               placeholder="Number of Experiences"
               onChange={this.handleChange}
             />
-                        
+
+            <label>About</label>
+            <textarea
+              className="form-input"
+              type="text"
+              id="about"
+              name="about"
+              placeholder="About"
+              onChange={this.handleChange}
+            />
+
             <label>email</label>
             <input 
               className="form-input"
@@ -114,9 +115,9 @@ class RegisterTraveller extends React.Component {
               onChange={this.handleChange}
             />
               
+            <br/>
+            <button className="btn" type="submit">Register</button>
           </form>
-          <br/>
-          <button className="btn" type="submit">Register</button>
         </div>
       </section>
     )

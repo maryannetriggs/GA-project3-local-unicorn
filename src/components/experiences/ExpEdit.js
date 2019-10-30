@@ -15,12 +15,18 @@ class ExpEdit extends React.Component {
         description: '',
         intensity: '',
         price: '',
-        errors: ''
+        availability: [''],
+        time: [''],
+        category: ['']
       }
     }
+    
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleMultiSelectAvailability = this.handleMultiSelectAvailability.bind(this)
+    this.handleMultiSelectTime = this.handleMultiSelectTime.bind(this)
+    this.handleMultiSelectCategory = this.handleMultiSelectCategory.bind(this)
   }
 
   componentDidMount() {
@@ -45,19 +51,50 @@ class ExpEdit extends React.Component {
       // .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
-  handleChange(e) {
-    const expFormData = { ...this.state.expFormData, [e.target.name]: e.target.value }
+  handleChange({ target: { name, value, type, checked } }) {
+    const newValue = type === 'checkbox' ? checked : value
+    const expFormData = { ...this.state.expFormData, [name]: newValue }
+    this.setState({ expFormData })
+  }
+
+  handleMultiSelectAvailability(selected) {
+    if (!selected) {
+      return this.setState({ expFormData: { ...this.state.expFormData, availability: [] } })
+    }
+    const availability = selected.map(item => item.value)
+    const expFormData = { ...this.state.expFormData, availability }
+    this.setState({ expFormData })
+  }
+
+  handleMultiSelectTime(selected) {
+    if (!selected) {
+      return this.setState({ expFormData: { ...this.state.expFormData, time: [] } })
+    }
+    const time = selected.map(item => item.value)
+    const expFormData = { ...this.state.expFormData, time }
+    this.setState({ expFormData })
+  }
+
+  handleMultiSelectCategory(selected) {
+    if (!selected) {
+      return this.setState({ expFormData: { ...this.state.expFormData, category: [] } })
+    }
+    const category = selected.map(item => item.value)
+    const expFormData = { ...this.state.expFormData, category }
     this.setState({ expFormData })
   }
 
   render() {
-    // console.log(this.state.expFormData)
+    console.log(this.state.expFormData)
     return (
       <div>
         <ExpForm
           expFormData={this.state.expFormData}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          handleMultiSelectAvailability={this.handleMultiSelectAvailability}
+          handleMultiSelectCategory={this.handleMultiSelectCategory}
+          handleMultiSelectTime={this.handleMultiSelectTime}
         />
       </div>
     )

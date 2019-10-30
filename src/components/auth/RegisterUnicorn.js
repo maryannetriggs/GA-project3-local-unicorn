@@ -71,6 +71,7 @@ class RegisterUnicorn extends React.Component {
                 <input 
                   className="input"
                   name="profilePicture"
+                  placeholder="Profile Picture (URL)"
                   value={data.profilePicture}
                   onChange={this.handleChange}
                 />
@@ -83,6 +84,7 @@ class RegisterUnicorn extends React.Component {
                 <textarea 
                   className="textarea"
                   name="about"
+                  placeholder="About"
                   value={data.about}
                   onChange={this.handleChange}
                 />
@@ -119,6 +121,7 @@ class RegisterUnicorn extends React.Component {
                 <input 
                   className="input"
                   name="language"
+                  placeholder="Languages"
                   //value={data.language}
                   onChange={this.handleChange}
                 />
@@ -132,6 +135,7 @@ class RegisterUnicorn extends React.Component {
                   className="input"
                   name="age"
                   number="number"
+                  placeholder="Age"
                   value={data.age}
                   onChange={this.handleChange}
                 />
@@ -156,6 +160,7 @@ class RegisterUnicorn extends React.Component {
                 <input
                   className="input"
                   name="email"
+                  placeholder="Email"
                   value={data.email}
                   onChange={this.handleChange}
                 />
@@ -168,6 +173,7 @@ class RegisterUnicorn extends React.Component {
                 <input
                   className="input"
                   name="password"
+                  placeholder="Password"
                   value={data.password}
                   onChange={this.handleChange}
                 />
@@ -180,6 +186,7 @@ class RegisterUnicorn extends React.Component {
                 <input
                   className="input"
                   name="passwordConfirmation"
+                  placeholder="Password Confirmation"
                   value={data.passwordConfirmation}
                   onChange={this.handleChange}
                 />

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Auth from '../../lib/auth'
 
 import ExpCard from '../experiences/ExpCard'
-import ReviewCard from '../reviews/ReviewCard'
 
 class UnicornProfile extends React.Component {
   constructor() {
@@ -50,7 +49,7 @@ class UnicornProfile extends React.Component {
               <div className="column col-6">
                 <h3>{unicorn.name}, {unicorn.age}</h3>
                 <img className="unicornProfilePic" src={unicorn.profilePicture} alt={name}/>
-                <h3>{unicorn.city}</h3>
+                <h3>{unicorn.city.name}</h3>
                 <h3>Languages Spoken:</h3> 
                 {unicorn.language.map((lang, i) => (
                   <h4 key={i}>{lang}</h4>
@@ -69,16 +68,14 @@ class UnicornProfile extends React.Component {
                     ))}
                   </div>
                 </div>
+                <Link to={'/experiences/new'}>
+                  <button>ADD NEW EXPERIENCE</button>
+                </Link>
               </div>
               <div className="column col-12">
-                <h3>Reviews</h3>
-                {/* <div className="container">
-                  <div className="columns">
-                    {unicorn.experiences.reviews.map(review => (
-                      <ReviewCard key={review._id} {...review} />
-                    ))}
-                  </div>
-                </div> */}
+                <Link to={'/experiences/new'}>
+                  <button>ADD NEW EXPERIENCE</button>
+                </Link>
               </div>
               {this.isOwner() && 
               <>

@@ -28,6 +28,7 @@ function unicornProfile(req, res) {
   Unicorn
     .findById(req.currentUnicorn._id)
     .populate('experiences')
+    .populate('city')
     .then(unicorn => res.status(200).json(unicorn))
     .catch(err => res.json(err))
 }

@@ -3,7 +3,6 @@ import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 
 import ExpCard from '../experiences/ExpCard'
-import ReviewCard from '../reviews/ReviewCard'
 
 class UnicornShow extends React.Component {
   constructor() {
@@ -65,16 +64,6 @@ class UnicornShow extends React.Component {
               <div className="columns">
                 {unicorn.experiences.map(exp => (
                   <ExpCard key={exp._id} {...exp} />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="column col-12">
-            <h3>Reviews</h3>
-            <div className="container">
-              <div className="columns">
-                {unicorn.experiences.reviews.map(review => (
-                  <ReviewCard key={review._id} {...review} />
                 ))}
               </div>
             </div>

@@ -96,6 +96,7 @@ class RegisterTraveller extends React.Component {
                 onChange={this.handleChange}
               />
               
+<<<<<<< HEAD
               <label>Parword</label>
               <input 
                 className="form-input col-5"
@@ -105,6 +106,17 @@ class RegisterTraveller extends React.Component {
                 placeholder="Password"
                 onChange={this.handleChange}
               />
+=======
+            <label>Pasword</label>
+            <input 
+              className="form-input"
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Password"
+              onChange={this.handleChange}
+            />
+>>>>>>> development
                   
               <label>Password Confirmation</label>
               <input 

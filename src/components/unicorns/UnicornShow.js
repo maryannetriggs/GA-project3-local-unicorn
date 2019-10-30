@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import ExpCard from '../experiences/ExpCard'
 // import ReviewCard from '../reviews/ReviewCard'
@@ -27,12 +28,14 @@ class UnicornShow extends React.Component {
   render() {
     if (!this.state.unicorn) return null
     const { unicorn } = this.state
-    console.log(unicorn.experiences)
+    console.log(unicorn)
     return (
       <section className="container">
         <div className="columns">
           <div className="column col-12 back">
-            <button>BACK TO OTHER {unicorn.city} UNICORNS</button>
+            <Link to={{ pathname: '/unicorns', state: { from: unicorn.city } }}>
+              <button>BACK TO OTHER {unicorn.city} UNICORNS</button>
+            </Link>
           </div>
           <div className="column col-6">
             <div className="columns">
@@ -67,7 +70,7 @@ class UnicornShow extends React.Component {
             </div>
           </div>
           <div className="column col-12">
-            <h3>MAP</h3>
+            <h3>Map</h3>
           </div>
           <div className="column col-12">
             <h3>Reviews</h3>

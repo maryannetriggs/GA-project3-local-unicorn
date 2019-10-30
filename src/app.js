@@ -13,9 +13,12 @@ import SecureRoute from './components/common/SecureRoute'
 
 // REGISTER:
 import RegisterTraveller from './components/auth/RegisterTraveller'
+import RegisterUnicorn from './components/auth/RegisterUnicorn'
 
 // LOGIN:
 import LoginTraveller from './components/auth/LoginTraveller'
+import LoginUnicorn from './components/auth/LoginUnicorn'
+import LoginAdmin from './components/auth/LoginAdmin'
 
 // TRAVELLER PROFILE:
 import TravellerEdit from './components/travellers/TravellerEdit'
@@ -51,12 +54,12 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Home}/>
 
-          {/* <Route path="/registerunicorn" component={RegisterUnicorn}/> */}
+          <Route path="/registerunicorn" component={RegisterUnicorn}/>
           <Route path="/registertraveller" component={RegisterTraveller}/>
 
-          {/* <Route path="/loginunicorn" component={LoginUnicorn}/> */}
+          <Route path="/loginunicorn" component={LoginUnicorn}/>
           <Route path="/logintraveller" component={LoginTraveller}/>
-          {/* <Route path="/loginadmin" component={LoginAdmin}/> */}
+          <Route path="/loginadmin" component={LoginAdmin}/>
 
           <SecureRoute path="/traveller/edit" component={TravellerEdit} />
           <SecureRoute path="/traveller" component={TravellerShow}/>

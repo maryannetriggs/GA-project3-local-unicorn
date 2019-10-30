@@ -44,7 +44,6 @@ class TravellerShow extends React.Component {
     const { traveller } = this.state
     return (
       <section className="container">
-        {/* <h1>Traveller profile page</h1> */}
         <div className="columns">
           <div className="column col-4">
             <div>
@@ -53,13 +52,11 @@ class TravellerShow extends React.Component {
               <img className="travellerProfilePic" src={traveller.profilePicture} alt={traveller.name}/>
             </div>
           </div>
-
           <div className="column col-8">
             <h3>My home country: {traveller.country}</h3>
             <h3>Number of experiences booked: {traveller.experiences}</h3>
             <p>{traveller.about}</p>
           </div>
-          {/* <div className="column col-4"></div> */}
           <div>
             {this.isOwner() && 
             <>

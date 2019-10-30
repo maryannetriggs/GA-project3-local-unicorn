@@ -21,7 +21,7 @@ class UnicornShow extends React.Component {
     const unicornId = this.props.match.params.id
     axios.get(`/api/unicorns/${unicornId}`)
       .then(res => this.setState({ unicorn: res.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {

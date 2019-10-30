@@ -31,7 +31,7 @@ class UnicornProfile extends React.Component {
         Auth.logout()
         this.props.history.push('/')
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   isOwner() {

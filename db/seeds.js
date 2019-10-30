@@ -1230,7 +1230,7 @@ mongoose.connect(
             time: ['Morning']
           },
           {
-            name: 'Discover The Calle Jaen',
+            name: 'The Calle Jaen',
             image: 'https://www.magriturismo.com/magritours/wp-content/uploads/revslider/bolivia/Teleferico-Reduced_V1.jpg',
             description: 'As of September 2018, the system consists of 25 stations along eight lines: Red, Yellow, Green, Blue, Orange, White, Sky Blue, and Purple.',
             category: ['Outdoors'],
@@ -1250,6 +1250,39 @@ mongoose.connect(
             unicorn: unicorns[26],
             availability: ['Sunday'],
             time: ['All-Day']
+          },
+          {
+            name: 'Magic Chapultepec Forest',
+            image: 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2019/03/CHAPULTEPEC-XVIII.jpg',
+            description: 'Chapultepec, more commonly called the "Bosque de Chapultepec", is one of the largest city parks in the Western Hemisphere, measuring in total just over 686 hectares.',
+            category: ['Outdoors'],
+            intensity: 'Low',
+            price: 15,
+            unicorn: unicorns[4],
+            availability: ['Monday', 'Wednesday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Visit The Zócalo',
+            image: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/C480/production/_108640305_gettyimages-1132330190.jpg',
+            description: 'Prior to the colonial period, it was the main ceremonial center in the Aztec city of Tenochtitlan.',
+            category: ['Outdoors'],
+            intensity: 'Low',
+            price: 10,
+            unicorn: unicorns[4],
+            availability: ['Tuesday', 'Thursday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Street Food, The Best Food',
+            image: 'https://assets.bonappetit.com/photos/5c06e9376d25022d06082800/16:9/w_2560%2Cc_limit/DylanJeni_BA_MexicoCityFood_07.jpg',
+            description: 'Mexican street food, called antojitos, is prepared by street vendors and at small traditional markets in Mexico.',
+            category: ['Food'],
+            intensity: 'Medium',
+            price: 5,
+            unicorn: unicorns[4],
+            availability: ['Sunday'],
+            time: ['Afternoon']
           }
         ])
       })

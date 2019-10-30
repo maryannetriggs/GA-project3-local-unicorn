@@ -26,7 +26,7 @@ class LoginUnicorn extends React.Component {
         Auth.setToken(res.data.token)
         this.props.history.push('/cities')
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {

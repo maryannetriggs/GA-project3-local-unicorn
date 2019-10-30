@@ -12,6 +12,7 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
             name="name"
             onChange={handleChange}
             value={data.name}
+            
           />
         </div>
       </div>

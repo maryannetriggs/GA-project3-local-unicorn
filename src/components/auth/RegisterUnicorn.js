@@ -47,22 +47,26 @@ class RegisterUnicorn extends React.Component {
   render() {
     const { data } = this.state
     return (
+
       <section>
         <div className="form-group">
           <h2>Register</h2>
-
           <form onSubmit={this.handleSubmit}>
+
             <div className="field">
               <label className="label">Full name</label>
               <div className="control">
                 <input 
                   className="input"
+                  type="text"
                   name="name"
+                  placeholder="Name"
                   value={data.name}
                   onChange={this.handleChange}
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Profile picture (url)</label>
               <div className="control">
@@ -74,6 +78,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">About me</label>
               <div className="control">
@@ -85,6 +90,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">City</label>
               <div className="control">
@@ -96,6 +102,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Country</label>
               <div className="control">
@@ -107,6 +114,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Region</label>
               <div className="select">
@@ -123,17 +131,19 @@ class RegisterUnicorn extends React.Component {
                 </select>
               </div>
             </div>
+
             <div className="field">
               <label className="label">Languages spoken</label>
               <div className="control">
                 <input 
                   className="input"
                   name="language"
-                  value={data.language}
+                  //value={data.language}
                   onChange={this.handleChange}
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Age</label>
               <div className="control">
@@ -146,6 +156,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Gender</label>
               <div className="select">
@@ -157,6 +168,7 @@ class RegisterUnicorn extends React.Component {
                 </select>
               </div>
             </div>
+
             <div className="field">
               <label className="label">Email</label>
               <div className="control">
@@ -168,6 +180,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Password</label>
               <div className="control">
@@ -178,7 +191,8 @@ class RegisterUnicorn extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
-            </div>           
+            </div> 
+
             <div className="field">
               <label className="label">Password confirmation</label>
               <div className="control">
@@ -191,6 +205,7 @@ class RegisterUnicorn extends React.Component {
               </div>
             </div>   
             <br/>
+
             <button className="btn btn-success">Register</button>
           </form>
         </div>

@@ -19,7 +19,7 @@ class RegisterTraveller extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('HELLO')
+    // console.log('HELLO')
     e.preventDefault()
     axios.post('/api/registertraveller', this.state.data)
       .then(() => this.props.history.push('/logintraveller'))

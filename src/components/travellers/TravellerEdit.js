@@ -27,9 +27,10 @@ class TravellerEdit extends React.Component {
     // const travellerId = this.props.match.params.id
     // console.log('hello gera', this.props.match)
     axios.get('/api/traveller', {
-      header: { Authorization: `Bearer ${Auth.getToken()}` }
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-
+    // .then(res => console.log(res.data))
+      
       .then(res => this.setState({ data: res.data }))
       .catch(err => console.log(err))
   }
@@ -42,8 +43,8 @@ class TravellerEdit extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const travellerId = this.props.match.params.id
-    axios.put(`api/traveller/${travellerId}`, this.state.data, {
+    // const travellerId = this.props.match.params.id
+    axios.put('api/traveller', this.state.data, {
       header: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => {

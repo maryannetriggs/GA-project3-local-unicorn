@@ -3,7 +3,6 @@ import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 
 import ExpCard from '../experiences/ExpCard'
-//import ReviewCard from '../reviews/ReviewCard'
 
 class UnicornShow extends React.Component {
   constructor() {
@@ -69,7 +68,6 @@ class UnicornShow extends React.Component {
               </div>
             </div>
           </div>
-         
         </div>
       </section >
     )

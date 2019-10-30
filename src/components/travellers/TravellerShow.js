@@ -15,7 +15,8 @@ class TravellerShow extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('api/travellerprofile', {
+    console.log('HELLO 123')
+    axios.get('api/traveller/', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => this.setState({ traveller: res.data }))
@@ -23,7 +24,7 @@ class TravellerShow extends React.Component {
   }
 
   handleDelete() {
-    axios.delete('/api/travellerprofile', {
+    axios.delete('/api/traveller/', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(() => {
@@ -34,7 +35,7 @@ class TravellerShow extends React.Component {
   }
 
   isOwner() {
-    return Auth.getPayload().sub === this.state.traveller._id
+    return Auth.getPayload().sub === this.state.traveller.id
   }
   
 
@@ -42,25 +43,36 @@ class TravellerShow extends React.Component {
     if (!this.state.traveller) return null
     const { traveller } = this.state
     return (
-      <div>
-        <h1>Traveller profile page</h1>
-        <h2>{traveller.name}</h2>
-        <br />
-        <img src={traveller.profilePicture} alt={traveller.name}/>
-        <br />
-        <h3>My home country: {traveller.country}</h3>
-        <h3>Number of experiences booked: {traveller.experiences}</h3>
-        <p>{traveller.about}</p>
-        <hr />
-        {this.isOwner() && 
-        <>
-          <Link to={`/travellerprofile/${traveller._id}/edit`} className="btn btn-primary">
+      <section className="container">
+        {/* <h1>Traveller profile page</h1> */}
+        <div className="columns">
+          <div className="column col-4">
+            <div>
+              <h2>{traveller.name}</h2>
+              <br />
+              <img className="travellerProfilePic" src={traveller.profilePicture} alt={traveller.name}/>
+            </div>
+          </div>
+
+          <div className="column col-8">
+            <h3>My home country: {traveller.country}</h3>
+            <h3>Number of experiences booked: {traveller.experiences}</h3>
+            <p>{traveller.about}</p>
+          </div>
+          {/* <div className="column col-4"></div> */}
+          <div>
+            {this.isOwner() && 
+            <>
+              <Link to={`/traveller/edit/${traveller._id}`} className="btn btn-primary">
               EDIT MY PROFILE
-          </Link>
-          <button onClick={this.handleDelete} className="btn btn-error">DELETE MY PROFILE</button>
-        </>
-        }
-      </div>
+              </Link>
+              <button onClick={this.handleDelete} className="btn btn-error">DELETE MY PROFILE</button>
+            </>
+            }
+          </div>
+        </div>
+        
+      </section>
     )
   }
 }

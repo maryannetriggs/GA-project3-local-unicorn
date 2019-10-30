@@ -19,82 +19,95 @@ class RegisterTraveller extends React.Component {
   }
 
   handleSubmit(e) {
+    console.log('HELLO')
     e.preventDefault()
-
     axios.post('/api/registertraveller', this.state.data)
-      .then(() => this.props.history.puch('/login'))
+      .then(() => this.props.history.push('/logintraveller'))
       .catch(err => console.log(err))
   }
 
   render() {
     return (
 
-      <section>
+      <section className="registerTraveller">
         <div className="form-group">
+          <h2>Register</h2>
           <form onSubmit={this.handleSubmit}>
-            <h2>Register</h2>
-            
-            <label>Name</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              onChange={this.handleChange}
-            />
+
+            <div className=" formBackgroundReg form-group">
+              <label>Name</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                onChange={this.handleChange}
+              />
               
-            <label>Profile Picture</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="profilePictuce"
-              name="profilePicture"
-              placeholder="Profile Picture (URL)"
-              onChange={this.handleChange}
-            />
+              <label>Profile Picture</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="profilePicture"
+                name="profilePicture"
+                placeholder="Profile Picture (URL)"
+                onChange={this.handleChange}
+              />
               
-            <label>About</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="about"
-              name="about"
-              placeholder="About"
-              onChange={this.handleChange}
-            />
-              
-            <label>Country</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="county"
-              name="country"
-              placeholder="Country"
-              onChange={this.handleChange}
-            />
+              <label>Country</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="country"
+                name="country"
+                placeholder="Country"
+                onChange={this.handleChange}
+              />
                           
-            <label>Experiences</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="experiences"
-              name="expericences"
-              placeholder="Number of Experiences"
-              onChange={this.handleChange}
-            />
-                        
-            <label>email</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Email"
-              onChange={this.handleChange}
-            />
+              <label>Experiences</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="experiences"
+                name="experiences"
+                placeholder="Number of Experiences"
+                onChange={this.handleChange}
+              />
+
+              <label>About</label>
+              <textarea
+                rows="4"
+                className="form-input col-5"
+                type="text"
+                id="about"
+                name="about"
+                placeholder="About"
+                onChange={this.handleChange}
+              />
+
+              <label>email</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+              />
               
-            <label>Parword</label>
+<<<<<<< HEAD
+              <label>Parword</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="password"
+                name="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
+=======
+            <label>Pasword</label>
             <input 
               className="form-input"
               type="text"
@@ -103,20 +116,22 @@ class RegisterTraveller extends React.Component {
               placeholder="Password"
               onChange={this.handleChange}
             />
+>>>>>>> development
                   
-            <label>Password Confirmation</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="passwordConfirmation"
-              name="passwordConfirmation"
-              placeholder="Password Confirmation"
-              onChange={this.handleChange}
-            />
+              <label>Password Confirmation</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="passwordConfirmation"
+                name="passwordConfirmation"
+                placeholder="Password Confirmation"
+                onChange={this.handleChange}
+              />
               
+              <br/>
+              <button className="btn btn-primary" type="submit">Register</button>
+            </div>
           </form>
-          <br/>
-          <button className="btn" type="submit">Register</button>
         </div>
       </section>
     )

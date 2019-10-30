@@ -19,28 +19,30 @@ class Navbar extends React.Component {
   // WE NEED TO ADD IN THE IS AUTHENTICATED ON THE CORRECT LINKS BELOW LATER!
   render() {
     return (
-      <nav>
+      
+      <nav className="navbar">
         <div className="logo-wrapper">
           <Link className="logo" to="/">🦄</Link>
         </div>
+        <div className="input-group input-inline ">
+          <Link className="btn btn-link" to="/registerunicorn">Register unicorn</Link>
+          <Link className="btn btn-link" to="/registertraveller">Register traveller</Link>
 
-        <Link to="/registerunicorn">Register unicorn</Link>
-        <Link to="/registertraveller">Register traveller</Link>
+          <Link className="btn btn-link" to="/loginunicorn">Login unicorn</Link>
+          <Link className="btn btn-link" to="/logintraveller">Login traveller</Link>
+          <Link className="btn btn-link" to="/loginadmin">Login admin</Link>
 
-        <Link to="/loginunicorn">Login unicorn</Link>
-        <Link to="/logintraveller">Login traveller</Link>
-        <Link to="/loginadmin">Login admin</Link>
+          <Link className="btn btn-link" to="/unicorn">UNICORN profile</Link>
+          <Link className="btn btn-link" to="/traveller">TRAVELLER profile</Link>
 
-        <Link to="/traveller">UNICORN profile</Link>
-        <Link to="/unicorn">TRAVELLER profile</Link>
+          <Link className="btn btn-link" to="/cities">CITIES</Link>
+          <Link className="btn btn-link" to="/unicorns">UNICORNS</Link>
+          <Link className="btn btn-link" to="/experiences">EXPERIENCES</Link>
 
-        <Link to="/cities">CITIES</Link>
-        <Link to="/unicorns">UNICORNS</Link>
-        <Link to="/experiences">EXPERIENCES</Link>
+          <Link className="btn btn-link" to="/travellers">TRAVELLERS</Link>
 
-        <Link to="/travellers">TRAVELLERS</Link>
-
-        <a onClick={this.handleLogout} className="navbar-item">LOGOUT</a>
+          <a onClick={this.handleLogout} className="btn btn-link">LOGOUT</a>
+        </div>
       </nav>
     )
   }

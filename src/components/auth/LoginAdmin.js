@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/auth'
 
-class LoginTraveller extends React.Component {
+class LoginAdmin extends React.Component {
   constructor() {
     super()
 
@@ -21,7 +21,7 @@ class LoginTraveller extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/logintraveller', this.state.data)
+    axios.post('/api/loginadmin', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
         this.props.history.push('/cities')
@@ -33,10 +33,10 @@ class LoginTraveller extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className=" formBackground form-group">
+        <div className="form-group">
           <label className="form-label" htmlFor="email">Email</label>
           <input 
-            className="form-input col-7" 
+            className="form-input" 
             name="email" 
             type="text" 
             id="email" 
@@ -44,14 +44,14 @@ class LoginTraveller extends React.Component {
             onChange={this.handleChange}/>
           <label className="form-label" htmlFor="password">Password</label>
           <input 
-            className="form-input col-7" 
+            className="form-input" 
             name="password" 
             type="text" 
             id="password" 
             placeholder="Password" 
             onChange={this.handleChange}/>
           <br />
-          <button className="btn btn-primary" type="submit">Log in</button>
+          <button className="btn" type="submit">Log in</button>
         </div>
       </form>
     )
@@ -59,4 +59,4 @@ class LoginTraveller extends React.Component {
 }
 
 
-export default LoginTraveller
+export default LoginAdmin

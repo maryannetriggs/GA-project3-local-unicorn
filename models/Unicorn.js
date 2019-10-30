@@ -5,7 +5,7 @@ const unicornSchema = new mongoose.Schema({
   name: { type: String, required: true },
   profilePicture: { type: String, required: true },
   about: { type: String, required: true, maxlength: 300 },
-  city: { type: mongoose.Schema.ObjectId, ref: 'City', required: true },
+  city: { type: mongoose.Schema.ObjectId, ref: 'City' },
   country: { type: String  },
   region: { type: String, enum: ['Africa', 'Asia', 'Caribbean', 'Central America', 'Europe', 'North America', 'Oceania', 'South America'] },
   language: { type: [String], required: true },

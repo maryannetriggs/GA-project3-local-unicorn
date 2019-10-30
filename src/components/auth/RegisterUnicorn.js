@@ -45,6 +45,7 @@ class RegisterUnicorn extends React.Component {
   render() {
     const { data } = this.state
     return (
+
       <section>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
@@ -54,6 +55,7 @@ class RegisterUnicorn extends React.Component {
               <div className="control">
                 <input 
                   className="input"
+                  type="text"
                   name="name"
                   placeholder="Full name"
                   value={data.name}
@@ -61,6 +63,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Profile picture (url)</label>
               <div className="control">
@@ -73,6 +76,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">About me</label>
               <div className="control">
@@ -85,6 +89,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">City</label>
               <div className="select">
@@ -108,6 +113,7 @@ class RegisterUnicorn extends React.Component {
                 </select>
               </div>
             </div>
+
             <div className="field">
               <label className="label">Languages spoken</label>
               <div className="control">
@@ -120,6 +126,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Age</label>
               <div className="control">
@@ -133,6 +140,7 @@ class RegisterUnicorn extends React.Component {
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Gender</label>
               <div className="select">
@@ -144,30 +152,33 @@ class RegisterUnicorn extends React.Component {
                 </select>
               </div>
             </div>
+
             <div className="field">
               <label className="label">Email</label>
               <div className="control">
                 <input
                   className="input"
                   name="email"
-                  placeholder="email"
+                  placeholder="Email"
                   value={data.email}
                   onChange={this.handleChange}
                 />
               </div>
             </div>
+
             <div className="field">
               <label className="label">Password</label>
               <div className="control">
                 <input
                   className="input"
                   name="password"
-                  placeholder="password"
+                  placeholder="Password"
                   value={data.password}
                   onChange={this.handleChange}
                 />
               </div>
-            </div>           
+            </div> 
+
             <div className="field">
               <label className="label">Password confirmation</label>
               <div className="control">
@@ -181,6 +192,7 @@ class RegisterUnicorn extends React.Component {
               </div>
             </div>   
             <br/>
+
             <button className="btn btn-success">Register</button>
           </div>
         </form>

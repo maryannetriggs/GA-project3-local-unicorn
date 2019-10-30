@@ -68,19 +68,6 @@ const TravellerForm = ({ data, handleChange, handleSubmit }) => (
         </div>
       </div>
 
-      <div>
-        <label>Email</label>
-        <div>
-          <input 
-            className="form-input"
-            placeholder="Email"
-            name="email"
-            onChange={handleChange}
-            value={data.email}
-          />
-        </div>
-      </div>
-
       <button type="submit" className="btn btn-success">SUBMIT</button>
     </div>
   </form>

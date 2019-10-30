@@ -14,12 +14,19 @@ class ExpEdit extends React.Component {
         image: '',
         description: '',
         intensity: '',
-        price: ''
+        price: '',
+        availability: [''],
+        time: [''],
+        category: ['']
       }
     }
+    
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleMultiSelectAvailability = this.handleMultiSelectAvailability.bind(this)
+    this.handleMultiSelectTime = this.handleMultiSelectTime.bind(this)
+    this.handleMultiSelectCategory = this.handleMultiSelectCategory.bind(this)
   }
 
   componentDidMount() {
@@ -50,6 +57,33 @@ class ExpEdit extends React.Component {
     this.setState({ expFormData })
   }
 
+  handleMultiSelectAvailability(selected) {
+    if (!selected) {
+      return this.setState({ expFormData: { ...this.state.expFormData, availability: [] } })
+    }
+    const availability = selected.map(item => item.value)
+    const expFormData = { ...this.state.expFormData, availability }
+    this.setState({ expFormData })
+  }
+
+  handleMultiSelectTime(selected) {
+    if (!selected) {
+      return this.setState({ expFormData: { ...this.state.expFormData, time: [] } })
+    }
+    const time = selected.map(item => item.value)
+    const expFormData = { ...this.state.expFormData, time }
+    this.setState({ expFormData })
+  }
+
+  handleMultiSelectCategory(selected) {
+    if (!selected) {
+      return this.setState({ expFormData: { ...this.state.expFormData, category: [] } })
+    }
+    const category = selected.map(item => item.value)
+    const expFormData = { ...this.state.expFormData, category }
+    this.setState({ expFormData })
+  }
+
   render() {
     console.log(this.state.expFormData)
     return (
@@ -58,6 +92,9 @@ class ExpEdit extends React.Component {
           expFormData={this.state.expFormData}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          handleMultiSelectAvailability={this.handleMultiSelectAvailability}
+          handleMultiSelectCategory={this.handleMultiSelectCategory}
+          handleMultiSelectTime={this.handleMultiSelectTime}
         />
       </div>
     )

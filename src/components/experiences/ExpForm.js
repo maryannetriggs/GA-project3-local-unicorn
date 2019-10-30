@@ -1,19 +1,10 @@
 import React from 'react'
 import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
 
-// this.state = {
-//   formData: {
-//     firstName: '',
-//   }
-// }
+const animatedcomponents = makeAnimated()
 
-// handleChange({ target: { name, value, type, checked } }) {
-//   const newValue = type === 'checkbox' ? checked : value
-//   const formData = { ...this.state.formData, [name]: newValue }
-//   this.setState({ formData })
-// }
-
-const ExpForm = ({ expFormData, handleChange, handleSubmit }) => (
+const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAvailability, handleMultiSelectTime, handleMultiSelectCategory }) => (
   <form onSubmit={handleSubmit}>
 
     <h3>Experience Name</h3>
@@ -52,38 +43,53 @@ const ExpForm = ({ expFormData, handleChange, handleSubmit }) => (
       onChange={handleChange}
     />
 
-    <h3>Experience Category</h3>
-    <select name="category" onChange={handleChange} value={expFormData.category}>
-      <option value=""disabled>Category</option>
-      <option value="Sport">Sport</option>
-      <option value="food">Food</option>
-      <option value="drink">Drink</option>
-      <option value="culture">Culture</option>
-      <option value="outdoors">Outdoors</option>
-      <option value="music">Music</option>
-      <option value="social">Social</option>
-    </select>
-
     <h3>Experience Availability</h3>
-    <select name="category" onChange={handleChange} value={expFormData.availability}>
-      <option value=""disabled>Availability</option>
-      <option value="monday">Monday</option>
-      <option value="tuesday">Tuesday</option>
-      <option value="wednesday">Wednesday</option>
-      <option value="thursday">Thursday</option>
-      <option value="friday">Friday</option>
-      <option value="saturday">Saturday</option>
-      <option value="sunday">Sunday</option>
-    </select>
+    <Select
+      name="availability"
+      options={[
+        { value: 'Monday', label: 'Monday' },
+        { value: 'Tuesday', label: 'Tuesday' },
+        { value: 'Wednesday', label: 'Wednesday' },
+        { value: 'Thursday', label: 'Thursday' },
+        { value: 'Friday', label: 'Friday' },
+        { value: 'Saturday', label: 'Saturday' },
+        { value: 'Sunday', label: 'Sunday' }
+      ]}
+      isMulti
+      onChange={handleMultiSelectAvailability}
+      components={animatedcomponents}
+    />
 
     <h3>Experience Time</h3>
-    <select name="category" onChange={handleChange} value={expFormData.time}>
-      <option value=""disabled>Time</option>
-      <option value="morning">Morning</option>
-      <option value="afternoon">Afternoon</option>
-      <option value="evening">Evening</option>
-      <option value="allday">All-Day</option>
-    </select>
+    <Select
+      name="time"
+      options={[
+        { value: 'Morning', label: 'Morning' },
+        { value: 'Afternoon', label: 'Afternoon' },
+        { value: 'Evening', label: 'Evening' },
+        { value: 'All-Day', label: 'All-Day' }
+      ]}
+      isMulti
+      onChange={handleMultiSelectTime}
+      components={animatedcomponents}
+    />
+
+    <h3>Experience Category</h3>
+    <Select
+      name="time"
+      options={[
+        { value: 'Sport', label: 'Sport' },
+        { value: 'Food', label: 'Food' },
+        { value: 'Drink', label: 'Drink' },
+        { value: 'Culture', label: 'Culture' },
+        { value: 'Outdoors', label: 'Outdoors' },
+        { value: 'Music', label: 'Music' },
+        { value: 'Social', label: 'Social' }
+      ]}
+      isMulti
+      onChange={handleMultiSelectCategory}
+      components={animatedcomponents}
+    />
 
     <br/>
     <br/>

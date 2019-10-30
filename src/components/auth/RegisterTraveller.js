@@ -99,7 +99,7 @@ class RegisterTraveller extends React.Component {
               <label>Password</label>
               <input 
                 className="form-input col-5"
-                type="text"
+                type="password"
                 id="password"
                 name="password"
                 placeholder="Password"
@@ -109,7 +109,7 @@ class RegisterTraveller extends React.Component {
               <label>Password Confirmation</label>
               <input 
                 className="form-input col-5"
-                type="text"
+                type="password"
                 id="passwordConfirmation"
                 name="passwordConfirmation"
                 placeholder="Password Confirmation"

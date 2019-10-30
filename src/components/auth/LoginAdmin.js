@@ -46,7 +46,7 @@ class LoginAdmin extends React.Component {
           <input 
             className="form-input" 
             name="password" 
-            type="text" 
+            type="password"
             id="password" 
             placeholder="Password" 
             onChange={this.handleChange}/>

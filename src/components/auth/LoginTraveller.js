@@ -46,7 +46,7 @@ class LoginTraveller extends React.Component {
           <input 
             className="form-input col-7" 
             name="password" 
-            type="text" 
+            type="password"
             id="password" 
             placeholder="Password" 
             onChange={this.handleChange}/>

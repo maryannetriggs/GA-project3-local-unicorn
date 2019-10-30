@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-// import Select from 'react-select'
-// import makeAnimated from 'react-select/animated'
+import makeAnimated from 'react-select/animated'
+import CreatableSelect from 'react-select/creatable'
 
-// const animatedComponents = makeAnimated()
+const animatedComponents = makeAnimated()
 
 class RegisterUnicorn extends React.Component {
   constructor() {
@@ -15,7 +15,7 @@ class RegisterUnicorn extends React.Component {
         profilePicture: '',
         about: '',
         city: '',
-        language: '',
+        language: [''],
         age: '',
         gender: '',
         email: '',
@@ -24,14 +24,42 @@ class RegisterUnicorn extends React.Component {
       }
     }
 
+    this.options = [
+      { value: 'English', label: 'English' },
+      { value: 'French', label: 'French' },
+      { value: 'Japanese', label: 'Japanese' },
+      { value: 'Greek', label: 'Greek' },
+      { value: 'Italian', label: 'Italian' },
+      { value: 'Portuguese', label: 'Portuguese' },
+      { value: 'Spanish', label: 'Spanish' },
+      { value: 'Maya', label: 'Maya' },
+      { value: 'Swedish', label: 'Swedish' },
+      { value: 'Tamil', label: 'Tamil' },
+      { value: 'Mandarin', label: 'Mandarin' },
+      { value: 'Arabic', label: 'Arabic' },
+      { value: 'Russian', label: 'Russian' },
+      { value: 'German', label: 'German' },
+      { value: 'Dutch', label: 'Dutch' },
+      { value: 'Urdu', label: 'Urdu' },
+      { value: 'Farci', label: 'Farci' },
+      { value: 'Aymara', label: 'Aymara' }
+    ]
+
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleCreatableSelect = this.handleCreatableSelect.bind(this)
   }
 
+  handleChange({ target: { name, value, type, checked } }) {
+    const newValue = type === 'checkbox' ? checked : value
+    const data = { ...this.state.data, [name]: newValue }
+    this.setState({ data })
+  }
 
-  handleChange(e) {
-    const data = { ...this.state.data, [e.target.name]: e.target.value }
-    this.setState({ data }) 
+  handleCreatableSelect(selected) {
+    const language = selected ? selected.map(item => item.value) : []
+    const data = { ...this.state.data, language }
+    this.setState({ data })
   }
 
   handleSubmit(e) {
@@ -115,14 +143,13 @@ class RegisterUnicorn extends React.Component {
             </div>
 
             <div className="field">
-              <label className="label">Languages spoken</label>
+              <label className="label">My languages (select from dropdown or add new)</label>
               <div className="control">
-                <input 
-                  className="input"
-                  name="language"
-                  placeholder="I speak the following languages..."
-                  value={data.language}
-                  onChange={this.handleChange}
+                <CreatableSelect
+                  options={this.options}
+                  isMulti
+                  onChange={this.handleCreatableSelect}
+                  components={animatedComponents}
                 />
               </div>
             </div>
@@ -171,6 +198,7 @@ class RegisterUnicorn extends React.Component {
               <div className="control">
                 <input
                   className="input"
+                  type="password"
                   name="password"
                   placeholder="Password"
                   value={data.password}
@@ -184,6 +212,7 @@ class RegisterUnicorn extends React.Component {
               <div className="control">
                 <input
                   className="input"
+                  type="password"
                   name="passwordConfirmation"
                   placeholder="Password confirmation"
                   value={data.passwordConfirmation}

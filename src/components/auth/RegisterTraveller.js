@@ -29,94 +29,96 @@ class RegisterTraveller extends React.Component {
   render() {
     return (
 
-      <section>
+      <section className="registerTraveller">
         <div className="form-group">
           <h2>Register</h2>
-
           <form onSubmit={this.handleSubmit}>
-            
-            <label>Name</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              onChange={this.handleChange}
-            />
+
+            <div className=" formBackgroundReg form-group">
+              <label>Name</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                onChange={this.handleChange}
+              />
               
-            <label>Profile Picture</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="profilePicture"
-              name="profilePicture"
-              placeholder="Profile Picture (URL)"
-              onChange={this.handleChange}
-            />
+              <label>Profile Picture</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="profilePicture"
+                name="profilePicture"
+                placeholder="Profile Picture (URL)"
+                onChange={this.handleChange}
+              />
               
-            <label>Country</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="country"
-              name="country"
-              placeholder="Country"
-              onChange={this.handleChange}
-            />
+              <label>Country</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="country"
+                name="country"
+                placeholder="Country"
+                onChange={this.handleChange}
+              />
                           
-            <label>Experiences</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="experiences"
-              name="experiences"
-              placeholder="Number of Experiences"
-              onChange={this.handleChange}
-            />
+              <label>Experiences</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="experiences"
+                name="experiences"
+                placeholder="Number of Experiences"
+                onChange={this.handleChange}
+              />
 
-            <label>About</label>
-            <textarea
-              className="form-input"
-              type="text"
-              id="about"
-              name="about"
-              placeholder="About"
-              onChange={this.handleChange}
-            />
+              <label>About</label>
+              <textarea
+                rows="4"
+                className="form-input col-5"
+                type="text"
+                id="about"
+                name="about"
+                placeholder="About"
+                onChange={this.handleChange}
+              />
 
-            <label>email</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Email"
-              onChange={this.handleChange}
-            />
+              <label>email</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+              />
               
-            <label>Parword</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="password"
-              name="password"
-              placeholder="Password"
-              onChange={this.handleChange}
-            />
+              <label>Parword</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="password"
+                name="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
                   
-            <label>Password Confirmation</label>
-            <input 
-              className="form-input"
-              type="text"
-              id="passwordConfirmation"
-              name="passwordConfirmation"
-              placeholder="Password Confirmation"
-              onChange={this.handleChange}
-            />
+              <label>Password Confirmation</label>
+              <input 
+                className="form-input col-5"
+                type="text"
+                id="passwordConfirmation"
+                name="passwordConfirmation"
+                placeholder="Password Confirmation"
+                onChange={this.handleChange}
+              />
               
-            <br/>
-            <button className="btn" type="submit">Register</button>
+              <br/>
+              <button className="btn btn-primary" type="submit">Register</button>
+            </div>
           </form>
         </div>
       </section>

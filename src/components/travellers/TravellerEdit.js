@@ -43,7 +43,7 @@ class TravellerEdit extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     const travellerId = this.props.match.params.id
-    axios.put(`api/traveller${travellerId}`, this.state.data, {
+    axios.put(`api/traveller/${travellerId}`, this.state.data, {
       header: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => {

@@ -16,7 +16,7 @@ class TravellerShow extends React.Component {
 
   componentDidMount() {
     console.log('HELLO 123')
-    axios.get('api/traveller', {
+    axios.get('api/traveller/', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => this.setState({ traveller: res.data }))
@@ -43,21 +43,24 @@ class TravellerShow extends React.Component {
     if (!this.state.traveller) return null
     const { traveller } = this.state
     return (
-      <div className="columns col-oneline">
+      <section className="container">
         {/* <h1>Traveller profile page</h1> */}
-        <div>
-          <h2>{traveller.name}</h2>
-          <br />
-          <img src={traveller.profilePicture} alt={traveller.name}/>
-        </div>
+        <div className="columns">
+          <div className="column col-4">
+            <div>
+              <h2>{traveller.name}</h2>
+              <br />
+              <img className="travellerProfilePic" src={traveller.profilePicture} alt={traveller.name}/>
+            </div>
+          </div>
 
-        <div className="columns col-oneline">
-          <div className="column col-2"></div>
-          <div className="column">
+          <div className="column col-8">
             <h3>My home country: {traveller.country}</h3>
             <h3>Number of experiences booked: {traveller.experiences}</h3>
             <p>{traveller.about}</p>
-            <hr />
+          </div>
+          {/* <div className="column col-4"></div> */}
+          <div>
             {this.isOwner() && 
             <>
               <Link to={`/traveller/edit/${traveller._id}`} className="btn btn-primary">
@@ -68,7 +71,8 @@ class TravellerShow extends React.Component {
             }
           </div>
         </div>
-      </div>
+        
+      </section>
     )
   }
 }

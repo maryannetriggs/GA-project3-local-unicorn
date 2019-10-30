@@ -90,3 +90,59 @@ h3 {
   width: 150px;
   // object-fit: cover;
 }
+
+.travellerProfilePic {
+  height: 150px;
+  width: auto;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .formBackground {
+    border-radius: 5px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 10px rgba(66, 19, 155, 0.479);
+    
+    width: 500px;
+    height: 300px;
+  }
+}
+
+.registerTraveller {
+  h2{
+    margin-left: 25px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  
+    .formBackgroundReg {
+      h2{
+        margin-left: 25px;
+      }
+      border-radius: 5px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      // box-shadow: 1px 1px 10px rgba(66, 19, 155, 0.479);
+      padding: 20px;
+      
+      width: 90vw;
+      height: 600px;
+    }
+  }
+}

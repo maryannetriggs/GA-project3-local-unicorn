@@ -12,6 +12,7 @@ class UnicornIndex extends React.Component {
       unicorns: null,
       gender: 'All',
       language: 'All'
+      
     }
 
     this.handleGender = this.handleGender.bind(this)

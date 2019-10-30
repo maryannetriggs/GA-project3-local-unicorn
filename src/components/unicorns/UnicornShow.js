@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import ExpCard from '../experiences/ExpCard'
-// import ReviewCard from '../reviews/ReviewCard'
+import ReviewCard from '../reviews/ReviewCard'
 
 class UnicornShow extends React.Component {
   constructor() {
@@ -28,21 +28,21 @@ class UnicornShow extends React.Component {
   render() {
     if (!this.state.unicorn) return null
     const { unicorn } = this.state
-    console.log(unicorn)
+    console.log(this.props.history)
     return (
       <section className="container">
         <div className="columns">
           <div className="column col-12 back">
-            <Link to={{ pathname: '/unicorns', state: { from: unicorn.city } }}>
-              <button>BACK TO OTHER {unicorn.city} UNICORNS</button>
-            </Link>
+            <button onClick={() => this.props.history.goBack()}>
+              BACK TO OTHER {unicorn.city.name} UNICORNS
+            </button>
           </div>
           <div className="column col-6">
             <div className="columns">
               <div className="column col-6">
                 <h3>{unicorn.name}, {unicorn.age}</h3>
                 <img className="unicornProfilePic" src={unicorn.profilePicture} alt={name}/>
-                <h3>{unicorn.city}</h3>
+                <h3>{unicorn.city.name}</h3>
                 <h3>Languages Spoken:</h3> 
                 {unicorn.language.map((lang, i) => (
                   <h4 key={i}>{lang}</h4>
@@ -70,16 +70,13 @@ class UnicornShow extends React.Component {
             </div>
           </div>
           <div className="column col-12">
-            <h3>Map</h3>
-          </div>
-          <div className="column col-12">
             <h3>Reviews</h3>
             <div className="container">
-              {/* <div className="columns">
+              <div className="columns">
                 {unicorn.experiences.reviews.map(review => (
                   <ReviewCard key={review._id} {...review} />
                 ))}
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -88,4 +85,4 @@ class UnicornShow extends React.Component {
   }
 }
 
-export default UnicornShow
+export default withRouter(UnicornShow)

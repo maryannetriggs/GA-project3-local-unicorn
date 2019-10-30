@@ -15,8 +15,6 @@ class RegisterUnicorn extends React.Component {
         profilePicture: '',
         about: '',
         city: '',
-        country: '',
-        region: '',
         language: '',
         age: '',
         gender: '',
@@ -93,41 +91,24 @@ class RegisterUnicorn extends React.Component {
 
             <div className="field">
               <label className="label">City</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  name="city"
-                  value={data.city}
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="field">
-              <label className="label">Country</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  name="country"
-                  value={data.country}
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="field">
-              <label className="label">Region</label>
               <div className="select">
-                <select name="region" onChange={this.handleChange} value={data.region}>
-                  <option value="" disabled>Select your region</option>
-                  <option value="Africa">Africa</option>
-                  <option value="Asia">Asia</option>
-                  <option value="Caribbean">Carribean</option>
-                  <option value="Central America">Central America</option>
-                  <option value="Europe">Europe</option>
-                  <option value="North America">North America</option>
-                  <option value="Oceania">Oceania</option>
-                  <option value="South America">South America</option>
+                <select name="city" onChange={this.handleChange} value={data.city}>
+                  <option value="" disabled>Select your city</option>
+                  <option value="All">All</option>
+                  <option value="La Paz">La Paz</option>
+                  <option value="London">London</option>
+                  <option value="Madrid">Madrid</option>
+                  <option value="Mexico City">Mexico City</option>
+                  <option value="Marrakesh">Marrakesh</option>
+                  <option value="Moscow">Moscow</option>
+                  <option value="New York">New York</option>
+                  <option value="Paris">Paris</option>
+                  <option value="Shanghai">Shanghai</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Stockholm">Stockholm</option>
+                  <option value="Tehran">Tehran</option>
+                  <option value="Tokyo">Tokyo</option>
+                  <option value="Wellington">Wellington</option>
                 </select>
               </div>
             </div>

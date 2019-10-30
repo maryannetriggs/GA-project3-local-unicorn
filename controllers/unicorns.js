@@ -26,6 +26,7 @@ function loginUnicorn(req, res) {
 function unicornProfile(req, res) {
   Unicorn
     .findById(req.currentUnicorn._id)
+    .populate('experiences')
     .then(unicorn => res.status(200).json(unicorn))
     .catch(err => res.json(err))
 }
@@ -67,6 +68,8 @@ function show(req, res) {
   Unicorn
     .findById(req.params.id)
     .populate('experiences')
+    .populate('city')
+    .populate('experience.reviews')
     .then(unicorn => {
       if (!unicorn) return res.status(404).json({ message: 'Unicorn not found' })
       res.status(200).json(unicorn)

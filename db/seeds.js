@@ -193,9 +193,9 @@ mongoose.connect(
             region: 'Central America'
           },
           {
-            name: 'Marrakech',
+            name: 'Marrakesh',
             image: 'https://cdn.matthewwilliamson.com/wp-content/uploads/2015/10/Marrakech-1140x726.jpg',
-            description: 'Marrakech, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens. A symbol of the city, and visible for miles, is the Moorish minaret of 12th-century Koutoubia Mosque.',
+            description: 'Marrakesh, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens. A symbol of the city, and visible for miles, is the Moorish minaret of 12th-century Koutoubia Mosque.',
             country: 'Morocco',
             region: 'Africa'
           },

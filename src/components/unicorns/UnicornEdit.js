@@ -2,29 +2,32 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/auth'
 
-import TravellerForm from './TravellerForm'
+import UnicornForm from './UnicornForm'
 
-class TravellerEdit extends React.Component {
+class UnicornEdit extends React.Component {
   constructor() {
     super()
-
+    
     this.state = {
       data: {
         name: '',
         profilePicture: '',
         about: '',
-        country: '',
-        experiences: 0,
-        email: ''
-      },
-      errors: {}
+        city: '',
+        language: '',
+        age: '',
+        gender: '',
+        email: '',
+        password: '',
+        passwordConfirmation: ''
+      }
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
-    axios.get('/api/traveller', {
+    axios.get('/api/unicorn', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => this.setState({ data: res.data }))
@@ -33,30 +36,29 @@ class TravellerEdit extends React.Component {
 
   handleChange(e) {
     const data = { ...this.state.data, [e.target.name]: e.target.value }
-    const errors = { ...this.state.errors, [e.target.name]: '' }
-    this.setState({ data, errors })
+    this.setState({ data })
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    axios.put('/api/traveller', this.state.data, {
+
+    axios.put('/api/unicorn', this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(() => {
-        this.props.history.push('/traveller')
+        this.props.history.push('/unicorn')
       })
-      .catch(err => this.setState({ error: err.response.data.error }))
+      .catch(err => console.log(err))
   }
 
   render() {
     return (
       <section>
         <div>
-          <TravellerForm
+          <UnicornForm
             data={this.state.data}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
-            errors={this.state.errors}
           />
         </div>
       </section>
@@ -64,5 +66,4 @@ class TravellerEdit extends React.Component {
   }
 }
 
-export default TravellerEdit
-
+export default UnicornEdit

@@ -1283,7 +1283,250 @@ mongoose.connect(
             unicorn: unicorns[4],
             availability: ['Sunday'],
             time: ['Afternoon']
+          },
+          {
+            name: 'Quad-Biking In The Desert',
+            image: 'https://cdn.getyourguide.com/img/tour_img-1308260-145.jpg',
+            description: 'I invite you to join us on this amazing journey to the largest desert in the world- The Marrakech Desert.',
+            category: ['Outdoors'],
+            intensity: 'High',
+            price: 70,
+            unicorn: unicorns[10],
+            availability: ['Sunday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Expedition On A Camel',
+            image: 'https://cdn.getyourguide.com/img/tour_img-2471030-145.jpg',
+            description: 'Discover numerous Berber villages and a set of waterfalls close to the Ourika village itself.',
+            category: ['Outdoors'],
+            intensity: 'Medium',
+            price: 30,
+            unicorn: unicorns[10],
+            availability: ['Monday', 'Wednesday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Tagine Cookery Class With a Local',
+            image: 'https://cdn.getyourguide.com/img/tour_img-1128039-145.jpg',
+            description: 'Learn to cook authentic Moroccan tagines in Marrakech.',
+            category: ['Food'],
+            intensity: 'Low',
+            price: 25,
+            unicorn: unicorns[10],
+            availability: ['Tuesday', 'Thursday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Colourful Souks Tour',
+            image: 'https://cdn.getyourguide.com/img/tour_img-2464875-145.jpg',
+            description: 'Get a special in-depth feel for various sections of the market.',
+            category: ['Culture'],
+            intensity: 'Low',
+            price: 15,
+            unicorn: unicorns[10],
+            availability: ['Friday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Casablanca to Marrakech Day Trip',
+            image: 'https://cdn.getyourguide.com/img/tour_img-344263-145.jpg',
+            description: 'Discover the imperial beauty of Marrakech on a 9-hour tour of the “Red City” from Casablanca.',
+            category: ['Outdoors'],
+            intensity: 'Medium',
+            price: 90,
+            unicorn: unicorns[23],
+            availability: ['Sunday'],
+            time: ['Afternoon']
+          },
+          {
+            name: 'Meet The Marrakesh Monuments',
+            image: 'https://cdn.getyourguide.com/img/tour_img-348125-145.jpg',
+            description: 'Go to one of the largest mosques of the western Muslim world, visit traditional souks and more.',
+            category: ['Outdoors'],
+            intensity: 'Low',
+            price: 20,
+            unicorn: unicorns[23],
+            availability: ['Monday', 'Tuesday'],
+            time: ['All-Day']
+          },
+          {
+            name: '3 Days In The Desert',
+            image: 'https://cdn.getyourguide.com/img/tour_img-1478182-145.jpg',
+            description: 'See the Kasbah of Ouarzazate, and much more.',
+            category: ['Food'],
+            intensity: 'High',
+            price: 80,
+            unicorn: unicorns[23],
+            availability: ['Wednesday', 'Thursday', 'Friday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Oasis Experience',
+            image: 'https://cdn.getyourguide.com/img/tour_img-2584468-145.jpg',
+            description: 'Enjoy a unique experience in Morocco as you paddle and inflatable board down a river in the middle of the desert.',
+            category: ['Outdoors'],
+            intensity: 'Medium',
+            price: 70,
+            unicorn: unicorns[23],
+            availability: ['Sunday'],
+            time: ['Morning']
           }
+          // {
+          //   name: 'new york',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[2],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'new york',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[2],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'ny',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[16],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'ny',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[16],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'ny',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[16],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[12],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[12],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[12],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[12],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[2],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[2],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[2],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[2],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // },
+          // {
+          //   name: 'Shanghai',
+          //   image: '',
+          //   description: '',
+          //   category: ['Food'],
+          //   intensity: '',
+          //   price: 5,
+          //   unicorn: unicorns[2],
+          //   availability: ['Sunday'],
+          //   time: ['Afternoon']
+          // }
+          
         ])
       })
       .then(experiences => console.log(`${experiences.length} experiences created`))

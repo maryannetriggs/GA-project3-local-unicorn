@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 
 function registerUnicorn(req, res, next) {
+  console.log(req.body)
   Unicorn
     .create(req.body)
     .then(unicorn => res.status(201).json(unicorn))

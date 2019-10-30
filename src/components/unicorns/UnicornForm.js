@@ -1,6 +1,7 @@
 import React from 'react'
 
-const UnicornForm = ({ data, handleChange, handleSubmit }) => (
+
+const UnicornForm = ({ cities, data, handleChange, handleSubmit }) => (
   <section>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -46,21 +47,7 @@ const UnicornForm = ({ data, handleChange, handleSubmit }) => (
           <div className="select">
             <select name="city" onChange={handleChange} value={data.city}>
               <option value="" disabled>Select your city</option>
-              <option value="All">All</option>
-              <option value="La Paz">La Paz</option>
-              <option value="London">London</option>
-              <option value="Madrid">Madrid</option>
-              <option value="Mexico City">Mexico City</option>
-              <option value="Marrakesh">Marrakesh</option>
-              <option value="Moscow">Moscow</option>
-              <option value="New York">New York</option>
-              <option value="Paris">Paris</option>
-              <option value="Shanghai">Shanghai</option>
-              <option value="Singapore">Singapore</option>
-              <option value="Stockholm">Stockholm</option>
-              <option value="Tehran">Tehran</option>
-              <option value="Tokyo">Tokyo</option>
-              <option value="Wellington">Wellington</option>
+              {cities.map(city => <option key={city._id} value={city._id}>{city.name}</option>)}
             </select>
           </div>
         </div>

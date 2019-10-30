@@ -20,13 +20,16 @@ class UnicornEdit extends React.Component {
         email: '',
         password: '',
         passwordConfirmation: ''
-      }
+      },
+      cities: []
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
+    axios.get('/api/cities')
+      .then(res => this.setState({ cities: res.data }))
     axios.get('/api/unicorn', {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
@@ -57,6 +60,7 @@ class UnicornEdit extends React.Component {
         <div>
           <UnicornForm
             data={this.state.data}
+            cities={this.state.cities}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />

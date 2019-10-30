@@ -21,11 +21,17 @@ class RegisterUnicorn extends React.Component {
         email: '',
         password: '',
         passwordConfirmation: ''
-      }
+      },
+      cities: []
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidMount() {
+    axios.get('/api/cities')
+      .then(res => this.setState({ cities: res.data }))
   }
 
 
@@ -38,12 +44,12 @@ class RegisterUnicorn extends React.Component {
     e.preventDefault()
 
     axios.post('/api/registerunicorn', this.state.data)
-      .then(() => this.props.history.push('/cities'))
-      .catch(err => console.log(err))
+      .then(() => this.props.history.push('/loginunicorn'))
+      .catch(err => console.log(err.message))
   }
 
   render() {
-    const { data } = this.state
+    const { data, cities } = this.state
     return (
 
       <section>
@@ -95,21 +101,7 @@ class RegisterUnicorn extends React.Component {
               <div className="select">
                 <select name="city" onChange={this.handleChange} value={data.city}>
                   <option value="" disabled>Select your city</option>
-                  <option value="All">All</option>
-                  <option value="La Paz">La Paz</option>
-                  <option value="London">London</option>
-                  <option value="Madrid">Madrid</option>
-                  <option value="Mexico City">Mexico City</option>
-                  <option value="Marrakesh">Marrakesh</option>
-                  <option value="Moscow">Moscow</option>
-                  <option value="New York">New York</option>
-                  <option value="Paris">Paris</option>
-                  <option value="Shanghai">Shanghai</option>
-                  <option value="Singapore">Singapore</option>
-                  <option value="Stockholm">Stockholm</option>
-                  <option value="Tehran">Tehran</option>
-                  <option value="Tokyo">Tokyo</option>
-                  <option value="Wellington">Wellington</option>
+                  {cities.map(city => <option key={city._id} value={city._id}>{city.name}</option>)}
                 </select>
               </div>
             </div>

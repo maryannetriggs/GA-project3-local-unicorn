@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Auth from '../../lib/auth'
 
 import ExpCard from '../experiences/ExpCard'
@@ -72,16 +72,19 @@ class UnicornProfile extends React.Component {
               </div>
               <div className="column col-12">
                 <h3>Reviews</h3>
-                <div className="container">
+                {/* <div className="container">
                   <div className="columns">
                     {unicorn.experiences.reviews.map(review => (
                       <ReviewCard key={review._id} {...review} />
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
               {this.isOwner() && 
               <>
+                <Link to={`/unicorn/edit/${unicorn._id}`} className="btn btn-primary">
+              EDIT MY PROFILE
+                </Link>
                 <button onClick={this.handleDelete} className="btn btn-error">DELETE MY PROFILE</button>
               </>
               }

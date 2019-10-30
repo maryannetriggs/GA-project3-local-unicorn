@@ -47,7 +47,7 @@ class TravellerEdit extends React.Component {
       header: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => {
-        this.props.history.push(`/travellers/${res.data._id}`)
+        this.props.history.push(`/traveller/${res.data._id}`)
       })
       .catch(err => this.setState({ error: err.response.data.error }))
   }

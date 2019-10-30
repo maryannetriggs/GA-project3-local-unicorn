@@ -25,6 +25,7 @@ import TravellerEdit from './components/travellers/TravellerEdit'
 import TravellerShow from './components/travellers/TravellerShow'
 
 // UNICORN PROFILE:
+import UnicornEdit from './components/unicorns/UnicornEdit'
 import UnicornProfile from './components/unicorns/UnicornProfile'
 
 // CITIES:
@@ -66,7 +67,7 @@ const App = () => (
           <SecureRoute path="/traveller/edit" component={TravellerEdit} />
           <SecureRoute path="/traveller" component={TravellerShow}/>
 
-          {/* <SecureRoute path="/unicorn/edit" component={UnicornEdit} /> */}
+          <SecureRoute path="/unicorn/edit" component={UnicornEdit} />
           <SecureRoute path="/unicorn" component={UnicornProfile}/> 
 
           <Route path="/cities/:id" component={CitiesShow}/>

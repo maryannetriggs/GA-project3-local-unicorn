@@ -8,6 +8,7 @@ class LoginTraveller extends React.Component {
 
     this.state = {
       data: {}
+      // error: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -20,13 +21,12 @@ class LoginTraveller extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-
     axios.post('/api/logintraveller', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
         this.props.history.push('/cities')
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {

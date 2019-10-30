@@ -22,7 +22,7 @@ class UnicornIndex extends React.Component {
   componentDidMount() {
     axios.get('/api/unicorns')
       .then(res => this.setState({ unicorns: res.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   handleGender(e) {

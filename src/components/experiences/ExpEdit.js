@@ -33,7 +33,7 @@ class ExpEdit extends React.Component {
     const expId = this.props.match.params.id
     axios.get(`/api/experiences/${expId}`)
       .then(res => this.setState({ expFormData: res.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   handleSubmit(e) {
@@ -48,7 +48,7 @@ class ExpEdit extends React.Component {
       .then(res => {
         this.props.history.push(`/experiences/${res.data._id}`)
       })
-      // .catch(err => this.setState({ errors: err.response.data.errors }))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   handleChange({ target: { name, value, type, checked } }) {

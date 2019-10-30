@@ -3,7 +3,7 @@ import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 
 import ExpCard from '../experiences/ExpCard'
-import ReviewCard from '../reviews/ReviewCard'
+//import ReviewCard from '../reviews/ReviewCard'
 
 class UnicornShow extends React.Component {
   constructor() {
@@ -22,7 +22,7 @@ class UnicornShow extends React.Component {
     const unicornId = this.props.match.params.id
     axios.get(`/api/unicorns/${unicornId}`)
       .then(res => this.setState({ unicorn: res.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {
@@ -69,16 +69,7 @@ class UnicornShow extends React.Component {
               </div>
             </div>
           </div>
-          <div className="column col-12">
-            <h3>Reviews</h3>
-            <div className="container">
-              <div className="columns">
-                {unicorn.experiences.reviews.map(review => (
-                  <ReviewCard key={review._id} {...review} />
-                ))}
-              </div>
-            </div>
-          </div>
+         
         </div>
       </section >
     )

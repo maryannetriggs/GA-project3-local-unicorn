@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Auth from '../../lib/auth'
 
 import ExpCard from '../experiences/ExpCard'
-import ReviewCard from '../reviews/ReviewCard'
+//import ReviewCard from '../reviews/ReviewCard'
 
 class UnicornProfile extends React.Component {
   constructor() {
@@ -32,7 +32,7 @@ class UnicornProfile extends React.Component {
         Auth.logout()
         this.props.history.push('/')
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   isOwner() {

@@ -20,7 +20,7 @@ class TravellerShow extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => this.setState({ traveller: res.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   handleDelete() {
@@ -31,7 +31,7 @@ class TravellerShow extends React.Component {
         Auth.logout()
         this.props.history.push('/')
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   isOwner() {

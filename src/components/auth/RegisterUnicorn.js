@@ -73,7 +73,7 @@ class RegisterUnicorn extends React.Component {
 
     axios.post('/api/registerunicorn', this.state.data)
       .then(() => this.props.history.push('/loginunicorn'))
-      .catch(err => console.log(err.message))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {

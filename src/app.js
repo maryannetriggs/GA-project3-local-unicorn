@@ -36,6 +36,8 @@ import UnicornIndex from './components/unicorns/UnicornIndex'
 // EXPERIENCES:
 import ExpShow from './components/experiences/ExpShow'
 import ExpIndex from './components/experiences/ExpIndex'
+import ExpEdit from './components/experiences/ExpEdit'
+import ExpNew from './components/experiences/ExpNew'
 
 // TRAVELLER INDEX (HIDDEN APART FROM ADMIN)
 import TravellerIndex from './components/travellers/TravellerIndex'
@@ -70,8 +72,8 @@ const App = () => (
           <Route path="/unicorns/:id" component={UnicornShow}/>
           <Route path="/unicorns" component={UnicornIndex}/>
 
-          {/* <SecureRoute path="/experiences/:id/edit" component={ExpEdit}/> */}
-          {/* <SecureRoute path="/experiences/new" component={ExpNew}/> */}
+          <SecureRoute path="/experiences/:id/edit" component={ExpEdit}/>
+          <SecureRoute path="/experiences/new" component={ExpNew}/>
           <Route path="/experiences/:id" component={ExpShow}/>
           <SecureRoute path="/experiences" component={ExpIndex}/>
 

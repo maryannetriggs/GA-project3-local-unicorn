@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/auth'
 import { IoMdWalk, IoMdTime, IoMdCalendar, IoMdCash, IoIosStar } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 
 // import ReviewCard from '../reviews/ReviewCard'
@@ -63,8 +64,8 @@ class ExpShow extends React.Component {
   }
 
   handleDelete() {
-    const experienceId = this.props.match.params.id
-    axios.delete(`/api/experiences/${experienceId}`, {
+    const expId = this.props.match.params.id
+    axios.delete(`/api/experiences/${expId}`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(() => {
@@ -84,6 +85,7 @@ class ExpShow extends React.Component {
   render() {
     if (!this.state.experience) return null
     const { experience } = this.state
+    const expId = experience._id
     return (
       <section className="container">
         <div className="columns">
@@ -104,6 +106,16 @@ class ExpShow extends React.Component {
             <br />
             <br />
             <button>BACK</button>
+            <br />
+            <br />
+            <Link to={`/experiences/${expId}/edit`}>
+              <button>EDIT EXPERIENCE</button>
+            </Link>
+            <br />
+            <br />
+            <Link to={'/experiences/new'}>
+              <button>ADD NEW EXPERIENCE</button>
+            </Link>
           </div>
           {this.isOwnerExperience() &&
         <>

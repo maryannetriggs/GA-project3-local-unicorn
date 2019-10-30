@@ -14,8 +14,7 @@ class ExpEdit extends React.Component {
         image: '',
         description: '',
         intensity: '',
-        price: '',
-        errors: ''
+        price: ''
       }
     }
 
@@ -45,13 +44,14 @@ class ExpEdit extends React.Component {
       // .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
-  handleChange(e) {
-    const expFormData = { ...this.state.expFormData, [e.target.name]: e.target.value }
+  handleChange({ target: { name, value, type, checked } }) {
+    const newValue = type === 'checkbox' ? checked : value
+    const expFormData = { ...this.state.expFormData, [name]: newValue }
     this.setState({ expFormData })
   }
 
   render() {
-    // console.log(this.state.expFormData)
+    console.log(this.state.expFormData)
     return (
       <div>
         <ExpForm

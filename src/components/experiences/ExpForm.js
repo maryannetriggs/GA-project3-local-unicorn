@@ -1,4 +1,17 @@
 import React from 'react'
+import Select from 'react-select'
+
+// this.state = {
+//   formData: {
+//     firstName: '',
+//   }
+// }
+
+// handleChange({ target: { name, value, type, checked } }) {
+//   const newValue = type === 'checkbox' ? checked : value
+//   const formData = { ...this.state.formData, [name]: newValue }
+//   this.setState({ formData })
+// }
 
 const ExpForm = ({ expFormData, handleChange, handleSubmit }) => (
   <form onSubmit={handleSubmit}>
@@ -26,13 +39,13 @@ const ExpForm = ({ expFormData, handleChange, handleSubmit }) => (
 
     <h3>Experience Intensity</h3>
     <select name="intensity" onChange={handleChange} value={expFormData.intensity}>
-      <option value=""disabled>Intensity</option>
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
+      <option value="">Select</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
     </select>
 
-    <h3>Expereience Price</h3>
+    <h3>Experience Price</h3>
     <input
       name="price"
       value={expFormData.price}

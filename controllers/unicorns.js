@@ -67,6 +67,7 @@ function show(req, res) {
   Unicorn
     .findById(req.params.id)
     .populate('experiences')
+    .populate('city')
     .then(unicorn => {
       if (!unicorn) return res.status(404).json({ message: 'Unicorn not found' })
       res.status(200).json(unicorn)

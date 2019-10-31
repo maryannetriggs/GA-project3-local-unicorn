@@ -58,7 +58,7 @@ class Navbar extends React.Component {
         <div className="logo-wrapper">
           <Link className="logo" to="/">🦄</Link>
         </div>
-        <div className="input-group input-inline ">
+        <div className="input-group input-inline nav-links">
           {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registerunicorn">Register Unicorn</Link>}
           {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registertraveller">Register traveller</Link>}
 

@@ -11,13 +11,14 @@ class ExpShow extends React.Component {
     this.state = {
       experience: null,
       text: '',
-      score: 5
+      score: ''
 
     }
     this.handleDelete = this.handleDelete.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.deleteReview = this.deleteReview.bind(this)
+    this.handleScoreChange = this.handleScoreChange.bind(this)
   }
 
   componentDidMount() {
@@ -33,6 +34,10 @@ class ExpShow extends React.Component {
 
   handleChange(e) {
     this.setState({ text: e.target.value })
+  }
+
+  handleScoreChange(e) {
+    this.setState({ score: e.target.value })
   }
 
   handleSubmit(e) {
@@ -124,8 +129,10 @@ class ExpShow extends React.Component {
         <div className="columns">
           {this.state.experience.reviews.map(review =>
             <div key={review._id}>
-              <p>{`"${review.text}"`}</p>
-              <p><IoIosStar/>{`"${review.score}"`}</p>
+              <p className="review">{`"${review.text}"`}</p>
+              <h6>Score:</h6>
+              <p>{`${review.score}`}<IoIosStar/></p>
+              <p>{review.traveller.name}</p>
               <hr />
               {console.log(review)}
               {this.isOwnerReview(review.traveller._id) &&
@@ -145,6 +152,18 @@ class ExpShow extends React.Component {
                 value={this.state.text}
                 onChange={this.handleChange}/>
               <br />
+              <div className="field">
+                <label className="label">Score</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    name="age"
+                    number="number"
+                    value={this.state.score}
+                    onChange={this.handleScoreChange}
+                  />
+                </div>
+              </div>
               <input className="btn btn-success" type="submit" value="POST REVIEW" />
             </div>
           </form>

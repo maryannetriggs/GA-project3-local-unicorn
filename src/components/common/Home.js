@@ -19,15 +19,10 @@ class Home extends React.Component {
   render() {
     const city = this.state.city
     return (
-      <>
-        <h1 className="homeTitle">FIND YOUR LOCAL 🦄</h1>
-        <Link to="/cities">
-          <button>BROWSE ALL CITIES</button>
-        </Link>
-        <br />
-        <br />
-        <div className="city-dropdown">
-          <h4>PICK A CITY:</h4>
+      <>        
+        <div className="cityPicker">
+          <h4>PICK A CITY</h4>
+          <br/>
           <form>
             <select onChange={this.handleChange}>
               <option value="La Paz">La Paz</option>
@@ -46,10 +41,20 @@ class Home extends React.Component {
               <option value="Wellington">Wellington</option>
             </select>
           </form>
+          <br/>
           <Link to={{ pathname: '/unicorns', state: { from: city } }}>
-            <button>FIND MY UNICORN</button>
+            <button className="btn buttonColors">FIND MY UNICORN</button>
+          </Link>
+          <br/>
+          <br/>
+          <h4>OR</h4>
+          <Link to="/cities">
+            <button className="btn buttonColors">BROWSE ALL CITIES</button>
           </Link>
         </div>
+        <h1 className="homeTitle">FIND 
+        YOUR 
+        LOCAL 🦄</h1>
       </>
     )
   }

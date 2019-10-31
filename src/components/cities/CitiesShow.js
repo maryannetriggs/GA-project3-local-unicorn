@@ -25,25 +25,33 @@ class CitiesShow extends React.Component {
     if (!this.state.city) return null
     const { city } = this.state
     return (
-      <section className="container">
-        <div className="columns">
-          <img className="column col-12" src={city.image} alt={city.name}/>
-          <div className="column col-6">
-            <h3>{city.name}</h3>
-            <h3>{city.description}</h3>
-          </div>
-          <div className="column col-6">
-            <Link to={{ pathname: '/unicorns', state: { from: city.name } }}>
-              <button>FIND MY UNICORN</button>
-            </Link>
-            <br />
-            <br />
-            <Link to="/cities">
-              <button>BACK TO CITIES</button>
-            </Link>
-          </div>
+      // <section className="container">
+      <div className="columns">
+        <img className="column columnCoverImage col-12" src={city.image} alt={city.name}/>
+        <div className="column col-6">
+          <h2 className="showTitle">{city.name}</h2>
+          <br />
+          <br />
+          <p className="cityDes">{city.description}</p>
         </div>
-      </section >
+        <div className="column col-6 centre">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Link to={{ pathname: '/unicorns', state: { from: city.name } }}>
+            <button className="btn btn-success btn-lg">Check out our {city.name} unicorns!</button>
+          </Link>
+          <br />
+          <br />
+          <Link to="/cities">
+            <button className="btn btn-lg">Back to all cities</button>
+          </Link>
+        </div>
+      </div>
+      // </section >
     )
   }
 }

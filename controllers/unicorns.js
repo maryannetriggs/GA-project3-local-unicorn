@@ -62,6 +62,7 @@ function index(req, res) {
   Unicorn
     .find()
     .populate('city')
+    .populate('experiences')
     .then(unicorns => res.status(200).json(unicorns))
     .catch(() => res.status(400).json({ message: 'Not found' }))
 }

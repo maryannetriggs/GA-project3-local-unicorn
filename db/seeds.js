@@ -691,7 +691,7 @@ mongoose.connect(
             time: ['Evening']
           },
           {
-            name: 'The best bars you have never heard of, or at least been to!',
+            name: 'The best bars you have never heard of, or at least never been to!',
             image: 'https://pbs.twimg.com/media/Dec6AlaX4AIP4rN.jpg',
             description: 'I\'ll show you a selection of my favourite bars in London that you have either never heard of (like the Archers wine bar), or you most likely haven\'t been to (like the members bar at the Tate Modern).',
             category: ['Drink', 'Social'],
@@ -1384,7 +1384,7 @@ mongoose.connect(
             time: ['All-Day']
           },
           {
-            name: 'new york',
+            name: 'Classic New York',
             image: 'https://cdn.getyourguide.com/img/tour_img-1737331-145.jpg',
             description: 'Tour the world-class attractions Statue of Liberty, Statue of Liberty Museum and Ellis Island at your own pace with accompanying audio guides.',
             category: ['Culture'],

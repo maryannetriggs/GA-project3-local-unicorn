@@ -41,7 +41,7 @@ class UnicornShow extends React.Component {
                 <h3>{unicorn.name}, {unicorn.age}</h3>
                 <img className="unicornProfilePic" src={unicorn.profilePicture} alt={name}/>
                 <h3>{unicorn.city.name}</h3>
-                <h3>Languages Spoken:</h3> 
+                <h3>Language(s) Spoken:</h3> 
                 {unicorn.language.map((lang, i) => (
                   <h4 key={i}>{lang}</h4>
                 ))}

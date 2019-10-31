@@ -67,7 +67,7 @@ class Navbar extends React.Component {
           {/* <Link className="btn btn-link" to="/loginadmin">Login admin</Link> */}
 
           {isUnicorn && <Link className="btn btn-link" to="/unicorn">UNICORN profile</Link>}
-          {isTraveller && <Link className="btn btn-link" to="/travellers">TRAVELLER profile</Link>}
+          {isTraveller && <Link className="btn btn-link" to="/traveller">TRAVELLER profile</Link>}
 
           <Link className="btn btn-link" to="/cities">CITIES</Link>
           {/* <Link className="btn btn-link" to="/unicorns">UNICORNS</Link> */}

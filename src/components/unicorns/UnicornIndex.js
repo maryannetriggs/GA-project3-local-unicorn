@@ -57,10 +57,12 @@ class UnicornIndex extends React.Component {
             handleLanguage={this.handleLanguage}
           />
         </div>
-        <div>
-          {this.filteredUnicorns().map(unicorn => (
-            <UnicornCard key={unicorn._id} {...unicorn}/>
-          ))}
+        <div className="container">
+          <div className="columns">
+            {this.filteredUnicorns().map(unicorn => (
+              <UnicornCard key={unicorn._id} {...unicorn}/>
+            ))}
+          </div>
         </div>
       </>
     )

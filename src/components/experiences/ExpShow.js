@@ -88,52 +88,66 @@ class ExpShow extends React.Component {
     const { experience } = this.state
     const expId = experience._id
     return (
-      <section className="container">
+      <>
         <div className="columns">
-          <img className="column col-12" src={experience.image} alt={experience.name}/>
-          <div className="column col-6">
-            <h2>{experience.name}</h2>
+          <img className="column columnCoverImage col-12" src={experience.image} alt={experience.name}/>
+          <div className="column columnTall col-6">
+            <h2 className="showTitle">{experience.name}</h2>
             <br />
-            <p>{experience.description}</p>
+            <p className="expDes">{experience.description}</p>
+            <br />
+            <br />
+            {this.isOwnerExperience() &&
+        <>
+          <div className="spaceLeft">
+            <Link to={`/experiences/${expId}/edit`}>
+              <button className="btn btn-primary">EDIT THIS EXPERIENCE</button>
+            </Link>
+            <span> </span>
+            <button onClick={this.handleDelete} className="btn btn-error">DELETE THIS EXPERIENCE</button>
           </div>
-          <div className="column col-6">
-            <h3>{`${experience.category}`}</h3>
-            <h3><IoMdWalk/>{experience.intensity}</h3>
-            <h3><IoMdCash/>£{experience.price}</h3>
-            <h3><IoMdCalendar/>{`${experience.availability}`}</h3>
-            <h3><IoMdTime/>{`${experience.time}`}</h3>
+        </>
+            }
+          </div>
+          <div className="column columnTall col-6">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h4 className="spaceLeftMassive marginTop borderLeft"><span className="text-success">CATEGORY:  </span>{`${experience.category}`}</h4>
+            <h4 className="spaceLeftMassive textSize borderLeft"><span className="icon"><IoMdWalk/></span><span> </span>{experience.intensity}</h4>
+            <h4 className="spaceLeftMassive borderLeft"><span className="icon"><IoMdCash/></span><span> </span>£{experience.price}</h4>
+            <h4 className="spaceLeftMassive borderLeft"><span className="icon"><IoMdCalendar/></span><span> </span>{`${experience.availability}`}</h4>
+            <h4 className="spaceLeftMassive borderLeft"><span className="icon"><IoMdTime/></span><span> </span>{`${experience.time}`}</h4>
             <br />
             <Link to={{ pathname: '/book', state: { experience } }}>
-              <button>BOOK</button>
+              <div className="spaceLeftMassive">
+                <button className="btn btn-lg btn-success">Book this experience!</button>
+              </div>
             </Link>
             <br />
             <br />
-            <button onClick={() => this.props.history.goBack()}>
-              BACK TO THE UNICORN
-            </button>
+            <div className="spaceLeftMassive">
+              <button className="btn btn-lg" onClick={() => this.props.history.goBack()}>
+              Back to the unicorn
+              </button>
+            </div>
           </div>
-          {this.isOwnerExperience() &&
-        <>
-          <Link to={`/experiences/${expId}/edit`}>
-            <button>EDIT EXPERIENCE</button>
-          </Link>
-          <button onClick={this.handleDelete} className="btn btn-error">DELETE THIS EXPERIENCE</button>
-        </>
-          }
         </div>
-        <hr />
-        <h4>REVIEWS</h4>
         <br />
-        <div className="columns">
+        <h3 className="reviewTitle text-primary">REVIEWS</h3>
+        <br />
+        <div className="columns spaceLeftBig textLarge">
           {this.state.experience.reviews.map(review =>
-            <div key={review._id}>
-              <cite>{`${review.text}`}</cite>
+            <div className="reviewArea" key={review._id}>
+              <p className="textLarge">{`${review.text}`}</p>
               <br />
               <br />
-              <h6>Score:</h6>
-              <p>{`${review.score}`}<IoIosStar/></p>
-              <h6>Traveller:</h6>
-              <p>{review.traveller.name}</p>
+              <h6 className="textLarge text-success pushToRight">Score:</h6>
+              <p className="pushToRight">{`${review.score}`}<IoIosStar/></p>
+              <h6 className="textLarge text-primary pushToRight">Traveller:</h6>
+              <p className="pushToRight">{review.traveller.name}</p>
               <br />
               {console.log(review)}
               {this.isOwnerReview(review.traveller._id) &&
@@ -142,34 +156,39 @@ class ExpShow extends React.Component {
             </div>
           )}
           <br />
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <textarea 
-                className="form-input" 
-                name="text"
-                id="text" 
-                placeholder="Write your review here" 
-                rows="3"
-                value={this.state.text}
-                onChange={this.handleChange}/>
-              <br />
-              <div className="field">
-                <label className="label">Score (1-5)</label>
-                <div className="control">
-                  <input
-                    className="input"
-                    name="age"
-                    number="number"
-                    value={this.state.score}
-                    onChange={this.handleScoreChange}
-                  />
+          <div className="spaceSmall">
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                <textarea 
+                  className="form-input" 
+                  name="text"
+                  id="text" 
+                  placeholder="Write your review here" 
+                  rows="3"
+                  value={this.state.text}
+                  onChange={this.handleChange}/>
+                <br />
+                <div className="field">
+                  <label className="label">Score (1-5)</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      name="age"
+                      number="number"
+                      value={this.state.score}
+                      onChange={this.handleScoreChange}
+                    />
+                  </div>
                 </div>
+                <br />
+                <input className="btn btn-success" type="submit" value="POST REVIEW" />
+                <br />
+                <br />
               </div>
-              <input className="btn btn-success" type="submit" value="POST REVIEW" />
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </section >
+      </>
     )
   }
 }

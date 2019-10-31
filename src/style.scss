@@ -26,6 +26,122 @@ body {
   color: black
 }
 
+// Showpages:
+.cityDes {
+  border-style: none solid none none;
+  border-width: 1px;
+  margin-left: 20px;
+  padding-right: 50px;
+  font-size: 25px;
+}
+
+.expDes {
+  margin-left: 20px;
+  padding-right: 50px;
+  font-size: 25px;
+}
+
+.spaceLeft {
+  padding-left: 20px;
+}
+
+.spaceLeftBig {
+  padding-left: 30px;
+}
+
+.spaceLeftMassive {
+  padding-left: 100px;
+}
+
+.marginTop {
+  margin-top: 6px;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.showTitle {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.reviewTitle {
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.unicornAbout {
+  margin-top: 20px;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.aboutUnicorn {
+  padding-right: 50px;
+  font-size: 20px;
+}
+
+.unicornInfo {
+  font-size: 17px;
+}
+
+.profilePic {
+  height: 300px;
+  width: auto;
+}
+
+.paddingTop {
+  padding-top: 20px;
+}
+
+.borderLeft {
+  border-style: none none none solid;
+  border-width: 1px;
+}
+
+.topBorder {
+  border-style: solid none none none;
+  border-width: 1px;
+}
+
+.columnCoverImage {
+  padding: 0px;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.columnTall {
+  height: auto;
+  // border: solid;
+}
+
+.textLarge {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+
+}
+
+.reviewArea {
+  border: solid;
+  border-width: 1px;
+  margin: 10px;
+  width: 300px;
+}
+
+.pushToRight {
+  padding-left: 150px;
+}
+
+.spaceSmall {
+  padding-left: 10px;
+}
+
 //HOMEPAGE. 
 
 .home {
@@ -84,13 +200,6 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 .city {
   margin: 0 auto;
   object-fit: cover;
-}
-
-.column {
-  padding: 0px;
-  height: 40vh;
-  object-fit: cover;
-  // border: solid;
 }
 
 .container {
@@ -159,6 +268,7 @@ h3 {
       height: 600px;
     }
   }
+
 
   .expName {
     display: flex;

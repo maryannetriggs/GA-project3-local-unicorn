@@ -24,24 +24,44 @@ class BookingPage extends React.Component {
 
   render() {
     const experience = this.props.location.state.experience
-    console.log(this.state)
     return (
       <>
         <div>
-          <h1>You&aposre booking &apos{experience.name}&apos with {experience.unicorn.name}</h1>
+          <h2 className="centre">You are booking {experience.name} with {experience.unicorn.name}</h2>
         </div>
-        <ExpCard key={experience._id} {...experience}/>
 
-        <h3>Unicorn availability: {experience.availability} {experience.time}</h3>
-        
-        <DatePicker
-          selected={this.state.startDate}
-          onChange={this.handleChange}
-          inline
-        />
-        <Link to="/bookingrequest">
-          <button>BOOK NOW NOW NOW!</button>
-        </Link>
+        <section className="container">
+          <div className="columns">
+            <div className="column col-6 centre">
+              <ExpCard key={experience._id} {...experience}/>
+              <h3>Days availabile:</h3> 
+              <>
+                {experience.availability.map((avail, i) => (
+                  <h4 key={i}>{avail} </h4>
+                ))}
+              </>
+              <h3>Times availabile:</h3> 
+              <>
+                {experience.time.map((time, i) => (
+                  <h4 key={i}>{time} </h4>
+                ))}
+              </>
+
+            </div>
+
+            <div className="column col-6 centre">
+              <DatePicker
+                selected={this.state.startDate}
+                onChange={this.handleChange}
+                inline
+              />
+              <Link to="/bookingrequest">
+                <button className="btn buttonColors">BOOK NOW!</button>
+              </Link>
+            </div>
+            
+          </div>
+        </section>
       </>
     )
   }

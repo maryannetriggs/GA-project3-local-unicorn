@@ -2,18 +2,23 @@
   box-sizing: border-box;
 }
 
+// Default Colour Schemes
+$primary-color: #fff;
+
+// Universal Schemes
+
 body {
   padding: 0px;
   font-family:'Raleway', sans-serif;
 }
 
+.buttonColors {
+  background: $primary-color;
+  border-color: black;
+  color: black
+}
 
-// PROPOSED STYLING FOR HOMEPAGE. 
-// It took me wuite a while to figure out how to do this, and now that I hage done it - I LOVE IT! 
-// I think if we keep the rest of the page white and sleek, with a few light grey lines to separate the search boxes, 
-// and maybe ad a turqoise/pink (to pick up on one "masquline" and one "feminie" colour from the moving background)
-// as an underline to the navbar items on hover; then alltogether I think it could look really cool!
-// What do you guys think?
+//HOMEPAGE. 
 
 .home {
   height: 100vh;
@@ -50,6 +55,8 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 // ALTERNATIVE 2 - still image:
 // background: url('https://i.dailymail.co.uk/i/pix/2015/11/19/17/2E9971C500000578-3325659-image-a-48_1447953828909.jpg');
 // background-size: cover;
+
+
 
 .city-card {
   height: 300px;

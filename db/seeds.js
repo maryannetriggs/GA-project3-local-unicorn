@@ -1459,8 +1459,73 @@ mongoose.connect(
             unicorn: unicorns[21],
             availability: ['Sunday', 'Friday'],
             time: ['All-Day']
+          },
+          {
+            name: 'Must see\'s and some hidden gems',
+            image: 'https://www.tappersia.com/wp-content/uploads/2018/08/Golestan-Palace-Tehran-UNESCO-Sites-TAP-Persia3-1.jpg',
+            description: 'Tehran is full of beautiful museums, buildings, and gardens, including UNESCO world herritage site Golestan Palace, and the extraordinary Treasury of National Jewels chamber. I will take you on a tour of my favourite sites and give you the inside track on the history behind them.',
+            category: ['Outdoors', 'Culture'],
+            intensity: 'Medium',
+            price: 5,
+            unicorn: unicorns[14],
+            availability: ['Tuesday', 'Wednesday', 'Thursday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Persian rugs galore',
+            image: 'https://media.mehrnews.com/d/2019/02/18/4/3051022.jpg',
+            description: 'Persian rugs are world-famous, and with good reason. A true persian rug is a handmade masterpeice that can take years to complete and with the finest wool or silk money can buy. But knowing where to go to find good quality for a reasonable price can be difficult if you are new to the city (and don\'t speak Farci). Let me take you round the the best vendors, off the beaten tourist track. No commission!',
+            category: ['Social', 'Culture'],
+            intensity: 'Low',
+            price: 0,
+            unicorn: unicorns[14],
+            availability: ['Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            time: ['Morning', 'Afternoon']
+          },
+          {
+            name: 'Modern art galleries the locals love',
+            image: 'https://images.saatchiart.com/saatchi/904263/art/3322502/2392389-NANHAVST-7.jpg',
+            description: 'Tehran has a bustling art scene that doesn\'t get much attention in the international media. Let me take you on an art tour that will make you think you are London or NYC when it comes to talent. Etemad Gallery will be one of our first stops - known for showcasing some of Iran\'s most exciting new modern (and often controversial) artists.',
+            category: ['Social', 'Culture'],
+            intensity: 'Medium',
+            price: 5,
+            unicorn: unicorns[22],
+            availability: ['Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            time: ['Morning', 'Afternoon']
+          },
+          {
+            name: 'Enjoy extraordinary coffee and pastry in cafes without having to wear your hijab...',
+            image: 'https://331mrnu3ylm2k3db3s1xd1hg-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/Sprudge-CafeRoberto-SafaHaratian-_8HG4540-copy-740x494.jpg',
+            description: 'The north of Tehran is where all the glam is and the sleek and stylish hang out. To cater for them, cafes like Roberto Cafe and Saboos Bakery have become trndy brunch and coffee institutions. The vibe is most certianly NY\'s Brooklyn meets London\'s Mayfair and its not uncommon to see ladies take their hijabs off, despite it technically being against the law. Let me show you this part of our beautiful city and the wonderful people in it.',
+            category: ['Social', 'Food', 'Drink'],
+            intensity: 'Low',
+            price: 0,
+            unicorn: unicorns[22],
+            availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            time: ['Morning', 'Afternoon', 'Evening']
+          },
+          {
+            name: 'The most scenic dinner in Tehran',
+            image: 'https://www.likealocalguide.com/media/cache/78/cf/78cfc330d3c978beaba659bbad0f0f2f.jpg',
+            description: 'Let me take you up to Darband for an evening, showing you the most stunning, romantic restaurants in our city. And we can find a lovely place to share a ghelyoon (shisha) after dinner, if that would be of interest.',
+            category: ['Social', 'Food', 'Drink'],
+            intensity: 'Low',
+            price: 20,
+            unicorn: unicorns[22],
+            availability: ['Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            time: ['Evening']
+          },
+          {
+            name: 'The Bazaar done the way the locals do it',
+            image: 'https://thecitylane.com/wp-content/uploads/2015/08/DSCF8063.jpg',
+            description: 'There are a few different bazaars in Tehran, but the Grand Bazaar is the crown jewel. However being inside it can feel like being the a needle in a haystack. Let me guide you through the 10km of stalls and shops, teach you how to haggle the iranian way, and get the the best quality of everything from tea to saffron.',
+            category: ['Social', 'Food', 'Drink', 'Outdoors'],
+            intensity: 'Medium',
+            price: 0,
+            unicorn: unicorns[14],
+            availability: ['Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            time: ['Morning', 'Afternoon']
           }
-          
         ])
       })
       .then(experiences => console.log(`${experiences.length} experiences created`))

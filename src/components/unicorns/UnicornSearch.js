@@ -7,13 +7,16 @@ const UnicornSearch = ({ handleGender, handleLanguage }) => {
 
       <div>
         <h2>Gender</h2>
-        <select onChange={handleGender}>
-          <option value="All">All</option>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-        </select>
+        <div className="field">
+          <select classnameonChange={handleGender}>
+            <div className="control">
+              <option value="All">All</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </div>
+          </select>
+        </div>
       </div>
-
       <div>
         <h2>Language</h2>
         <select onChange={handleLanguage}>

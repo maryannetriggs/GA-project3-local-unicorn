@@ -22,6 +22,7 @@ class RegisterUnicorn extends React.Component {
         password: '',
         passwordConfirmation: ''
       },
+      errors: {},
       cities: []
     }
 
@@ -59,7 +60,8 @@ class RegisterUnicorn extends React.Component {
   handleChange({ target: { name, value, type, checked } }) {
     const newValue = type === 'checkbox' ? checked : value
     const data = { ...this.state.data, [name]: newValue }
-    this.setState({ data })
+    const errors = { ...this.state.errors, [name]: '' }
+    this.setState({ data, errors })
   }
 
   handleCreatableSelect(selected) {
@@ -88,13 +90,16 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Full name</label>
               <div className="control">
                 <input 
-                  className="input"
+                  // className="input"
+                  className={`form-input col-5 ${this.state.errors.name ? 'is-error' : ''}`}
                   type="text"
                   name="name"
                   placeholder="Full name"
                   value={data.name}
                   onChange={this.handleChange}
                 />
+                <p className="form-input-hint">{`${this.state.errors.name ? 'A name is required' : ''}`}</p>
+
               </div>
             </div>
 
@@ -102,12 +107,15 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Profile picture (url)</label>
               <div className="control">
                 <input 
-                  className="input"
+                  // className="input"
+                  className={`form-input col-5 ${this.state.errors.profilePicture ? 'is-error' : ''}`}
                   name="profilePicture"
                   placeholder="My profile picture"
                   value={data.profilePicture}
                   onChange={this.handleChange}
                 />
+                <p className="form-input-hint">{`${this.state.errors.profilePicture ? 'An image URL is required' : ''}`}</p>
+
               </div>
             </div>
 
@@ -115,22 +123,30 @@ class RegisterUnicorn extends React.Component {
               <label className="label">About me</label>
               <div className="control">
                 <textarea 
-                  className="textarea"
+                  // className="textarea"
+                  className={`form-input col-5 ${this.state.errors.about ? 'is-error' : ''}`}
                   name="about"
                   placeholder="About me"
                   value={data.about}
                   onChange={this.handleChange}
                 />
+                <p className="form-input-hint">{`${this.state.errors.about ? 'This area is required' : ''}`}</p>
+
               </div>
             </div>
 
             <div className="field">
               <label className="label">City</label>
               <div className="select">
-                <select name="city" onChange={this.handleChange} value={data.city}>
+                <select 
+                  className={`form-select ${this.state.errors.city ? 'is-error' : ''}`}
+                  name="city" 
+                  onChange={this.handleChange} 
+                  value={data.city}>
                   <option value="" disabled>Select your city</option>
                   {cities.map(city => <option key={city._id} value={city._id}>{city.name}</option>)}
                 </select>
+                <p className="form-input-hint">{`${this.state.errors.about ? 'Select a city.' : ''}`}</p>
               </div>
             </div>
 
@@ -142,6 +158,7 @@ class RegisterUnicorn extends React.Component {
                   isMulti
                   onChange={this.handleCreatableSelect}
                   components={animatedComponents}
+                  errors={this.state.errors}
                 />
               </div>
             </div>
@@ -150,20 +167,26 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Age</label>
               <div className="control">
                 <input
-                  className="input"
+                  // className="input"
+                  className={`form-input col-5 ${this.state.errors.age ? 'is-error' : ''}`}
                   name="age"
                   number="number"
                   placeholder="My age"
                   value={data.age}
                   onChange={this.handleChange}
                 />
+                <p className="form-input-hint">{`${this.state.errors.age ? 'Please, enter a number.' : ''}`}</p>
+
               </div>
             </div>
 
             <div className="field">
               <label className="label">Gender</label>
               <div className="select">
-                <select name="gender" onChange={this.handleChange} value={data.gender}>
+                <select name="gender"
+                  onChange={this.handleChange} 
+                  value={data.gender}
+                  className={`form-select ${this.state.errors.gender ? 'is-error' : ''}`}>
                   <option value="" disabled>Select your gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -176,12 +199,15 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Email</label>
               <div className="control">
                 <input
-                  className="input"
+                  // className="input"
+                  className={`form-input col-5 ${this.state.errors.email ? 'is-error' : ''}`}
                   name="email"
                   placeholder="Email"
                   value={data.email}
                   onChange={this.handleChange}
                 />
+                <p className="form-input-hint">{`${this.state.errors.email ? 'An email is required.' : ''}`}</p>
+
               </div>
             </div>
 
@@ -189,13 +215,16 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Password</label>
               <div className="control">
                 <input
-                  className="input"
+                  // className="input"
+                  className={`form-input col-5 ${this.state.errors.password ? 'is-error' : ''}`}
                   type="password"
                   name="password"
                   placeholder="Password"
                   value={data.password}
                   onChange={this.handleChange}
                 />
+                <p className="form-input-hint">{`${this.state.errors.password ? 'A password is required.' : ''}`}</p>
+
               </div>
             </div> 
 
@@ -203,13 +232,16 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Password confirmation</label>
               <div className="control">
                 <input
-                  className="input"
+                  // className="input"
+                  className={`form-input col-5 ${this.state.errors.passwordConfirmation ? 'is-error' : ''}`}
                   type="password"
                   name="passwordConfirmation"
                   placeholder="Password confirmation"
                   value={data.passwordConfirmation}
                   onChange={this.handleChange}
                 />
+                <p className="form-input-hint">{`${this.state.errors.passwordConfirmation ? 'Oops, the passwords do not match' : ''}`}</p>
+
               </div>
             </div>   
             <br/>

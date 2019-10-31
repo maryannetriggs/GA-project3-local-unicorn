@@ -18,7 +18,8 @@ class ExpEdit extends React.Component {
         availability: [''],
         time: [''],
         category: ['']
-      }
+      },
+      errors: {}
     }
     
 
@@ -95,6 +96,7 @@ class ExpEdit extends React.Component {
           handleMultiSelectAvailability={this.handleMultiSelectAvailability}
           handleMultiSelectCategory={this.handleMultiSelectCategory}
           handleMultiSelectTime={this.handleMultiSelectTime}
+          errors={this.state.errors}
         />
       </div>
     )

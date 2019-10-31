@@ -49,6 +49,9 @@ class UnicornIndex extends React.Component {
     return (
       <>
         <div>
+          <h2>{this.props.location.state.from}</h2>
+        </div>
+        <div>
           <UnicornSearch 
             handleGender={this.handleGender}
             handleLanguage={this.handleLanguage}

@@ -30,18 +30,16 @@ class Navbar extends React.Component {
 
           <Link className="btn btn-link" to="/loginunicorn">Login unicorn</Link>
           <Link className="btn btn-link" to="/logintraveller">Login traveller</Link>
-          <Link className="btn btn-link" to="/loginadmin">Login admin</Link>
+          {/* <Link className="btn btn-link" to="/loginadmin">Login admin</Link> */}
 
           <Link className="btn btn-link" to="/unicorn">UNICORN profile</Link>
-          <Link className="btn btn-link" to="/traveller">TRAVELLER profile</Link>
+          <Link className="btn btn-link" to="/travellers">TRAVELLER profile</Link>
 
           <Link className="btn btn-link" to="/cities">CITIES</Link>
-          <Link className="btn btn-link" to="/unicorns">UNICORNS</Link>
-          <Link className="btn btn-link" to="/experiences">EXPERIENCES</Link>
+          {/* <Link className="btn btn-link" to="/unicorns">UNICORNS</Link> */}
+          {/* <Link className="btn btn-link" to="/experiences">EXPERIENCES</Link> */}
 
-          <Link className="btn btn-link" to="/travellers">TRAVELLERS</Link>
-
-          <a onClick={this.handleLogout} className="btn btn-link">LOGOUT</a>
+          {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="btn btn-link">LOGOUT</a>}
         </div>
       </nav>
     )

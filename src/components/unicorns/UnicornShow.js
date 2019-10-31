@@ -27,7 +27,6 @@ class UnicornShow extends React.Component {
   render() {
     if (!this.state.unicorn) return null
     const { unicorn } = this.state
-    console.log(this.props.history)
     return (
       <section className="container">
         <div className="columns">

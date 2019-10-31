@@ -28,7 +28,7 @@ class BookingPage extends React.Component {
     return (
       <>
         <div>
-          <h1>You're booking '{experience.name}' with {experience.unicorn.name}</h1>
+          <h1>You&aposre booking &apos{experience.name}&apos with {experience.unicorn.name}</h1>
         </div>
         <ExpCard key={experience._id} {...experience}/>
 

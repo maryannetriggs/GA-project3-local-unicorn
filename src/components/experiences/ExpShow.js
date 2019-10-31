@@ -80,10 +80,8 @@ class ExpShow extends React.Component {
 
   render() {
     if (!this.state.experience) return null
-    console.log(this.state)
     const { experience } = this.state
     const expId = experience._id
-    console.log(this.state.experience)
     return (
       <section className="container">
         <div className="columns">

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Traveller = require('../models/Traveller')
 
 const reviewSchema = new mongoose.Schema({
-  text: { type: String, required: true },
+  text: { type: String, required: true, maxlength: 500 },
   score: { type: Number, min: 0, max: 5  },
   traveller: { type: mongoose.Schema.ObjectId, ref: Traveller, required: true }
 }, {

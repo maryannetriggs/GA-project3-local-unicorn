@@ -1371,161 +1371,95 @@ mongoose.connect(
             unicorn: unicorns[23],
             availability: ['Sunday'],
             time: ['Morning']
+          },
+          {
+            name: 'Helicopter Ride',
+            image: 'https://cdn.getyourguide.com/img/tour_img-1718257-145.jpg',
+            description: 'Fly in your private helicopter between major airports and Manhattan and enjoy scenic views on the way.',
+            category: ['Outdoors'],
+            intensity: 'High',
+            price: 1800,
+            unicorn: unicorns[2],
+            availability: ['Monday', 'Wednesday', 'Friday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'new york',
+            image: 'https://cdn.getyourguide.com/img/tour_img-1737331-145.jpg',
+            description: 'Tour the world-class attractions Statue of Liberty, Statue of Liberty Museum and Ellis Island at your own pace with accompanying audio guides.',
+            category: ['Culture'],
+            intensity: 'Medium',
+            price: 90,
+            unicorn: unicorns[2],
+            availability: ['Sunday'],
+            time: ['Afternoon']
+          },
+          {
+            name: 'Christmas Magic Tour',
+            image: 'https://cdn.getyourguide.com/img/tour_img-1418378-145.jpg',
+            description: 'The ultimate Christmas experience in New York City.',
+            category: ['Culture'],
+            intensity: 'Low',
+            price: 25,
+            unicorn: unicorns[16],
+            availability: ['Wednesday', 'Friday'],
+            time: ['Afternoon']
+          },
+          {
+            name: 'Central Park Hidden Secrets',
+            image: 'https://images.adsttc.com/media/images/5bc8/ad3b/f197/cc6b/2200/03c9/slideshow/06_Alternative-Central-Park-6.jpg?1539878195',
+            description: 'Central Park is an urban park in Manhattan, New York City, located between the Upper West Side and the Upper East Side.',
+            category: ['Outdoors'],
+            intensity: 'Low',
+            price: 20,
+            unicorn: unicorns[16],
+            availability: ['Sunday', 'Monday'],
+            time: ['All-Day']
+          },
+          {
+            name: 'Shanghai City Walk And Hidden Gems',
+            image: 'https://www.chinadaily.com.cn/travel/img/attachement/jpg/site1/20151109/wires_1447050677656_middle.jpg',
+            description: 'The Bund or Waitan is a waterfront area in central Shanghai.',
+            category: ['Outdoors'],
+            intensity: 'Low',
+            price: 10,
+            unicorn: unicorns[12],
+            availability: ['Monday','Tuesday'],
+            time: ['Afternoon']
+          },
+          {
+            name: 'Yu Garden or Yuyuan Garden Adventure',
+            image: 'https://blog.airpaz.com/wp-content/uploads/YU-YUAN-GARDEN.png',
+            description: 'Yu Garden or Yuyuan Garden is an extensive Chinese garden located in the northeast of the Old City of Shanghai at Huangpu Qu, Shanghai Shi.',
+            category: ['Outdoors'],
+            intensity: 'Medium',
+            price: 20,
+            unicorn: unicorns[12],
+            availability: ['Sunday','Wednesday'],
+            time: ['Morning']
+          },
+          {
+            name: 'Street food in Shanghai',
+            image: 'https://blog.urbanadventures.com/wp-content/uploads/2018/05/shanghai_street_food.jpeg',
+            description: 'There are a few famous Shanghai snacks streets. For local Shanghai native or new visitors, they will go to the snack street looking for local-flavored food.',
+            category: ['Food'],
+            intensity: 'Low',
+            price: 5,
+            unicorn: unicorns[21],
+            availability: ['Monday', 'Wednesday'],
+            time: ['Afternoon']
+          },
+          {
+            name: 'Biking Through Shanghai',
+            image: 'https://www.adventurecycling.org/sites/default/assets/Image/blog/Guest%20Posts/KarlSchlinger/radler_in_shanghai_707x461.jpg',
+            description: 'Despite its busy reputation, Shanghai is a very bike-friendly city. With such a gorgeous mix of old and new architecture, it’s the perfect place to explore on two wheels.',
+            category: ['Outdoors'],
+            intensity: 'Medium',
+            price: 25,
+            unicorn: unicorns[21],
+            availability: ['Sunday', 'Friday'],
+            time: ['All-Day']
           }
-          // {
-          //   name: 'new york',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[2],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'new york',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[2],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'ny',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[16],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'ny',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[16],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'ny',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[16],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[12],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[12],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[12],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[12],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[2],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[2],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[2],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[2],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // },
-          // {
-          //   name: 'Shanghai',
-          //   image: '',
-          //   description: '',
-          //   category: ['Food'],
-          //   intensity: '',
-          //   price: 5,
-          //   unicorn: unicorns[2],
-          //   availability: ['Sunday'],
-          //   time: ['Afternoon']
-          // }
           
         ])
       })

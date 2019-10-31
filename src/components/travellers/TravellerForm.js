@@ -1,29 +1,26 @@
 import React from 'react'
 
 const TravellerForm = ({ data, handleChange, handleSubmit, errors }) => (
-  <form className="form-horisontal" onSubmit={handleSubmit}>
-    <div className="formBackground">
-      <div>
-        <label>Name</label>
-        <div>
-          <input 
+  <section className="registerTraveller">
 
-            className={`form-input ${errors.name ? 'is-error' : ''}`}
+    <div className="regForm form-group">
+      <h2 className="register">Traveller - Edit</h2>
+
+      <form className="centre form-horisontal" onSubmit={handleSubmit}>
+        <div className="formBackgroundReg form-group"> 
+          <label>Name</label>
+          <input 
+            className={`form-input col-12 ${errors.name ? 'is-error' : ''}`}
             placeholder="Name"
             name="name"
             onChange={handleChange}
             value={data.name}
           />
           <p className="form-input-hint">{`${errors.name ? 'This area is required is required' : ''}`}</p>
-
-        </div>
-      </div>
-
-      <div>
-        <label>Profile Picture</label>
-        <div>
+         
+          <label>Profile Picture</label> 
           <input 
-            className={`form-input ${errors.profilePicture ? 'is-error' : ''}`}
+            className={`form-input col-12${errors.profilePicture ? 'is-error' : ''}`}
             placeholder="Profile Picture"
             name="profilePicture"
             onChange={handleChange}
@@ -31,15 +28,9 @@ const TravellerForm = ({ data, handleChange, handleSubmit, errors }) => (
           />
           <p className="form-input-hint">{`${errors.profilePicture ? 'An image URL is required' : ''}`}</p>
 
-        </div>
-      </div>
-
-      <div>
-        <label>About</label>
-        <div>
+          <label>About</label>
           <textarea 
-            
-            className={`form-input ${errors.about ? 'is-error' : ''}`}
+            className={`form-input col-12 ${errors.about ? 'is-error' : ''}`}
             placeholder="About"
             name="about"
             onChange={handleChange}
@@ -47,29 +38,19 @@ const TravellerForm = ({ data, handleChange, handleSubmit, errors }) => (
           />
           <p className="form-input-hint">{`${errors.about ? 'This section is required' : ''}`}</p>
 
-        </div>
-      </div>
-
-      <div>
-        <label>Country</label>
-        <div>
+          <label>Country</label>  
           <input
-            className={`form-input ${errors.country ? 'is-error' : ''}`} 
+            className={`form-input col-12 ${errors.country ? 'is-error' : ''}`} 
             placeholder="Country"
             name="country"
             onChange={handleChange}
             value={data.country}
           />
           <p className="form-input-hint">{`${errors.country ? 'This section is required' : ''}`}</p>
-
-        </div>
-      </div>
-
-      <div>
-        <label>Expreriences</label>
-        <div>
+        
+          <label>Expreriences</label>
           <input 
-            className={`form-input ${errors.experiences ? 'is-error' : ''}`}
+            className={`form-input col-12 ${errors.experiences ? 'is-error' : ''}`}
             placeholder="Number of experiences booked"
             name="experiences"
             onChange={handleChange}
@@ -77,12 +58,11 @@ const TravellerForm = ({ data, handleChange, handleSubmit, errors }) => (
           />
           <p className="form-input-hint">{`${errors.experiences ? 'This section is required' : ''}`}</p>
 
+          <button type="submit" className="btn btn-success">SUBMIT</button>
         </div>
-      </div>
-
-      <button type="submit" className="btn btn-success">SUBMIT</button>
+      </form>
     </div>
-  </form>
+  </section>
 )
 
 export default TravellerForm

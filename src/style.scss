@@ -27,10 +27,9 @@ h1, h2, h3, h4, h5, h6, p {
 .buttonColors {
   background: $primary-color;
   border-color: black;
-  color: black
+  color: black;
 }
 
-<<<<<<< HEAD
 // NAVBAR 
 
 .nav-links {
@@ -40,7 +39,8 @@ h1, h2, h3, h4, h5, h6, p {
     text-decoration-color: black;
     justify-self: center;
   }
-=======
+}
+
 // Showpages:
 .cityDes {
   border-style: none solid none none;
@@ -139,7 +139,6 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   flex-wrap: wrap;
   font-size: 20px;
-
 }
 
 .reviewArea {
@@ -155,7 +154,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .spaceSmall {
   padding-left: 10px;
->>>>>>> development
 }
 
 //HOMEPAGE. 
@@ -227,19 +225,16 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
   object-fit: cover;
 }
 
-<<<<<<< HEAD
 // .column {
 //   padding: 0px;
 //   height: 40vh;
 //   object-fit: cover;
 //   border: black 1px solid;
 // }
-=======
 .container {
   height: 100vh;
   width: 100vw;
 }
->>>>>>> development
 
 // .container {
 //   height: 100vh;

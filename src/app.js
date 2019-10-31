@@ -10,6 +10,8 @@ import './style.scss'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import SecureRoute from './components/common/SecureRoute'
+import BookingPage from './components/common/BookingPage'
+import BookingRequestSent from './components/common/BookingRequestSent'
 
 // REGISTER:
 import RegisterTraveller from './components/auth/RegisterTraveller'
@@ -56,6 +58,8 @@ const App = () => (
         <Navbar/>
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route path="/book" component={BookingPage}/>
+          <Route path="/bookingrequest" component={BookingRequestSent}/>
 
           <Route path="/registerunicorn" component={RegisterUnicorn}/>
           <Route path="/registertraveller" component={RegisterTraveller}/>

@@ -86,6 +86,7 @@ class ExpShow extends React.Component {
     if (!this.state.experience) return null
     const { experience } = this.state
     const expId = experience._id
+    console.log(this.state.experience)
     return (
       <section className="container">
         <div className="columns">
@@ -102,7 +103,9 @@ class ExpShow extends React.Component {
             <h3><IoMdCalendar/>{`${experience.availability}`}</h3>
             <h3><IoMdTime/>{`${experience.time}`}</h3>
             <br />
-            <button>BOOK</button>
+            <Link to={{ pathname: '/book', state: { experience } }}>
+              <button>BOOK</button>
+            </Link>
             <br />
             <br />
             <button>BACK</button>

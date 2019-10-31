@@ -28,7 +28,6 @@ class Home extends React.Component {
         <br />
         <form>
           <select onChange={this.handleChange}>
-            <option value="All">All</option>
             <option value="La Paz">La Paz</option>
             <option value="London">London</option>
             <option value="Madrid">Madrid</option>

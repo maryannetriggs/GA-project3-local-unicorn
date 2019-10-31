@@ -59,12 +59,10 @@ class UnicornShow extends React.Component {
           </div>
           <div className="column col-12">
             <h3>Experiences</h3>
-            <div className="container">
-              <div className="columns">
-                {unicorn.experiences.map(exp => (
-                  <ExpCard key={exp._id} {...exp} />
-                ))}
-              </div>
+            <div className="columns">
+              {unicorn.experiences.map(exp => (
+                <ExpCard key={exp._id} {...exp} />
+              ))}
             </div>
           </div>
         </div>

@@ -1,15 +1,23 @@
-* {
-  box-sizing: border-box;
-}
-
 // Default Colour Schemes
+
 $primary-color: #fff;
 
 // Universal Schemes
 
+* {
+  box-sizing: border-box;
+  color: black;
+}
+
 body {
   padding: 0px;
   font-family:'Raleway', sans-serif;
+}
+
+.centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buttonColors {
@@ -82,7 +90,7 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
   padding: 0px;
   height: 40vh;
   object-fit: cover;
-  border: solid;
+  // border: solid;
 }
 
 .container {
@@ -171,12 +179,40 @@ h3 {
 
   .card {
     width: 400px;
-    height: 700px;
+    height: auto;
     padding: 20px;
     margin: 20px;
   }
 
+  .veryBold {
+    font-weight: 900;
+  }
 
+// BOOKING PAGE PAGE
 
+.bookingInfoWrapper {
+  margin-bottom: 30px;
+}
+.bookingInfo {
+  font-weight: 700;
+}
+.bookButton {
+  button {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+}
 
-  
+// BOOKING REQUEST SENT PAGE
+
+.bookingRequest {
+  margin-top: 50px;
+  h2 {
+    font-size: 40px;
+  }
+  button {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+}
+

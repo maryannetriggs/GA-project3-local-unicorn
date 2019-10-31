@@ -8,10 +8,10 @@ const UnicornCard = ({ name, profilePicture, language, experiences, _id }) => (
     </div>
     <div className="card-header">
       <div className="card-title text-uppercase h4">{name}</div>
-      <div className="card-subtitle text-primary">Language(s) spoken: {`${language}`}</div>
+      <div className="card-subtitle"><b className="text-primary">Language(s) spoken:</b>{` ${language}`}</div>
     </div>
     <div className="card-body">
-      <u>My awesome experiences:</u>
+      <u className="text-success">My awesome experiences:</u>
       <div className="expname">
         {experiences.map(exp => (
           <li className="expName" key={exp.name}>{`※ ${exp.name}`}</li>

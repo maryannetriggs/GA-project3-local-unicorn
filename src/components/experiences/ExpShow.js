@@ -109,7 +109,7 @@ class ExpShow extends React.Component {
             <br />
             <br />
             <button onClick={() => this.props.history.goBack()}>
-              BACK
+              BACK TO THE UNICORN
             </button>
           </div>
           {this.isOwnerExperience() &&

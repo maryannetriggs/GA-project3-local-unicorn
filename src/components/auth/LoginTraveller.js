@@ -41,8 +41,8 @@ class LoginTraveller extends React.Component {
           <div className=" formBackground form-group">
             <label className="form-label" htmlFor="email">Email</label>
             <input 
-              // className="form-input col-7" 
-              className={`form-input col-7 ${this.state.errors.email ? 'is-error' : ''}`}
+              className="form-input col-7" 
+              // className={`form-input col-7 ${this.state.errors.email ? 'is-error' : ''}`}
               name="email" 
               type="text" 
               id="email" 

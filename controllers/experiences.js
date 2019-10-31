@@ -65,7 +65,7 @@ function reviewCreate(req, res, next) {
   req.body.traveller = req.currentTraveller
   Exp
     .findById(req.params.id)
-    .populate('reviews.traveller')
+    .populate('reviews.traveller.name')
     .then(experience => {
       if (!experience) return res.status(404).json({ message: 'Experience not available for review' })
       experience.reviews.push(req.body)

@@ -15,7 +15,7 @@ class CitiesIndex extends React.Component {
   componentDidMount() {
     axios.get('/api/cities')
       .then(res => this.setState({ cities: res.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {

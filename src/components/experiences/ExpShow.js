@@ -4,18 +4,14 @@ import Auth from '../../lib/auth'
 import { IoMdWalk, IoMdTime, IoMdCalendar, IoMdCash, IoIosStar } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 
-
-// import ReviewCard from '../reviews/ReviewCard'
-
 class ExpShow extends React.Component {
   constructor() {
     super()
 
     this.state = {
       experience: null,
-      experienceName: '',
       text: '',
-      score: ''
+      score: 5
 
     }
     this.handleDelete = this.handleDelete.bind(this)
@@ -41,13 +37,12 @@ class ExpShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-
     const experienceId = this.props.match.params.id
-    axios.post(`/api/experiences/${experienceId}/reviews`, { experienceName: this.state.experienceName }, { text: this.state.text }, { score: this.state.score }, {
+    axios.post(`/api/experiences/${experienceId}/reviews`, { text: this.state.text, score: this.state.score }, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => {
-        this.setState({ experience: res.data, experienceName: '', text: '', score: '' })
+        this.setState({ experience: res.data, text: '', score: '' })
       })
       .catch(err => console.log(err))
   }
@@ -78,12 +73,14 @@ class ExpShow extends React.Component {
     return Auth.getPayload().sub === this.state.experience.unicorn._id
   }
 
-  isOwnerReview() {
-    return Auth.getPayload().sub === this.state.experience.traveller._id
+  isOwnerReview(id) {
+    console.log(Auth.getPayload().sub, id)
+    return Auth.getPayload().sub === id
   }
 
   render() {
     if (!this.state.experience) return null
+    console.log(this.state)
     const { experience } = this.state
     const expId = experience._id
     console.log(this.state.experience)
@@ -108,35 +105,31 @@ class ExpShow extends React.Component {
             </Link>
             <br />
             <br />
-            <button>BACK</button>
-            <br />
-            <br />
-            <Link to={`/experiences/${expId}/edit`}>
-              <button>EDIT EXPERIENCE</button>
-            </Link>
-            <br />
-            <br />
-            <Link to={'/experiences/new'}>
-              <button>ADD NEW EXPERIENCE</button>
-            </Link>
+            <button onClick={() => this.props.history.goBack()}>
+              BACK
+            </button>
           </div>
           {this.isOwnerExperience() &&
         <>
+          <Link to={`/experiences/${expId}/edit`}>
+            <button>EDIT EXPERIENCE</button>
+          </Link>
           <button onClick={this.handleDelete} className="btn btn-error">DELETE THIS EXPERIENCE</button>
         </>
           }
         </div>
         <hr />
+        <h4>REVIEWS</h4>
+        <br />
         <div className="columns">
           {this.state.experience.reviews.map(review =>
             <div key={review._id}>
-              <li>{`"${review.experienceName}"`}</li>
-              <li>{`"${review.text}"`}</li>
-              <li><IoIosStar/>{`"${review.score}"`}</li>
-              <li>{`"${review.traveller}"`}</li>
+              <p>{`"${review.text}"`}</p>
+              <p><IoIosStar/>{`"${review.score}"`}</p>
               <hr />
-              {this.isOwnerReview() &&
-              <button onClick={this.deleteReview} value={review._id} className="btn btn-error">DELETE THIS REVIEW</button>
+              {console.log(review)}
+              {this.isOwnerReview(review.traveller._id) &&
+                <button onClick={this.deleteReview} value={review._id} className="btn btn-error">DELETE THIS REVIEW</button>
               }
             </div>
           )}
@@ -145,29 +138,11 @@ class ExpShow extends React.Component {
             <div className="form-group">
               <textarea 
                 className="form-input" 
-                name="experienceName" 
-                id="experienceName" 
-                placeholder="Experience name" 
-                rows="1"
-                value={this.state.experienceName}
-                onChange={this.handleChange}/>
-              <br />
-              <textarea 
-                className="form-input" 
                 name="text"
                 id="text" 
                 placeholder="Write your review here" 
                 rows="3"
                 value={this.state.text}
-                onChange={this.handleChange}/>
-              <br />
-              <label className="form-label" htmlFor="score">Review score (0-5):</label>
-              <input 
-                className="form-input" 
-                name="score" 
-                type="text" 
-                id="score" 
-                value={this.state.score}
                 onChange={this.handleChange}/>
               <br />
               <input className="btn btn-success" type="submit" value="POST REVIEW" />

@@ -59,21 +59,21 @@ class Navbar extends React.Component {
           <Link className="logo" to="/">🦄</Link>
         </div>
         <div className="input-group input-inline ">
-          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registerunicorn">Register unicorn</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registerunicorn">Register Unicorn</Link>}
           {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registertraveller">Register traveller</Link>}
 
-          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/loginunicorn">Login unicorn</Link>}
-          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/logintraveller">Login traveller</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/loginunicorn">Unicorn Login</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/logintraveller">Traveller Login</Link>}
           {/* <Link className="btn btn-link" to="/loginadmin">Login admin</Link> */}
 
-          {isUnicorn && <Link className="btn btn-link" to="/unicorn">UNICORN profile</Link>}
-          {isTraveller && <Link className="btn btn-link" to="/traveller">TRAVELLER profile</Link>}
+          {isUnicorn && <Link className="btn btn-link" to="/unicorn">My Profile</Link>}
+          {isTraveller && <Link className="btn btn-link" to="/traveller">My Profile</Link>}
 
-          <Link className="btn btn-link" to="/cities">CITIES</Link>
+          <Link className="btn btn-link" to="/cities">See all our Cities</Link>
           {/* <Link className="btn btn-link" to="/unicorns">UNICORNS</Link> */}
           {/* <Link className="btn btn-link" to="/experiences">EXPERIENCES</Link> */}
 
-          {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="btn btn-link">LOGOUT</a>}
+          {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="btn btn-link">Log Out</a>}
         </div>
       </nav>
     )

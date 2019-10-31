@@ -29,16 +29,16 @@ class RegisterTraveller extends React.Component {
 
   render() {
     return (
-
       <section className="registerTraveller">
-        <div className="form-group">
-          <h2>Register</h2>
-          <form onSubmit={this.handleSubmit}>
+       
+        <div className="regForm form-group">
+          <h2 className="register">Register</h2>
 
-            <div className=" formBackgroundReg form-group">
+          <form onSubmit={this.handleSubmit}>
+            <div className="formBackgroundReg form-group">
               <label>Name</label>
               <input 
-                className={`form-input col-5 ${this.state.errors.name ? 'is-error' : ''}`}
+                className={`form-input col-12 ${this.state.errors.name ? 'is-error' : ''}`}
                 type="text"
                 id="name"
                 name="name"
@@ -49,7 +49,7 @@ class RegisterTraveller extends React.Component {
               
               <label>Profile Picture</label>
               <input 
-                className={`form-input col-5 ${this.state.errors.profilePicture ? 'is-error' : ''}`}
+                className={`form-input col-12 ${this.state.errors.profilePicture ? 'is-error' : ''}`}
                 type="text"
                 id="profilePicture"
                 name="profilePicture"
@@ -60,7 +60,7 @@ class RegisterTraveller extends React.Component {
               
               <label>Country</label>
               <input 
-                className={`form-input col-5 ${this.state.errors.country ? 'is-error' : ''}`}
+                className={`form-input col-12 ${this.state.errors.country ? 'is-error' : ''}`}
                 type="text"
                 id="country"
                 name="country"
@@ -71,7 +71,7 @@ class RegisterTraveller extends React.Component {
                           
               <label>Experiences</label>
               <input 
-                className={`form-input col-5 ${this.state.errors.experiences ? 'is-error' : ''}`}
+                className={`form-input col-12 ${this.state.errors.experiences ? 'is-error' : ''}`}
                 type="text"
                 id="experiences"
                 name="experiences"
@@ -80,11 +80,11 @@ class RegisterTraveller extends React.Component {
               />
               <p className="form-input-hint">{`${this.state.errors.experiences ? 'A number is required' : ''}`}</p>
 
-              <label>About</label>
+              <label>About Me</label>
               <textarea
+                
+                className={`form-input col-12 ${this.state.errors.about ? 'is-error' : ''}`}
                 rows="4"
-                className={`form-input col-5 ${this.state.errors.about ? 'is-error' : ''}`}
-                type="text"
                 id="about"
                 name="about"
                 placeholder="About"
@@ -94,7 +94,7 @@ class RegisterTraveller extends React.Component {
 
               <label>email</label>
               <input 
-                className={`form-input col-5 ${this.state.errors.email ? 'is-error' : ''}`}
+                className={`form-input col-12 ${this.state.errors.email ? 'is-error' : ''}`}
                 type="text"
                 id="email"
                 name="email"
@@ -105,7 +105,7 @@ class RegisterTraveller extends React.Component {
               
               <label>Password</label>
               <input 
-                className={`form-input col-5 ${this.state.errors.password ? 'is-error' : ''}`}
+                className={`form-input col-12 ${this.state.errors.password ? 'is-error' : ''}`}
                 type="password"
                 id="password"
                 name="password"
@@ -116,7 +116,7 @@ class RegisterTraveller extends React.Component {
                   
               <label>Password Confirmation</label>
               <input 
-                className={`form-input col-5 ${this.state.errors.passwordConfirmation ? 'is-error' : ''}`}
+                className={`form-input col-12 ${this.state.errors.passwordConfirmation ? 'is-error' : ''}`}
                 type="password"
                 id="passwordConfirmation"
                 name="passwordConfirmation"
@@ -126,7 +126,7 @@ class RegisterTraveller extends React.Component {
               <p className="form-input-hint">{`${this.state.errors.passwordConfirmation ? 'Oops, the passwords do not match' : ''}`}</p>
               
               <br/>
-              <button className="btn btn-primary" type="submit">Register</button>
+              <button className="submit button btn btn-primary" type="submit">Register</button>
             </div>
           </form>
         </div>

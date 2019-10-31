@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: black
 }
 
+<<<<<<< HEAD
 // NAVBAR 
 
 .nav-links {
@@ -39,6 +40,122 @@ h1, h2, h3, h4, h5, h6, p {
     text-decoration-color: black;
     justify-self: center;
   }
+=======
+// Showpages:
+.cityDes {
+  border-style: none solid none none;
+  border-width: 1px;
+  margin-left: 20px;
+  padding-right: 50px;
+  font-size: 25px;
+}
+
+.expDes {
+  margin-left: 20px;
+  padding-right: 50px;
+  font-size: 25px;
+}
+
+.spaceLeft {
+  padding-left: 20px;
+}
+
+.spaceLeftBig {
+  padding-left: 30px;
+}
+
+.spaceLeftMassive {
+  padding-left: 100px;
+}
+
+.marginTop {
+  margin-top: 6px;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.showTitle {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.reviewTitle {
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.unicornAbout {
+  margin-top: 20px;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.aboutUnicorn {
+  padding-right: 50px;
+  font-size: 20px;
+}
+
+.unicornInfo {
+  font-size: 17px;
+}
+
+.profilePic {
+  height: 300px;
+  width: auto;
+}
+
+.paddingTop {
+  padding-top: 20px;
+}
+
+.borderLeft {
+  border-style: none none none solid;
+  border-width: 1px;
+}
+
+.topBorder {
+  border-style: solid none none none;
+  border-width: 1px;
+}
+
+.columnCoverImage {
+  padding: 0px;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.columnTall {
+  height: auto;
+  // border: solid;
+}
+
+.textLarge {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+
+}
+
+.reviewArea {
+  border: solid;
+  border-width: 1px;
+  margin: 10px;
+  width: 300px;
+}
+
+.pushToRight {
+  padding-left: 150px;
+}
+
+.spaceSmall {
+  padding-left: 10px;
+>>>>>>> development
 }
 
 //HOMEPAGE. 
@@ -110,12 +227,19 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
   object-fit: cover;
 }
 
+<<<<<<< HEAD
 // .column {
 //   padding: 0px;
 //   height: 40vh;
 //   object-fit: cover;
 //   border: black 1px solid;
 // }
+=======
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+>>>>>>> development
 
 // .container {
 //   height: 100vh;
@@ -135,44 +259,56 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
   width: auto;
 }
 
-  .formBackground {
-    border-radius: 5px;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 1px 1px 10px rgba(66, 19, 155, 0.479);
-    
-    width: 500px;
-    height: 300px;
-  }
+
+.centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formBackground {
+  border-radius: 5px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 10px rgba(66, 19, 155, 0.479);
+  
+  width: 500px;
+  height: 300px;
+}
+
+.bottomSpace {
+  padding-bottom: 20px;
+}
 
 .registerTraveller {
-  h2 {
-    margin-left: 25px;
-    margin-bottom: 0px;
-    margin-top: 10px;
-  }
+  height: auto;
+  display: flex;
+  justify-content: center;
+  
+  .regForm{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 
-
+    .register {
+      text-align: center;
+    }
+  
     .formBackgroundReg {
-      h2{
-        margin-left: 25px;
-      }
       border-radius: 5px;
       margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      // box-shadow: 1px 1px 10px rgba(66, 19, 155, 0.479);
-      padding: 20px;
-      
-      width: 90vw;
-      height: 600px;
-    }
+      box-shadow: 1px 1px 10px rgba(66, 19, 155, 0.479);
+      padding: 30px;
+      width: 50vw;
+      height: auto;
+      margin-bottom: 30px;
+    } 
   }
+}
+
 
   .expName {
     display: flex;
@@ -182,9 +318,13 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 
   .card {
     width: 400px;
-    height: 700px;
+    height: auto;
     padding: 20px;
     margin: 20px;
+  }
+
+  .veryBold {
+    font-weight: 900;
   }
 
 // BOOKING PAGE PAGE

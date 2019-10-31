@@ -7,7 +7,10 @@ class LoginTraveller extends React.Component {
     super()
 
     this.state = {
-      data: {},
+      data: {
+        email: '',
+        password: ''
+      },
       errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
@@ -38,20 +41,25 @@ class LoginTraveller extends React.Component {
           <div className=" formBackground form-group">
             <label className="form-label" htmlFor="email">Email</label>
             <input 
-              className="form-input col-7" 
+              // className="form-input col-7" 
+              className={`form-input col-7 ${this.state.errors.email ? 'is-error' : ''}`}
               name="email" 
               type="text" 
               id="email" 
               placeholder="Email" 
               onChange={this.handleChange}/>
+            {/* <p className="form-input-hint">{`${this.state.errors.password ? 'Incorrect password' : ''}`}</p> */}
+              
             <label className="form-label" htmlFor="password">Password</label>
             <input 
               className="form-input col-7" 
+              // className={`form-input col-7 ${this.state.errors.email ? 'is-error' : ''}`}
               name="password" 
               type="password"
               id="password" 
               placeholder="Password" 
               onChange={this.handleChange}/>
+            {/* <p className="form-input-hint">{`${this.state.errors.password ? 'Incorrect password' : ''}`}</p> */}
             <br />
             <button className="btn btn-primary" type="submit">Log in</button>
           </div>

@@ -21,6 +21,7 @@ class UnicornEdit extends React.Component {
         password: '',
         passwordConfirmation: ''
       },
+      errors: {},
       cities: []
     }
     this.handleChange = this.handleChange.bind(this)
@@ -63,6 +64,7 @@ class UnicornEdit extends React.Component {
             cities={this.state.cities}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
+            errors={this.state.errors}
           />
         </div>
       </section>

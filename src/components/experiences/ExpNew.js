@@ -14,7 +14,8 @@ class ExpNew extends React.Component {
         image: '',
         description: '',
         intensity: ''
-      }
+      },
+      errors: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -45,6 +46,7 @@ class ExpNew extends React.Component {
           expFormData={this.state.expFormData}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          errors={this.state.errors}
         />
       </div>
     )

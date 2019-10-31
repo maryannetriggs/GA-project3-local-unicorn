@@ -4,11 +4,12 @@ import makeAnimated from 'react-select/animated'
 
 const animatedcomponents = makeAnimated()
 
-const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAvailability, handleMultiSelectTime, handleMultiSelectCategory }) => (
+const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAvailability, handleMultiSelectTime, handleMultiSelectCategory,errors }) => (
   <form onSubmit={handleSubmit}>
 
     <h3>Experience Name</h3>
     <input
+      className={`form-input col-5 ${errors.name ? 'is-error' : ''}`}
       name="name"
       value={expFormData.name}
       onChange={handleChange}

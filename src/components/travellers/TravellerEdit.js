@@ -45,7 +45,7 @@ class TravellerEdit extends React.Component {
       .then(() => {
         this.props.history.push('/traveller')
       })
-      .catch(err => this.setState({ error: err.response.data.error }))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {

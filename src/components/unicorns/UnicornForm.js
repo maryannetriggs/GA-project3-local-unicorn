@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const UnicornForm = ({ cities, data, handleChange, handleSubmit }) => (
+const UnicornForm = ({ cities, data, handleChange, handleSubmit, errors }) => (
   <section>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -10,36 +10,43 @@ const UnicornForm = ({ cities, data, handleChange, handleSubmit }) => (
           <label className="label">Full name</label>
           <div className="control">
             <input 
-              className="input"
+              // className="input"
+              className={`form-input col-5 ${errors.name ? 'is-error' : ''}`}
               name="name"
               placeholder="Full name"
               value={data.name}
               onChange={handleChange}
             />
+            <p className="form-input-hint">{`${errors.name ? 'A name is required.' : ''}`}</p>
+
           </div>
         </div>
         <div className="field">
           <label className="label">Profile picture (url)</label>
           <div className="control">
             <input 
-              className="input"
+              className={`form-input col-5 ${errors.profilePicture ? 'is-error' : ''}`}
               name="profilePicture"
               placeholder="My profile picture"
               value={data.profilePicture}
               onChange={handleChange}
             />
+            <p className="form-input-hint">{`${errors.profilePicture ? 'A name is required.' : ''}`}</p>
+
           </div>
         </div>
         <div className="field">
           <label className="label">About me</label>
           <div className="control">
             <textarea 
-              className="textarea"
+              className={`form-input col-5 ${errors.about ? 'is-error' : ''}`}
               name="about"
               placeholder="About me"
               value={data.about}
               onChange={handleChange}
             />
+            <p className="form-input-hint">{`${errors.about ? 'A name is required.' : ''}`}</p>
+
           </div>
         </div>
         <div className="field">
@@ -55,7 +62,8 @@ const UnicornForm = ({ cities, data, handleChange, handleSubmit }) => (
           <label className="label">Languages spoken</label>
           <div className="control">
             <input 
-              className="input"
+              // className="input"
+              className={`form-input col-5 ${errors.language ? 'is-error' : ''}`}
               name="language"
               placeholder="I speak the following languages..."
               value={data.language}
@@ -79,7 +87,12 @@ const UnicornForm = ({ cities, data, handleChange, handleSubmit }) => (
         <div className="field">
           <label className="label">Gender</label>
           <div className="select">
-            <select name="gender" onChange={handleChange} value={data.gender}>
+            <select 
+              className={`form-input col-5 ${errors.gender ? 'is-error' : ''}`}
+              name="gender" 
+              onChange={handleChange} 
+              value={data.gender}>
+                
               <option value="" disabled>Select your gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>

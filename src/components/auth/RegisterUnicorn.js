@@ -139,7 +139,7 @@ class RegisterUnicorn extends React.Component {
               <label className="label">City</label>
               <div className="select">
                 <select 
-                  className={`form-select ${this.state.errors.city ? 'is-error' : ''}`}
+                  className={`form-select col-5 ${this.state.errors.city ? 'is-error' : ''}`}
                   name="city" 
                   onChange={this.handleChange} 
                   value={data.city}>
@@ -154,6 +154,7 @@ class RegisterUnicorn extends React.Component {
               <label className="label">My languages (select from dropdown or add new)</label>
               <div className="control">
                 <CreatableSelect
+                  className="col-5"
                   options={this.options}
                   isMulti
                   onChange={this.handleCreatableSelect}
@@ -167,7 +168,6 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Age</label>
               <div className="control">
                 <input
-                  // className="input"
                   className={`form-input col-5 ${this.state.errors.age ? 'is-error' : ''}`}
                   name="age"
                   number="number"
@@ -186,7 +186,7 @@ class RegisterUnicorn extends React.Component {
                 <select name="gender"
                   onChange={this.handleChange} 
                   value={data.gender}
-                  className={`form-select ${this.state.errors.gender ? 'is-error' : ''}`}>
+                  className={`form-select col-5${this.state.errors.gender ? 'is-error' : ''}`}>
                   <option value="" disabled>Select your gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -199,7 +199,6 @@ class RegisterUnicorn extends React.Component {
               <label className="label">Email</label>
               <div className="control">
                 <input
-                  // className="input"
                   className={`form-input col-5 ${this.state.errors.email ? 'is-error' : ''}`}
                   name="email"
                   placeholder="Email"

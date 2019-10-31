@@ -127,11 +127,14 @@ class ExpShow extends React.Component {
         <div className="columns">
           {this.state.experience.reviews.map(review =>
             <div key={review._id}>
-              <p className="review">{`"${review.text}"`}</p>
+              <cite>{`${review.text}`}</cite>
+              <br />
+              <br />
               <h6>Score:</h6>
               <p>{`${review.score}`}<IoIosStar/></p>
+              <h6>Traveller:</h6>
               <p>{review.traveller.name}</p>
-              <hr />
+              <br />
               {console.log(review)}
               {this.isOwnerReview(review.traveller._id) &&
                 <button onClick={this.deleteReview} value={review._id} className="btn btn-error">DELETE THIS REVIEW</button>
@@ -151,7 +154,7 @@ class ExpShow extends React.Component {
                 onChange={this.handleChange}/>
               <br />
               <div className="field">
-                <label className="label">Score</label>
+                <label className="label">Score (1-5)</label>
                 <div className="control">
                   <input
                     className="input"

@@ -3,7 +3,7 @@ const Traveller = require('../models/Traveller')
 
 const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true, maxlength: 500 },
-  score: { type: Number, min: 0, max: 5  },
+  score: { type: Number, min: 1, max: 5, required: true  },
   traveller: { type: mongoose.Schema.ObjectId, ref: Traveller, required: true }
 }, {
   timestamps: true

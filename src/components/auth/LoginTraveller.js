@@ -32,28 +32,31 @@ class LoginTraveller extends React.Component {
   render() {
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className=" formBackground form-group">
-          <label className="form-label" htmlFor="email">Email</label>
-          <input 
-            className="form-input col-7" 
-            name="email" 
-            type="text" 
-            id="email" 
-            placeholder="Email" 
-            onChange={this.handleChange}/>
-          <label className="form-label" htmlFor="password">Password</label>
-          <input 
-            className="form-input col-7" 
-            name="password" 
-            type="password"
-            id="password" 
-            placeholder="Password" 
-            onChange={this.handleChange}/>
-          <br />
-          <button className="btn btn-primary" type="submit">Log in</button>
-        </div>
-      </form>
+      <>
+        <h3 className="centre">Welcome back, you globetrotter!</h3>
+        <form className="centre" onSubmit={this.handleSubmit}>
+          <div className=" formBackground form-group">
+            <label className="form-label" htmlFor="email">Email</label>
+            <input 
+              className="form-input col-7" 
+              name="email" 
+              type="text" 
+              id="email" 
+              placeholder="Email" 
+              onChange={this.handleChange}/>
+            <label className="form-label" htmlFor="password">Password</label>
+            <input 
+              className="form-input col-7" 
+              name="password" 
+              type="password"
+              id="password" 
+              placeholder="Password" 
+              onChange={this.handleChange}/>
+            <br />
+            <button className="btn btn-primary" type="submit">Log in</button>
+          </div>
+        </form>
+      </>
     )
   }
 }

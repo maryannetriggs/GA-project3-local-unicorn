@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import makeAnimated from 'react-select/animated'
 import CreatableSelect from 'react-select/creatable'
-// import Select from 'react-select'
+
 
 const animatedComponents = makeAnimated()
 

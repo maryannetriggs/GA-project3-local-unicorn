@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const UnicornSearch = ({ handleGender, handleLanguage }) => {
   return (
-    <form className="unicorn-search-wrapper" >
+    <form className="unicornSearchWrapper" >
 
       <div>
-        <h2>Gender</h2>
+        <h4>Gender</h4>
         <select onChange={handleGender}>
           <option value="All">All</option>
           <option value="Female">Female</option>
@@ -14,7 +13,7 @@ const UnicornSearch = ({ handleGender, handleLanguage }) => {
         </select>
       </div>
       <div>
-        <h2>Language</h2>
+        <h4>Language</h4>
         <select onChange={handleLanguage}>
           <option value="All">All</option>
           <option value="Arabic">Arabic</option>
@@ -37,12 +36,6 @@ const UnicornSearch = ({ handleGender, handleLanguage }) => {
         </select>
       </div>
 
-      <div>
-        <Link to="/cities">
-          <button className="btn btn-primary buttonColors">Pick a different city</button>
-        </Link>
-      </div>
-      
     </form>
   ) 
 }

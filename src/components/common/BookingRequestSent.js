@@ -5,11 +5,12 @@ const BookingRequestSent = () => (
   <div className="container">
     <div className="columns">
       <div className="column col-12 centre bookingRequest">
-        <h2>Booking request has been sent to your unicorn.</h2>
+        <h2 className="bookTitle centre">Booking request has been sent to your unicorn</h2>
         <br />
-        <h2><span className="logo">🦄</span> Thank You <span className="logo">🦄</span></h2>
+        <h2 className="bye ourGrey"><span className="logo">🦄</span> Thank You <span className="logo">🦄</span></h2>
         <Link to={'/traveller'}>
-          <button className="buttonColors centre">BACK TO PROFILE</button>
+          <br />
+          <button className="btn centre">BACK TO PROFILE</button>
         </Link>
       </div>
       

@@ -5,16 +5,16 @@ const UnicornSearch = ({ handleGender, handleLanguage }) => {
     <form className="unicornSearchWrapper" >
 
       <div>
-        <h4>Gender</h4>
-        <select onChange={handleGender}>
+        <h3 className="dropdownTitle ourGrey">Gender</h3>
+        <select className="dropFilter" onChange={handleGender}>
           <option value="All">All</option>
           <option value="Female">Female</option>
           <option value="Male">Male</option>
         </select>
       </div>
-      <div>
-        <h4>Language</h4>
-        <select onChange={handleLanguage}>
+      <div className="marginAll">
+        <h3 className="dropdownTitle ourGrey">Language</h3>
+        <select className="dropFilter" onChange={handleLanguage}>
           <option value="All">All</option>
           <option value="Arabic">Arabic</option>
           <option value="Dutch">Dutch</option>

@@ -50,9 +50,11 @@ class UnicornIndex extends React.Component {
       <>
         <div className="cityNameSearchAndButton">
           <div className="cityNameAndButton">
-            <h2>{this.props.location.state.from}</h2>
+            <h2 className="showTitle">{this.props.location.state.from}</h2>
             <Link to="/cities">
-              <button className="btn btn-primary buttonColors">Pick a different city</button>
+              <div className="spaceLeft">
+                <button className="btn btn-lg centre">Pick a different city</button>
+              </div>
             </Link>
           </div>
           
@@ -72,7 +74,7 @@ class UnicornIndex extends React.Component {
             <p className="empty-subtitle">Change your search filters or go back to the cities page</p>
             <div className="empty-action">
               <Link to="/cities">
-                <button className="btn btn-primary buttonColors">Pick a different city</button>
+                <button className="btn btn-primary">Pick a different city</button>
               </Link>
             </div>
           </div>

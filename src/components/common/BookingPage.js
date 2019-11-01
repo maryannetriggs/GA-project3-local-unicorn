@@ -27,7 +27,7 @@ class BookingPage extends React.Component {
     return (
       <>
         <div className="bookingInfoWrapper centre">
-          <h3 className="centre"><span>You are booking <span className="bookingInfo">{experience.name}</span> with <span className="bookingInfo">{experience.unicorn.name}</span></span></h3>
+          <h3 className="centre"><span>You are booking <span className="bookingInfo bad">{experience.name}</span> with <span className="bookingInfo bad">{experience.unicorn.name}</span></span></h3>
         </div>
 
         <div className="columns">
@@ -37,14 +37,14 @@ class BookingPage extends React.Component {
             />
           </div>
           <div className="column col-4 centre timeAndDateAvailability">
-            <h4>Days availabile:</h4> 
+            <h4 className="hello">Days availabile:</h4> 
             <>
               {experience.availability.map((avail, i) => (
                 <h5 key={i}>{avail} </h5>
               ))}
             </>
             <br/>
-            <h4>Times available:</h4> 
+            <h4 className="hello">Times available:</h4> 
             <>
               {experience.time.map((time, i) => (
                 <h5 key={i}>{time} </h5>
@@ -60,7 +60,7 @@ class BookingPage extends React.Component {
             />
             <div className="centre bookButton">
               <Link to="/bookingrequest">
-                <button className="btn buttonColors">BOOK NOW!</button>
+                <button className="btn btn-lg btn-success">BOOK NOW!</button>
               </Link>
             </div>
           </div>

@@ -22,11 +22,9 @@ class CitiesIndex extends React.Component {
     if (!this.state.cities) return null
     return (
       <div className="container">
-        <div className="columns">
-          {this.state.cities.map(city => (
-            <CityCard key={city._id} {...city}/>
-          ))}
-        </div>
+        {this.state.cities.map(city => (
+          <CityCard key={city._id} {...city}/>
+        ))}
       </div>
     )
   }

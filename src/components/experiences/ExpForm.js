@@ -8,7 +8,7 @@ const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAva
   <section className="registerTraveller">
 
     <div className="regForm form-group">
-      <h2 className="centre">Create experience<span className="logo">🦄</span></h2>
+      <h2 className="centre">{expFormData.name}<span className="logo">🦄</span></h2>
 
       <form onSubmit={handleSubmit}>
         <div className="formBackgroundReg form-group">
@@ -44,7 +44,9 @@ const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAva
           <select 
             className="form-input col-12"
             onChange={handleChange} 
-            value={expFormData.intensity}>
+            value={expFormData.intensity}
+            name="intensity"
+          >
             <option value="">Select</option>
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
@@ -52,15 +54,19 @@ const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAva
           </select>
           <p className="form-input-hint">{`${errors.intensity ? 'Select an option.' : ''}`}</p>
 
-          <label>Experience Price</label>
-          <input
-            className={`form-input col-12 ${errors.price ? 'is-error' : ''}`}
-            name="price"
-            value={expFormData.price}
-            onChange={handleChange}
-          />
-          <p className="form-input-hint">{`${errors.price ? 'Please, enter a number.' : ''}`}</p>
-
+          <div className="field">
+            <label>Experience Price</label>
+            <div className="control">
+              <input
+                className={`form-input col-12 ${errors.price ? 'is-error' : ''}`}
+                name="price"
+                number="number"
+                value={expFormData.price}
+                onChange={handleChange}
+              />
+              <p className="form-input-hint">{`${errors.price ? 'Please, enter a number.' : ''}`}</p>
+            </div>
+          </div>
           <label>Experience Availability</label>
           <Select
             className={`${errors.price ? 'is-error' : ''}`}
@@ -116,7 +122,9 @@ const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAva
           <p className="form-input-hint">{`${errors.category ? 'Select a categoty' : ''}`}</p>
 
           <br/>
-          <button className="btn btn-success">Edit!</button>
+          <div className="centre">
+            <button className="btn btn-success">Add!</button>
+          </div>
         </div>
       </form>
     </div>

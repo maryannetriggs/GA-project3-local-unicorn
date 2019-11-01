@@ -326,6 +326,35 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
     font-weight: 900;
   }
 
+// UNICORN INDEX PAGE
+
+  // UNICORN SEARCH OPTIONS
+
+.unicornSearchWrapper {
+  
+}
+
+.cityNameSearchAndButton {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  .unicornSearchWrapper {
+    display: flex;
+    margin-left: 20vw;
+    div {
+      align-self: center;
+      padding-left: 60px;
+    }
+  }
+}
+.emptyDiv {
+  margin-top: 30px;
+}
+
+.cityNameAndButton {
+  padding-left: 60px;
+}
+
 // BOOKING PAGE PAGE
 
 .bookingInfoWrapper {

@@ -48,18 +48,23 @@ class UnicornIndex extends React.Component {
     if (!this.state.unicorns) return null
     return (
       <>
-        <div>
-          <h2>{this.props.location.state.from}</h2>
-        </div>
-        <div>
+        <div className="cityNameSearchAndButton">
+          <div className="cityNameAndButton">
+            <h2>{this.props.location.state.from}</h2>
+            <Link to="/cities">
+              <button className="btn btn-primary buttonColors">Pick a different city</button>
+            </Link>
+          </div>
+          
           <UnicornSearch
             handleGender={this.handleGender}
             handleLanguage={this.handleLanguage}
           />
         </div>
+
         {this.filteredUnicorns().length === 0
           ?
-          <div className="empty">
+          <div className="empty emptyDiv">
             <div className="empty-icon">
               <i className="icon icon-people"></i>
             </div>

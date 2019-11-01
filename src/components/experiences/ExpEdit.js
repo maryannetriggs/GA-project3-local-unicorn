@@ -42,7 +42,7 @@ class ExpEdit extends React.Component {
     console.log('Edit exp form has been submitted')
 
     const expId = this.props.match.params.id
-    console.log(expId)
+    // console.log(expId)
     axios.put(`/api/experiences/${expId}`, this.state.expFormData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })

@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 const UnicornCard = ({ name, profilePicture, language, experiences, _id }) => (
   <div className="card">
     <div className="card-image centre">
-      <img className="city-card img-responsive" src={profilePicture} alt={name}/>
+      <Link to={`/unicorns/${_id}`}>
+        <img className="city-card img-responsive" src={profilePicture} alt={name}/>
+      </Link>
     </div>
     <div className="card-header">
       <div className="card-title text-uppercase h4">{name}</div>

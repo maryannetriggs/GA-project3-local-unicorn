@@ -208,7 +208,7 @@ mongoose.connect(
           },
           {
             name: 'Singapore',
-            image: 'https://handluggageonly.co.uk/wp-content/uploads/2015/07/Hand-Luggage-Only-17-1.jpg',
+            image: 'https://images.unsplash.com/photo-1509689895114-099a6abebd69?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
             description: 'Even though Singapore is one of the smallest countries in the world, its capital with the same name is known as a melting pot of cultures. It is a great place for tourists as it offers fantastic food, unparalleled safety and clenliness, and has a facinating history.',
             country: 'Singapore',
             region: 'Asia'
@@ -514,7 +514,7 @@ mongoose.connect(
           {
             name: 'Annika Ivanov',
             profilePicture: 'https://images.unsplash.com/photo-1551803091-e20673f15770?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80',
-            about: 'Living one day at a time, with a fresh baked cookie. Okay.  And with a coffee.  And maybe some chocolate. But I promise to take my vitamins.',
+            about: 'Living one day at a time, with a fresh baked cookie. Okay. And with a coffee. And maybe some chocolate. But I promise to take my vitamins.',
             city: cities[7],
             country: 'Russia',
             region: 'Europe',
@@ -583,8 +583,8 @@ mongoose.connect(
           },
           {
             name: 'Linnea Nilsson',
-            profilePicture: 'https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-            about: 'I’ve learned I don’t know anything. Have also learned that people will pay for what I know. Life is good.',
+            profilePicture: 'https://images.unsplash.com/photo-1548367074-c9804f727062?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+            about: 'I’ve learned I don’t know anything. I have also learned that people will pay for what I know. Life is good.',
             city: cities[10],
             country: 'Sweden',
             region: 'Europe',
@@ -658,7 +658,7 @@ mongoose.connect(
             time: 'Evening'
           },
           {
-            name: 'Eat your way through east London',
+            name: 'Eat your way through East London',
             image: 'https://i.pinimg.com/originals/1f/c6/b5/1fc6b56bf39d28b2f2a0d63a3eebe636.jpg',
             description: 'Do you identify as a trendy foodie (or at least wish you did)? Then this tour is for you! Let me take you to the tastiest places in East London. From pretty pastries at Pophams to a snazzy dinner at BISTROTHEQUE.',
             category: ['Food', 'Social'],
@@ -682,7 +682,7 @@ mongoose.connect(
           {
             name: 'Pub crawl',
             image: 'https://static.designmynight.com/uploads/2014/03/524492_10151469252969733_701697217_n-optimised.jpg',
-            description: 'A great way to check out the great and quirky pubs in London. We will keep going until the last man(or woman!) standing!',
+            description: 'A great way to check out the great and quirky pubs in London. We will keep going until the last man (or woman) standing!',
             category: ['Drink', 'Social'],
             intensity: 'Low',
             price: 15,
@@ -715,7 +715,7 @@ mongoose.connect(
           {
             name: 'Unique shops',
             image: 'http://www.srlawpractice.in/wp-content/uploads/2018/08/photo-1521587760476-6c12a4b040da.jpg',
-            description: 'I\'ll show you round some of the special and tucked away shops in London you probably never heard of. We will start off at Maggs Bros - the amazing vintage book shop for rare books and manuscripts.',
+            description: 'I\'ll show you round some of the special and tucked away shops in London you\'ve probably never heard of. We\'ll start off at Maggs Bros - the amazing vintage book shop for rare books and manuscripts.',
             category: ['Social'],
             intensity: 'Medium',
             price: 0,
@@ -735,7 +735,7 @@ mongoose.connect(
             time: ['Evening']
           },
           {
-            name: 'The coolest art spaces in the famous Red October district',
+            name: 'The coolest art spaces in famous Red October district',
             image: 'https://s.inyourpocket.com/gallery/190542.jpg',
             description: 'The Red October art district has become well-known to locals and tourists alike for showcasing some of the most exciting art in Moscow. I\'ll show you all the best places in the area that the tourists don\'t know about',
             category: ['Social', 'Culture', 'Outdoors'],
@@ -746,7 +746,7 @@ mongoose.connect(
             time: ['Morning', 'Afternoon']
           },
           {
-            name: 'The best meals in Moscow',
+            name: 'Best meals in Moscow',
             image: 'https://cdni.rbth.com/rbthmedia/images/2018.06/article/5b2ba44e15e9f916c17e7e3d.jpg',
             description: 'Want to know where to get the best meals Moscow has to offer (including White Rabbit and Twins Garden), and help getting you that coveted table? This is the experience for you!',
             category: ['Food', 'Drink'],
@@ -770,7 +770,7 @@ mongoose.connect(
           {
             name: 'Night out in the city that never sleeps',
             image: 'https://static.themoscowtimes.com/image/article_1360/dc/9ee3dab0d5f34a59966f52f86f6c1675.jpg',
-            description: 'I will take you out on a night to be rememberd. The Moscow clubs scene has evolved a lot over the last decade and i will take you on a tour to some of the best places the Russian music scene has to offer today, with nods to Arma 17 which remains an insititution for this generation of Russian electronic music.',
+            description: 'I\'ll take you out on a night to be rememberd. The Moscow club scene has evolved a lot over the last decade and i will take you on a tour to some of the best places the Russian music scene has to offer today, with nods to Arma 17 which remains an insititution for this generation of Russian electronic music.',
             category: ['Social', 'Drink', 'Music'],
             intensity: 'High',
             price: 20,
@@ -779,7 +779,7 @@ mongoose.connect(
             time: ['Evening']
           },
           {
-            name: 'Local food heros',
+            name: 'Local food heroes',
             image: 'https://media.timeout.com/images/103937318/630/472/image.jpg',
             description: 'Want to find some of those special local foodie gems? Look no further! I will take you round some of the best places for food this city has to offer - from the cheap an cheerful (Pink Mamma and Le Scheffer) to the fancy but low-key (Table), just to name a few!',
             category: ['Food', 'Drink', 'Social'],
@@ -812,7 +812,7 @@ mongoose.connect(
             time: ['Morning', 'Afternoon']
           },
           {
-            name: 'Best independent boutiques in Paris',
+            name: 'Independent boutiques in Paris',
             image: 'https://media.architecturaldigest.com/photos/5a3d3fc738bb817b7ffe1f32/master/pass/RL_GAS_BIJOUX_11_1_2017-1346.jpg',
             description: 'Love shopping but bored of the mainstream stuff? Come with me as I show you my personal favourites, spread across the city. Stops will include my favourite jewelry brand - Gas Bijoux.',
             category: ['Social', 'Culture', 'Outdoors'],
@@ -847,7 +847,7 @@ mongoose.connect(
           {
             name: 'Best brunch places in the city',
             image: 'http://q-xx.bstatic.com/images/hotel/max500/460/46070489.jpg',
-            description: 'After a long night out, who doesn\'t need a good brunch to recover?! I\'ll show you the best bruncc places this city has to offer, from the most amazing fresh tortilla stand to the fancy Wellington Hotel bottomless brunch with unlimited cava to match.',
+            description: 'After a long night out, who doesn\'t need a good brunch to recover?! I\'ll show you the best brunch places this city has to offer, from the most amazing fresh tortilla stand to the fancy Wellington Hotel bottomless brunch with unlimited cava to match.',
             category: ['Food', 'Drink', 'Social'],
             intensity: 'Low',
             price: 50,
@@ -858,7 +858,7 @@ mongoose.connect(
           {
             name: 'Street art tour through Madrid\'s trendiest neighbourhoods',
             image: 'https://www.mad4youhostel.com/wp-content/uploads/2019/08/1.jpg',
-            description: 'Want to see the city from a different lens? Let me take you on a tour out of the ordinary, showing you my city through a trail of amazing street art. Our tour will take us to some of the most bustling of locations, many of which would will want to return to later for its food and nightlife.',
+            description: 'Want to see the city through a different lens? Let me take you on a tour out of the ordinary, showing you my city through a trail of amazing street art. Our tour will take us to some of the most bustling of locations, many of which would will want to return to later for its food and nightlife.',
             category: ['Social', 'Culture', 'Outdoors'],
             intensity: 'Medium',
             price: 5,
@@ -979,7 +979,7 @@ mongoose.connect(
           {
             name: 'King or queen of the kitchen? This tour is for you!',
             image: 'https://storage.googleapis.com/stateless-shop-echefknife-com/2018/04/57f8b690-ao3set_main.jpg?w=640g',
-            description: 'Do you love to cooke? Then you also know how important a great knife is. Japan is famous for its razor sharp, super thin carbon steel knives, which have been beautifully handcrafted. Come with the to the cooking mecca neighbourhood of Kappabashi and I will show you all the best places!',
+            description: 'Do you love to cook? Then you also know how important a great knife is. Japan is famous for its razor sharp, super thin carbon steel knives, which have been beautifully handcrafted. Come with the to the cooking mecca neighbourhood of Kappabashi and I will show you all the best places!',
             category: ['Social'],
             intensity: 'Medium',
             price: 0,
@@ -1021,7 +1021,7 @@ mongoose.connect(
             time: ['Evening']
           },
           {
-            name: 'Learn some japanese cooking secrets',
+            name: 'Learn japanese cooking secrets',
             image: 'https://media-cdn.tripadvisor.com/media/photo-s/0b/72/1d/5d/japanese-home-cooking.jpg',
             description: 'Learn the tricks of the craft that is Japanese cooking from my very own grandmother. Half a day of cooking together, finished off with lunch and some of my favourite sake. I will be translating throughout and you will get recipes in English to take home.',
             category: ['Social', 'Food'],
@@ -1034,7 +1034,7 @@ mongoose.connect(
           {
             name: 'Sample the best pizza in New York',
             image: 'https://assets3.thrillist.com/v1/image/1808335/size/tmg-venue_carousel_mobile.jpg',
-            description: 'Lover of pizza? I will guide you through the jungle of pizza places and take you to the very BEST pizza places the city has to offer, including of course Roberta\'s which all of new york is infatuated with.',
+            description: 'Lover of pizza? I will guide you through the jungle of pizza places and take you to the very BEST pizza places the city has to offer, including of course Roberta\'s which all of New York is infatuated with.',
             category: ['Social', 'Food'],
             intensity: 'Low',
             price: 10,
@@ -1081,7 +1081,7 @@ mongoose.connect(
             description: 'Come scale the heights of Mount Kaukau, the highest point in Wellington with stunning views across the city, harbour and even as far as the south Island.',
             category: ['Outdoors'],
             intensity: 'High',
-            price: 10,
+            price: 0,
             unicorn: unicorns[5],
             availability: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
             time: ['Morning']

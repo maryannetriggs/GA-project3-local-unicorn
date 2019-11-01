@@ -10,14 +10,26 @@ class Home extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+    this.keyPress = this.keyPress.bind(this)
   }
 
   handleChange(e) {
     this.setState({ city: e.target.value })
+    return this.handleClick()
+  }
+
+  keyPress(e){
+    if (e.keyCode === 13) return this.handleClick()
+  }
+
+  handleClick() {
+    if (!this.state.city) return null
   }
 
   render() {
     const city = this.state.city
+    console.log(city)
     return (
       <>        
         <div className="cityPicker">
@@ -41,16 +53,19 @@ class Home extends React.Component {
               <option value="Tokyo">Tokyo</option>
               <option value="Wellington">Wellington</option>
             </select>
+            <br/>
+            <br/>
+            
+            <Link className="btn buttonColors" disabled={!city} to={{ pathname: '/unicorns', state: { from: city } }}>
+              FIND MY UNICORN
+            </Link>
           </form>
-          <br/>
-          <Link to={{ pathname: '/unicorns', state: { from: city } }}>
-            <button className="btn buttonColors">FIND MY UNICORN</button>
-          </Link>
+          
           <br/>
           <br/>
           <h4>OR</h4>
-          <Link to="/cities">
-            <button className="btn buttonColors">BROWSE ALL CITIES</button>
+          <Link className="btn buttonColors" to={{ pathname: '/cities' }}>
+            BROWSE ALL CITIES
           </Link>
         </div>
         <h1 className="homeTitle">FIND</h1> 

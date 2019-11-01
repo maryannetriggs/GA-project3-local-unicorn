@@ -11,7 +11,8 @@ class ExpShow extends React.Component {
     this.state = {
       experience: null,
       text: '',
-      score: ''
+      score: '',
+      error: ''
 
     }
     this.handleDelete = this.handleDelete.bind(this)
@@ -33,11 +34,13 @@ class ExpShow extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ text: e.target.value })
+    // const errors = { ...this.state.errors, [e.target.name]: '' }
+    this.setState({ text: e.target.value, error: '' })
   }
 
   handleScoreChange(e) {
-    this.setState({ score: e.target.value })
+    // const errors = { ...this.state.errors, [e.target.name]: '' }
+    this.setState({ score: e.target.value, error: '' })
   }
 
   handleSubmit(e) {
@@ -49,7 +52,7 @@ class ExpShow extends React.Component {
       .then(res => {
         this.setState({ experience: res.data, text: '', score: '' })
       })
-      .catch(err => console.log(err))
+      .catch(() => this.setState({ error: 'no.' }))
   }
 
   deleteReview(e) {
@@ -157,27 +160,38 @@ class ExpShow extends React.Component {
           )}
           <br />
           <div className="spaceSmall">
+
+
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <textarea 
-                  className="form-input" 
+                  // className="form-input" 
+                  className={`form-input ${this.state.error ? 'is-error' : ''}`}
                   name="text"
                   id="text" 
                   placeholder="Write your review here" 
                   rows="3"
                   value={this.state.text}
-                  onChange={this.handleChange}/>
+                  onChange={this.handleChange}
+                />
+                {/* <p className="form-input-hint">{`${this.state.error ? 'Enter a text.' : ''}`}</p>  */}
+
                 <br />
                 <div className="field">
-                  <label className="label">Score (1-5)</label>
+                  <label>Score (1-5)</label>
                   <div className="control">
+
                     <input
-                      className="input"
+                      // className="input"
+                      className={`form-input ${this.state.error ? 'is-error' : ''}`}
                       name="age"
                       number="number"
                       value={this.state.score}
                       onChange={this.handleScoreChange}
                     />
+                    <p className="form-input-hint">{`${this.state.error ? 'Oops, Unicorns can not review experiences.' : ''}`}</p>
+                    {/* {this.state.error && <p className="form-input-hint is-error">{this.state.error}</p>} */}
+
                   </div>
                 </div>
                 <br />

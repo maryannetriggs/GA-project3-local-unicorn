@@ -59,11 +59,11 @@ class Navbar extends React.Component {
           <Link className="logo" to="/">🦄</Link>
         </div>
         <div className="input-group input-inline nav-links">
-          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/registerunicorn">Register Unicorn</Link>}
-          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/loginunicorn">Unicorn Login</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/registerunicorn">Unicorn Register</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item border" to="/loginunicorn">Login</Link>}
 
-          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registertraveller">Register traveller</Link>}
-          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/logintraveller">Traveller Login</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/registertraveller">Traveller Register</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item border" to="/logintraveller">Login</Link>}
           {/* <Link className="btn btn-link nav-item" to="/loginadmin">Admin Login</Link> */}
 
           {isUnicorn && <Link className="btn btn-link nav-item" to="/unicorn">My Profile</Link>}

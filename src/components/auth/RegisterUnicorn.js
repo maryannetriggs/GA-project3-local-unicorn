@@ -27,6 +27,23 @@ class RegisterUnicorn extends React.Component {
       cities: []
     }
 
+    // this.cities = [
+    //   { value: 'London', label: 'London' },
+    //   { value: 'La Paz', label: 'La Paz' },
+    //   { value: 'New York', label: 'New York' },
+    //   { value: 'Tokyo', label: 'Tokyo' },
+    //   { value: 'Madrid', label: 'Madrid' },
+    //   { value: 'Paris', label: 'Paris' },
+    //   { value: 'Marrakesh', label: 'Marrakesh' },
+    //   { value: 'Mexico City', label: 'Mexico City' },
+    //   { value: 'Tehran', label: 'Tehran' },
+    //   { value: 'Shanghai', label: 'Shanghai' },
+    //   { value: 'Moscow', label: 'Moscow' },
+    //   { value: 'Wellington', label: 'Wellington' },
+    //   { value: 'Singapore', label: 'Singapore' },
+    //   { value: 'Stockholm', label: 'Stockholm' }
+    // ]
+
     this.options = [
       { value: 'English', label: 'English' },
       { value: 'French', label: 'French' },
@@ -136,6 +153,17 @@ class RegisterUnicorn extends React.Component {
                 </div>
               </div>
 
+              {/* <label>City</label>
+              <Select
+                className={'{this.state.errors.city ? \'is-error\' : \'\'}'}
+                defaultValue={this.options[0]}
+                value={data.city}
+                label="City"
+                options={this.options}
+                onChange={this.handleChange}
+              />
+              <p className="form-input-hint">{`${this.state.errors.city ? 'Select a city.' : ''}`}</p> */}
+                
               <div className="field">
                 <label>City</label>
                 <div className="select">

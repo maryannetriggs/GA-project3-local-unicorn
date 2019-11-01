@@ -22,19 +22,20 @@ class LoginUnicorn extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-
     axios.post('/api/loginunicorn', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
         this.props.history.push('/cities')
       })
+      // .catch(err => console.log(err))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {
-
+    console.log(this.state.errors)
+    
     return (
-      <>
+      <section>
         <h3 className="centre">Welcome back<span className="logo">🦄</span></h3>
         <form className="centre" onSubmit={this.handleSubmit}>
           <div className="formBackground form-group">
@@ -64,7 +65,7 @@ class LoginUnicorn extends React.Component {
             <button className="btn btn-primary" type="submit">Log in</button>
           </div>
         </form>
-      </>
+      </section>
     )
   }
 }

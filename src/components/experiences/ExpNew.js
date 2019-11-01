@@ -27,6 +27,7 @@ class ExpNew extends React.Component {
     axios.get(`/api/experiences/${expId}`)
       .then(res => this.setState({ expFormData: res.data }))
       .catch(err => console.log(err))
+      // .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   handleSubmit(e) {

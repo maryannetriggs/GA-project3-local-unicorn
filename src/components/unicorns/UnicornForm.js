@@ -1,8 +1,7 @@
 import React from 'react'
-import CreatableSelect from 'react-select/creatable'
 
 
-const UnicornForm = ({ cities, data, handleChange, handleSubmit, errors, optios }) => (
+const UnicornForm = ({ cities, data, handleChange, handleSubmit, errors }) => (
   <section className="registerTraveller">
 
     <div className="regForm form-group">

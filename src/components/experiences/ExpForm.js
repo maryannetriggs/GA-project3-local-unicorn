@@ -5,97 +5,122 @@ import makeAnimated from 'react-select/animated'
 const animatedcomponents = makeAnimated()
 
 const ExpForm = ({ expFormData, handleChange, handleSubmit, handleMultiSelectAvailability, handleMultiSelectTime, handleMultiSelectCategory,errors }) => (
-  <form onSubmit={handleSubmit}>
+  <section className="registerTraveller">
 
-    <h3>Experience Name</h3>
-    <input
-      className={`form-input col-5 ${errors.name ? 'is-error' : ''}`}
-      name="name"
-      value={expFormData.name}
-      onChange={handleChange}
-    />
+    <div className="regForm form-group">
+      <h2 className="centre">Create experience<span className="logo">🦄</span></h2>
 
-    <h3>Experience Image</h3>
-    <input
-      name="image"
-      value={expFormData.image}
-      onChange={handleChange}
-    />
+      <form onSubmit={handleSubmit}>
+        <div className="formBackgroundReg form-group">
+          <label>Experience Name</label>
+          <input
+            className={`form-input col-12 ${errors.name ? 'is-error' : ''}`}
+            name="name"
+            value={expFormData.name}
+            onChange={handleChange}
+          />
+          <p className="form-input-hint">{`${errors.name ? 'A name is required' : ''}`}</p>
 
-    <h3>Experience Description</h3>
-    <textarea
-      name="description"
-      value={expFormData.description}
-      onChange={handleChange}
-    />
+          <label>Experience Image</label>
+          <input
+            className={`form-input col-12 ${errors.image ? 'is-error' : ''}`}
+            name="image"
+            value={expFormData.image}
+            onChange={handleChange}
+          />
+          <p className="form-input-hint">{`${errors.image ? 'An image URL is required' : ''}`}</p>
 
-    <h3>Experience Intensity</h3>
-    <select name="intensity" onChange={handleChange} value={expFormData.intensity}>
-      <option value="">Select</option>
-      <option value="Low">Low</option>
-      <option value="Medium">Medium</option>
-      <option value="High">High</option>
-    </select>
+          <label>Experience Description</label>
+          <textarea
+            className={`form-input col-12 ${errors.description ? 'is-error' : ''}`}
+            rows="4"
+            name="description"
+            value={expFormData.description}
+            onChange={handleChange}
+          />
+          <p className="form-input-hint">{`${errors.description ? 'A description is required' : ''}`}</p>
 
-    <h3>Experience Price</h3>
-    <input
-      name="price"
-      value={expFormData.price}
-      onChange={handleChange}
-    />
+          <label>Experience Intensity</label>
+          <select 
+            className="form-input col-12"
+            onChange={handleChange} 
+            value={expFormData.intensity}>
+            <option value="">Select</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <p className="form-input-hint">{`${errors.intensity ? 'Select an option.' : ''}`}</p>
 
-    <h3>Experience Availability</h3>
-    <Select
-      name="availability"
-      options={[
-        { value: 'Monday', label: 'Monday' },
-        { value: 'Tuesday', label: 'Tuesday' },
-        { value: 'Wednesday', label: 'Wednesday' },
-        { value: 'Thursday', label: 'Thursday' },
-        { value: 'Friday', label: 'Friday' },
-        { value: 'Saturday', label: 'Saturday' },
-        { value: 'Sunday', label: 'Sunday' }
-      ]}
-      isMulti
-      onChange={handleMultiSelectAvailability}
-      components={animatedcomponents}
-    />
+          <label>Experience Price</label>
+          <input
+            className={`form-input col-12 ${errors.price ? 'is-error' : ''}`}
+            name="price"
+            value={expFormData.price}
+            onChange={handleChange}
+          />
+          <p className="form-input-hint">{`${errors.price ? 'Please, enter a number.' : ''}`}</p>
 
-    <h3>Experience Time</h3>
-    <Select
-      name="time"
-      options={[
-        { value: 'Morning', label: 'Morning' },
-        { value: 'Afternoon', label: 'Afternoon' },
-        { value: 'Evening', label: 'Evening' },
-        { value: 'All-Day', label: 'All-Day' }
-      ]}
-      isMulti
-      onChange={handleMultiSelectTime}
-      components={animatedcomponents}
-    />
+          <label>Experience Availability</label>
+          <Select
+            className={`${errors.price ? 'is-error' : ''}`}
+            name="availability"
+            options={[
+              { value: 'Monday', label: 'Monday' },
+              { value: 'Tuesday', label: 'Tuesday' },
+              { value: 'Wednesday', label: 'Wednesday' },
+              { value: 'Thursday', label: 'Thursday' },
+              { value: 'Friday', label: 'Friday' },
+              { value: 'Saturday', label: 'Saturday' },
+              { value: 'Sunday', label: 'Sunday' }
+            ]}
+            isMulti
+            onChange={handleMultiSelectAvailability}
+            components={animatedcomponents}
+          />
+          <p className="form-input-hint">{`${errors.availability ? 'Select an availibility.' : ''}`}</p>
 
-    <h3>Experience Category</h3>
-    <Select
-      name="time"
-      options={[
-        { value: 'Sport', label: 'Sport' },
-        { value: 'Food', label: 'Food' },
-        { value: 'Drink', label: 'Drink' },
-        { value: 'Culture', label: 'Culture' },
-        { value: 'Outdoors', label: 'Outdoors' },
-        { value: 'Music', label: 'Music' },
-        { value: 'Social', label: 'Social' }
-      ]}
-      isMulti
-      onChange={handleMultiSelectCategory}
-      components={animatedcomponents}
-    />
+          <label>Experience Time</label>
+          <Select
+            className={`${errors.price ? 'is-error' : ''}`}
+            name="time"
+            options={[
+              { value: 'Morning', label: 'Morning' },
+              { value: 'Afternoon', label: 'Afternoon' },
+              { value: 'Evening', label: 'Evening' },
+              { value: 'All-Day', label: 'All-Day' }
+            ]}
+            isMulti
+            onChange={handleMultiSelectTime}
+            components={animatedcomponents}
+          />
+          <p className="form-input-hint">{`${errors.time ? 'Select a time.' : ''}`}</p>
 
-    <br/>
-    <br/>
-    <button>Edit!</button>
-  </form>
+          <label>Experience Category</label>
+          <Select
+            className={`${errors.price ? 'is-error' : ''}`}
+            name="time"
+            options={[
+              { value: 'Sport', label: 'Sport' },
+              { value: 'Food', label: 'Food' },
+              { value: 'Drink', label: 'Drink' },
+              { value: 'Culture', label: 'Culture' },
+              { value: 'Outdoors', label: 'Outdoors' },
+              { value: 'Music', label: 'Music' },
+              { value: 'Social', label: 'Social' }
+            ]}
+            isMulti
+            onChange={handleMultiSelectCategory}
+            components={animatedcomponents}
+          />
+          <p className="form-input-hint">{`${errors.category ? 'Select a categoty' : ''}`}</p>
+
+          <br/>
+          <button className="btn btn-success">Edit!</button>
+        </div>
+      </form>
+    </div>
+  </section>
 )
 
 export default ExpForm

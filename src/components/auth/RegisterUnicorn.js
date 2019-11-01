@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import makeAnimated from 'react-select/animated'
 import CreatableSelect from 'react-select/creatable'
+// import Select from 'react-select'
 
 const animatedComponents = makeAnimated()
 
@@ -92,7 +93,6 @@ class RegisterUnicorn extends React.Component {
                 <label>Full name</label>
                 <div className="control">
                   <input 
-                  
                     className={`form-input col-12 ${this.state.errors.name ? 'is-error' : ''}`}
                     type="text"
                     name="name"
@@ -156,13 +156,14 @@ class RegisterUnicorn extends React.Component {
                 <label>My languages (select from dropdown or add new)</label>
                 <div className="control">
                   <CreatableSelect
-                    className="bottomSpace col-12"
+                    className={`${this.state.errors.language ? 'is-error' : ''}`}
                     options={this.options}
                     isMulti
                     onChange={this.handleCreatableSelect}
                     components={animatedComponents}
                     errors={this.state.errors}
                   />
+                  <p className="form-input-hint">{`${this.state.errors.language ? 'Select a language.' : ''}`}</p>
                 </div>
               </div>
 
@@ -182,7 +183,7 @@ class RegisterUnicorn extends React.Component {
                 </div>
               </div>
 
-              <div className="bottomSpace field">
+              <div className="field">
                 <label>Gender</label>
                 <div className="select">
                   <select name="gender"
@@ -194,6 +195,7 @@ class RegisterUnicorn extends React.Component {
                     <option value="Female">Female</option>
                     <option value="Non-binary">Non-binary</option>
                   </select>
+                  <p className="form-input-hint">{`${this.state.errors.gender ? 'Select an option.' : ''}`}</p>
                 </div>
               </div>
 

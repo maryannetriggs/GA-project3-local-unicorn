@@ -33,10 +33,10 @@ class Home extends React.Component {
     return (
       <>        
         <div className="cityPicker">
-          <h4>PICK A CITY</h4>
+          {/* <h4>PICK A CITY</h4> */}
           <br/>
-          <form>
-            <select onChange={this.handleChange}>
+          <form className="centre">
+            <select className="dropHome" onChange={this.handleChange}>
               <option value="" disabled selected>Pick a City</option>
               <option value="La Paz">La Paz</option>
               <option value="London">London</option>
@@ -56,15 +56,15 @@ class Home extends React.Component {
             <br/>
             <br/>
             
-            <Link className="btn buttonColors" disabled={!city} to={{ pathname: '/unicorns', state: { from: city } }}>
-              FIND MY UNICORN
+            <Link className="btn btn-lg centre" disabled={!city} to={{ pathname: '/unicorns', state: { from: city } }}>
+              FIND MY UNICORN!
             </Link>
           </form>
           
           <br/>
           <br/>
-          <h4>OR</h4>
-          <Link className="btn buttonColors" to={{ pathname: '/cities' }}>
+          <p className="centre italic">Don't know where to go?</p>
+          <Link className="btn btn-lg btn-link centre" to={{ pathname: '/cities' }}>
             BROWSE ALL CITIES
           </Link>
         </div>

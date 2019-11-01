@@ -32,9 +32,8 @@ class RegisterTraveller extends React.Component {
       <section className="registerTraveller">
        
         <div className="regForm form-group">
-          <h2 className="register">Register</h2>
-
-          <form onSubmit={this.handleSubmit}>
+          <h2 className="register centre marginTopBig">Register as a Traveller to book an awesome <span className="logo">🦄</span></h2>
+          <form className="centre" onSubmit={this.handleSubmit}>
             <div className="formBackgroundReg form-group">
               <label>Name</label>
               <input 
@@ -126,7 +125,9 @@ class RegisterTraveller extends React.Component {
               <p className="form-input-hint">{`${this.state.errors.passwordConfirmation ? 'Oops, the passwords do not match' : ''}`}</p>
               
               <br/>
-              <button className="submit button btn btn-primary" type="submit">Register</button>
+              <div className="centre">
+                <button className="submit button btn btn-primary btn-lg" type="submit">Take me to the unicorns!</button>
+              </div>
             </div>
           </form>
         </div>

@@ -85,9 +85,8 @@ class RegisterUnicorn extends React.Component {
       <section className="registerTraveller">
 
         <div className="regForm form-group">
-          <h2 className="centre">Register<span className="logo">🦄</span></h2>
-
-          <form onSubmit={this.handleSubmit}>
+          <h2 className="register centre marginTopBig">Become a <span className="logo">🦄</span></h2>
+          <form className="centre" onSubmit={this.handleSubmit}>
             <div className="formBackgroundReg form-group">
               <div className="field">
                 <label>Full name</label>
@@ -246,7 +245,9 @@ class RegisterUnicorn extends React.Component {
                   <p className="form-input-hint">{`${this.state.errors.passwordConfirmation ? 'Oops, the passwords do not match' : ''}`}</p>
 
                   <br/>
-                  <button className="btn btn-primary">Register</button>
+                  <div className="centre">
+                    <button className="btn btn-primary btn-lg btn-link">I am now a <span className="logo">🦄</span></button>
+                  </div>
                 </div>
               </div>   
             </div>

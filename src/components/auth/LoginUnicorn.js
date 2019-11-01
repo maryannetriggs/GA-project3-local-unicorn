@@ -36,7 +36,7 @@ class LoginUnicorn extends React.Component {
     
     return (
       <section>
-        <h3 className="centre">Welcome back<span className="logo">🦄</span></h3>
+        <h2 className="register centre marginTopBig ourGrey">Welcome back<span className="logo">🦄</span></h2>
         <form className="centre" onSubmit={this.handleSubmit}>
           <div className="formBackground form-group">
             <label className="form-label" htmlFor="email">Email</label>

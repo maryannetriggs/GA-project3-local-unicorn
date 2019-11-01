@@ -36,7 +36,7 @@ class LoginTraveller extends React.Component {
   render() {
     return (
       <>
-        <h3 className="centre">Welcome back, you globetrotter!</h3>
+        <h2 className="register centre marginTopBig ourGrey">Welcome back, you globetrotter!</h2>
         <form className="centre" onSubmit={this.handleSubmit}>
           <div className=" formBackground form-group">
             <label className="form-label" htmlFor="email">Email</label>

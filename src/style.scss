@@ -1,6 +1,8 @@
 // Default Colour Schemes
 
-$primary-color: #fff;
+$maincol-color: rgb(203, 255, 253);
+$happy-color: rgb(40, 173, 0);
+$bad-color: rgb(247, 9, 255);
 
 // Universal Schemes
 
@@ -24,9 +26,40 @@ h1, h2, h3, h4, h5, h6, p {
   align-items: center;
 }
 
-.buttonColors {
-  background: $primary-color;
-  border-color: black;
+.dropHome {
+  height: 50px;
+  width: 220px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(3, 0, 3);
+  border-color:rgb(5, 0, 5);
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.italic {
+  font-style: italic;
+  margin: 10px;
+}
+
+.ourGrey {
+  color: rgb(87, 87, 87);
+}
+
+.maincol {
+  background: $maincol-color;
+  border-color: rgb(22, 255, 255);
+  color: rgb(10, 240, 248);
+}
+
+.happy {
+  background: $happy-color;
+  border-color: rgb(116, 114, 114);
+  color: black;
+}
+
+.bad {
+  background: $bad-color;
+  border-color: rgb(116, 114, 114);
   color: black;
 }
 
@@ -73,6 +106,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 .marginTop {
   margin-top: 6px;
+}
+
+.marginTopBig {
+  margin-top: 70px;
+  margin-bottom: 20px;
 }
 
 .icon {
@@ -330,9 +368,6 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 
   // UNICORN SEARCH OPTIONS
 
-.unicornSearchWrapper {
-  
-}
 
 .cityNameSearchAndButton {
   display: flex;

@@ -25,6 +25,7 @@ class Home extends React.Component {
           <br/>
           <form>
             <select onChange={this.handleChange}>
+              <option value="" disabled selected>Pick a City</option>
               <option value="La Paz">La Paz</option>
               <option value="London">London</option>
               <option value="Madrid">Madrid</option>
@@ -52,9 +53,9 @@ class Home extends React.Component {
             <button className="btn buttonColors">BROWSE ALL CITIES</button>
           </Link>
         </div>
-        <h1 className="homeTitle">FIND 
-        YOUR 
-        LOCAL 🦄</h1>
+        <h1 className="homeTitle">FIND</h1> 
+        <h1 className="homeTitle">YOUR</h1>
+        <h1 className="homeTitle">LOCAL 🦄</h1>
       </>
     )
   }

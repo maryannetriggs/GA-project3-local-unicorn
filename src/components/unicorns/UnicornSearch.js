@@ -39,7 +39,7 @@ const UnicornSearch = ({ handleGender, handleLanguage }) => {
 
       <div>
         <Link to="/cities">
-          <button>PICK A DIFFERENT CITY</button>
+          <button className="btn btn-primary buttonColors">Pick a different city</button>
         </Link>
       </div>
       

@@ -36,13 +36,14 @@ class BookingPage extends React.Component {
 
             />
           </div>
-          <div className="column col-4 centre">
+          <div className="column col-4 centre timeAndDateAvailability">
             <h4>Days availabile:</h4> 
             <>
               {experience.availability.map((avail, i) => (
                 <h5 key={i}>{avail} </h5>
               ))}
             </>
+            <br/>
             <h4>Times available:</h4> 
             <>
               {experience.time.map((time, i) => (
@@ -51,7 +52,7 @@ class BookingPage extends React.Component {
             </>
           </div>
 
-          <div className="column col-4 centre">
+          <div className="column col-4 centre bookingCalendar">
             <DatePicker
               selected={this.state.startDate}
               onChange={this.handleChange}

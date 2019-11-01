@@ -59,21 +59,21 @@ class Navbar extends React.Component {
           <Link className="logo" to="/">🦄</Link>
         </div>
         <div className="input-group input-inline nav-links">
-          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registerunicorn">Register Unicorn</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/registerunicorn">Register Unicorn</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/loginunicorn">Unicorn Login</Link>}
+
           {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/registertraveller">Register traveller</Link>}
+          {!Auth.isAuthenticated() && <Link className="btn btn-link nav-item" to="/logintraveller">Traveller Login</Link>}
+          {/* <Link className="btn btn-link nav-item" to="/loginadmin">Admin Login</Link> */}
 
-          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/loginunicorn">Unicorn Login</Link>}
-          {!Auth.isAuthenticated() && <Link className="btn btn-link" to="/logintraveller">Traveller Login</Link>}
-          {/* <Link className="btn btn-link" to="/loginadmin">Login admin</Link> */}
+          {isUnicorn && <Link className="btn btn-link nav-item" to="/unicorn">My Profile</Link>}
+          {isTraveller && <Link className="btn btn-link nav-item" to="/traveller">My Profile</Link>}
 
-          {isUnicorn && <Link className="btn btn-link" to="/unicorn">My Profile</Link>}
-          {isTraveller && <Link className="btn btn-link" to="/traveller">My Profile</Link>}
+          <Link className="btn btn-link nav-item" to="/cities">See all our Cities</Link>
+          {/* <Link className="btn btn-link nav-item" to="/unicorns">See all our Unicorns</Link> */}
+          {/* <Link className="btn btn-link nav-item" to="/experiences">See all our Experiences</Link> */}
 
-          <Link className="btn btn-link" to="/cities">See all our Cities</Link>
-          {/* <Link className="btn btn-link" to="/unicorns">UNICORNS</Link> */}
-          {/* <Link className="btn btn-link" to="/experiences">EXPERIENCES</Link> */}
-
-          {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="btn btn-link">Log Out</a>}
+          {Auth.isAuthenticated() && <a onClick={this.handleLogout} className="btn btn-link nav-item">Log Out</a>}
         </div>
       </nav>
     )

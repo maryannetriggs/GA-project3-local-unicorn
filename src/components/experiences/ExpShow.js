@@ -11,7 +11,8 @@ class ExpShow extends React.Component {
     this.state = {
       experience: null,
       text: '',
-      score: ''
+      score: '',
+      errors: {}
 
     }
     this.handleDelete = this.handleDelete.bind(this)
@@ -33,11 +34,13 @@ class ExpShow extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ text: e.target.value })
+    const errors = { ...this.state.errors, [e.target.name]: '' }
+    this.setState({ text: e.target.value, errors })
   }
 
   handleScoreChange(e) {
-    this.setState({ score: e.target.value })
+    const errors = { ...this.state.errors, [e.target.name]: '' }
+    this.setState({ score: e.target.value, errors })
   }
 
   handleSubmit(e) {
@@ -49,7 +52,7 @@ class ExpShow extends React.Component {
       .then(res => {
         this.setState({ experience: res.data, text: '', score: '' })
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   deleteReview(e) {
@@ -169,10 +172,11 @@ class ExpShow extends React.Component {
                   onChange={this.handleChange}/>
                 <br />
                 <div className="field">
-                  <label className="label">Score (1-5)</label>
+                  <label>Score (1-5)</label>
                   <div className="control">
                     <input
                       className="input"
+                      // className={`input ${this.state.errors ? 'is-error' : ''}`}
                       name="age"
                       number="number"
                       value={this.state.score}

@@ -8,7 +8,7 @@ class LoginUnicorn extends React.Component {
 
     this.state = {
       data: {},
-      errors: {}
+      error: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -16,8 +16,7 @@ class LoginUnicorn extends React.Component {
 
   handleChange(e) {
     const data = { ...this.state.data, [e.target.name]: e.target.value }
-    const errors = { ...this.state.errors, [e.target.name]: '' }
-    this.setState({ data, errors })
+    this.setState({ data, error: '' })
   }
 
   handleSubmit(e) {
@@ -27,8 +26,7 @@ class LoginUnicorn extends React.Component {
         Auth.setToken(res.data.token)
         this.props.history.push('/cities')
       })
-      // .catch(err => console.log(err))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+      .catch(() => this.setState({ error: 'Credetials Not Recognised' }))
   }
 
   render() {
@@ -41,8 +39,8 @@ class LoginUnicorn extends React.Component {
           <div className="formBackground form-group">
             <label className="form-label" htmlFor="email">Email</label>
             <input 
-              className="form-input col-7" 
-              // className={`form-input col-7 ${this.state.errors.email ? 'is-error' : ''}`}
+              // className="form-input col-7" 
+              className={`form-input col-7 ${this.state.error ? 'is-error' : ''}`}
               name="email" 
               type="text" 
               id="email" 
@@ -52,14 +50,14 @@ class LoginUnicorn extends React.Component {
 
             <label className="form-label" htmlFor="password">Password</label>
             <input 
-              className="form-input col-7" 
-              // className={`form-input col-7 ${this.state.errors.email ? 'is-error' : ''}`}
+              // className="form-input col-7" 
+              className={`form-input col-7 ${this.state.error ? 'is-error' : ''}`}
               name="password" 
               type="password"
               id="password" 
               placeholder="Password" 
               onChange={this.handleChange}/>
-            {/* <p className="form-input-hint">{`${this.state.errors.password ? 'The password is incorrect.' : ''}`}</p> */}
+            {this.state.error && <p className="form-input-hint is-error">{this.state.error}</p>}
 
             <br />
             <button className="btn btn-primary" type="submit">Log in</button>

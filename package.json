@@ -4,9 +4,12 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit",
-    "serve:back": "nodemon index.js",
+    "serve:back": "nodemon",
     "serve:front": "webpack-dev-server --mode-development",
-    "seed": "node db/seeds.js"
+    "seed": "node db/seeds.js",
+    "build": "webpack -p",
+    "start": "node index.js"
+
   },
   "repository": "git@github.com:gsiebels/sei-group-project.git",
   "author": "Gerardo Siebels <gsiebels@gmail.com>",

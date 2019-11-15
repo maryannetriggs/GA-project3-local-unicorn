@@ -63,7 +63,7 @@ class Home extends React.Component {
           
           <br/>
           <br/>
-          <p className="centre italic">Don't know where to go?</p>
+          <p className="centre italic">Dont know where to go?</p>
           <Link className="btn btn-lg btn-link centre" to={{ pathname: '/cities' }}>
             BROWSE ALL CITIES
           </Link>

@@ -2,11 +2,7 @@
 
 # GA Project 3 - Local Unicorn
 
-This was the third project I completed during the General Assembly Software Engineering Immersive (bootcamp) course.
-
-## Resources
-
-* The Times [Newspaper](https://www.thetimes.co.uk/)
+Local Unicorn is a travel website to help travellers find unique tours provided by local guides (unicorns). Users can either register as a traveller and book tours or as a unicorn and provide tours. This was the third project I completed during the General Assembly Software Engineering Immersive (bootcamp) course.
 
 ## Built With
 
@@ -15,8 +11,11 @@ This was the third project I completed during the General Assembly Software Engi
 * Spectre CSS Framework
 * Javascript
 * React
+* NoSQL (MongoDB)
 * Node
 * Express
+* Insomnia
+* Mocha / Chai Testing
 * Git / GitHub
 
 ## Timeframe
@@ -27,7 +26,7 @@ This was the third project I completed during the General Assembly Software Engi
 
 This website is deployed on [Heroku](https://local-unicorn.herokuapp.com)
 
-![readme-one](images/readme/screenshot.png)
+![readme-one](images/readme/homepage.png)
 
 ---
 
@@ -39,7 +38,7 @@ Use the clone button to download the source code. In your terminal enter the fol
 $ yarn
 
 ### Run the app on your localhost:
-
+$ yarn start
 
 ## To Use
 
@@ -49,11 +48,15 @@ $ yarn
 
 ---
 
-## Architecture
+## User Experience
 
 ```js
 
 ```
+
+---
+
+## Architecture
 
 ---
 
@@ -63,9 +66,10 @@ This project was...
 
 Advancements that could be made in the future to improve this website include:
 
-- 
-- 
-- 
+- Inclusion of a 'live' booking system
+- Chat functionality with your chosen unicorn
+- Improved review system - percentage satisfaction and limiting reviews to travellers who had been on experience.
+- Add ability to see previously taken tours in travellers profile.
 
 ## Author - Mary-Anne Triggs
 

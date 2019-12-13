@@ -15,6 +15,7 @@ Local Unicorn is a travel website to help travellers find unique tours provided 
 * Node
 * Express
 * Insomnia
+* Yarn
 * Mocha / Chai Testing
 * Git / GitHub
 
@@ -63,9 +64,13 @@ Once a unicorn is selected, users are shown a profile of the unicorn and also th
 ![readme-six](images/readme/unicorn-profile.png)
 ![readme-seven](images/readme/unicorn-experiences.png)
 
-- 
-- 
-- 
+Any of the experiences/tours can be selected and user is taken to a show page for that experience complete with a beautiful panoramic photograph, experience info (experience category, intensity, cost and availability) and a paragraph giving a short introduction. From this page, users can chose to book the experience or go back a page to view the unicorn again.
+
+![readme-eight](images/readme/booking-page.png)
+
+If a user clicks 'Book this experience!' they get the following page which shows the experience car once more, shows the booking availabily and a calendar with selectable date functionality. A date can be selected from the calendar and if the 'BOOK NOW' button is clicked the following page can be viewed.
+
+![readme-nine](images/readme/booking-confirmation.png)
 
 ---
 

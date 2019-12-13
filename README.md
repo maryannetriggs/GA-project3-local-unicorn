@@ -42,6 +42,14 @@ $ yarn start
 
 ## To Use
 
+There are many ways to navigate around the website to find your ideal tour. On the homepage you can begin searching by either chosing a city from a pre-defined list or chose to view all the available cities.
+
+![readme-two](images/readme/homepage-dropdown.png)
+
+If you view all available cities you get the following view
+
+![readme-three](images/readme/cities-overview.png)
+
 - 
 - 
 - 
@@ -68,8 +76,7 @@ Advancements that could be made in the future to improve this website include:
 
 - Inclusion of a 'live' booking system
 - Chat functionality with your chosen unicorn
-- Improved review system - percentage satisfaction and limiting reviews to travellers who had been on experience.
-- Add ability to see previously taken tours in travellers profile.
+- Improved review system (including - percentage satisfaction and limiting reviews to travellers who had been on experience)
 
 ## Author - Mary-Anne Triggs
 

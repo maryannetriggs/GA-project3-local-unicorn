@@ -41,7 +41,9 @@ $ yarn
 ### Run the app on your localhost:
 $ yarn start
 
-## To Use
+---
+
+## User Experience
 
 There are many ways to navigate around the website to find your ideal tour. On the homepage you can begin searching by either chosing a city from a pre-defined list or chose to view all the available cities.
 
@@ -72,9 +74,14 @@ If a user clicks 'Book this experience!' they get the following page which shows
 
 ![readme-nine](images/readme/booking-confirmation.png)
 
+Users/Travellers and Unicorns can register and log in to personal accounts (required to view personal profiles and to write experience reviews)
+
+![readme-ten](images/readme/unicorn-register.png)
+![readme-eleven](images/readme/unicorn-login.png)
+
 ---
 
-## User Experience
+## Architecture
 
 ```js
 
@@ -82,13 +89,39 @@ If a user clicks 'Book this experience!' they get the following page which shows
 
 ---
 
-## Architecture
+## Challenges
+
+The challenges associated with this project were:
+
+* Working remotely as a team on the same branch
+* Creating such a large projet
+*
+
+---
+
+## Wins
+
+The wins associated with this project were:
+
+*
+*
+*
+
+---
+
+## Key Learning Points
+
+The key learning points associated with this project were:
+
+* CSS Frameworks are amazing for quick polished styling and snazzy extra features but overwriting pre-set styling is near-impossible
+* 
+*
 
 ---
 
 ## Future Improvements
 
-This project was...
+This project was a really fun experience and a good insight into how to code as part of a team.
 
 Advancements that could be made in the future to improve this website include:
 

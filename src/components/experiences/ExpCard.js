@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 const ExpCard = ({ name, image, category, price, _id }) => (
   <div className="card">
     <div className="card-image centre">
-      <img className="city-card img-responsive" src={image} alt={name}/>
+      <Link to={`/experiences/${_id}`}>
+        <img className="city-card img-responsive" src={image} alt={name} />
+      </Link>
     </div>
     <div className="card-header">
       <div className="card-title text-uppercase h4">{name}</div>

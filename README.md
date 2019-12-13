@@ -9,7 +9,7 @@ Local Unicorn is a travel website to help travellers find unique tours provided 
 * HTML5
 * SCSS
 * Spectre CSS Framework
-* Javascript
+* JavaScript
 * React
 * NoSQL (MongoDB)
 * Node
@@ -46,9 +46,22 @@ There are many ways to navigate around the website to find your ideal tour. On t
 
 ![readme-two](images/readme/homepage-dropdown.png)
 
-If you view all available cities you get the following view
+If you view all available cities you see the following
 
 ![readme-three](images/readme/cities-overview.png)
+
+Any of the cities can be selected and user is taken to a show page for that city complete with a beautiful panoramic photograph and a paragraph giving a short introduction. From this page, users can chose to see the local guides (unicorns) in that city or go back a page to view all the cities again.
+
+![readme-four](images/readme/wellington-show.png)
+
+Unicorns are displayed in 'cards' with profile pictures, names, languages spoken and experiences offered. Unicorns can be filtered by gender and language spoken. If no unicorns match the required filter options an 'empty state' message is displayed.
+
+![readme-five](images/readme/unicorn-filtering.png)
+
+Once a unicorn is selected, users are shown a profile of the unicorn and also the experiences they offer in 'cards'
+
+![readme-six](images/readme/unicorn-profile.png)
+![readme-seven](images/readme/unicorn-experiences.png)
 
 - 
 - 

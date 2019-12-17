@@ -86,7 +86,7 @@ Users/Travellers and Unicorns can register and log in to personal accounts (requ
 The challenges associated with this project were:
 
 * Working remotely as a team on the same git branch
-* Creating such a large project with so many routes and maintaining consitency.
+* Creating such a large project with so many routes and maintaining consistency across coding and design styles.
 * Understanding React props
 
 ---
@@ -95,7 +95,7 @@ The challenges associated with this project were:
 
 The wins associated with this project were:
 
-* Coding the JavaScript logic for filtering the Unicorns on the Unicorn show page
+* Coding the JavaScript logic for filtering the Unicorns on the Unicorn show page taking into account the city selected from the home page
 
 ```js
 filteredUnicorns() {
@@ -110,12 +110,57 @@ filteredUnicorns() {
   }
 ```
 * Adding little UX features to improve the user experience whilst navigating the site
+  - Disabling the button to search for unicorns in a city if a city hadn't been selected
 
 ```js
 <Link className="btn btn-lg centre" disabled={!city} to={{ pathname: '/unicorns', state: { from: city } }}>
   FIND MY UNICORN!
 </Link>
 ```
+
+  - using a ternary statement to determine if there were no unicorns to display after filtering options had been applied and displaying an empty state message if this was the case
+
+```js
+{this.filteredUnicorns().length === 0
+          ?
+          <div className="empty emptyDiv">
+            <div className="empty-icon">
+              <i className="icon icon-people"></i>
+            </div>
+            <p className="empty-title h5">There are no unicorns which match your search criteria</p>
+            <p className="empty-subtitle">Change your search filters or go back to the cities page</p>
+            <div className="empty-action">
+              <Link to="/cities">
+                <button className="btn btn-primary">Pick a different city</button>
+              </Link>
+            </div>
+          </div>
+          :
+
+          <>
+            <div className="container">
+              <div className="columns">
+                {this.filteredUnicorns().map(unicorn => (
+                  <UnicornCard key={unicorn._id} {...unicorn} />
+                ))}
+              </div>
+            </div>
+          </>
+          
+        }
+```
+ - CSS styling to 'animate' the navigation bar options when the mouse was hovered over them
+
+```scss
+.nav-links {
+  display: flex;
+
+  a:hover {
+    margin-bottom: 5px;
+  }
+}
+```
+
 * Having the immersive gif background on the home page
 
 ```css
@@ -137,14 +182,14 @@ background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
 The key learning points associated with this project were:
 
 * CSS Frameworks are amazing for quick polished styling and snazzy extra features but overwriting pre-set styling is near-impossible
-* 
-*
+* The importance of appropriate naming of variables, components and CSS classes
+* How to work on a coding project as part of a team
 
 ---
 
 ## Future Improvements
 
-This project was a really fun experience and a good insight into how to code as part of a team.
+This project was a really fun experience and a good insight into how to code as part of a team. I believe we worked well together and acheived a beautiful, fun website whilst learning lots.
 
 Advancements that could be made in the future to improve this website include:
 

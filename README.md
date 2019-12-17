@@ -109,8 +109,8 @@ filteredUnicorns() {
     })
   }
 ```
-* Adding little UX features to improve the user experience whilst navigating the site
-  - Disabling the button to search for unicorns in a city if a city hadn't been selected
+* Adding little UX features to improve the user experience whilst navigating the site such as:
+  1. Disabling the button to search for unicorns in a city if a city hadn't been selected
 
 ```js
 <Link className="btn btn-lg centre" disabled={!city} to={{ pathname: '/unicorns', state: { from: city } }}>
@@ -118,7 +118,7 @@ filteredUnicorns() {
 </Link>
 ```
 
-  - using a ternary statement to determine if there were no unicorns to display after filtering options had been applied and displaying an empty state message if this was the case
+  2. using a ternary statement to determine if there were no unicorns to display after filtering options had been applied and displaying an empty state message if this was the case
 
 ```js
 {this.filteredUnicorns().length === 0
@@ -149,7 +149,7 @@ filteredUnicorns() {
           
         }
 ```
- - CSS styling to 'animate' the navigation bar options when the mouse was hovered over them
+ 3. CSS styling to 'animate' the navigation bar options when the mouse was hovered over them
 
 ```scss
 .nav-links {

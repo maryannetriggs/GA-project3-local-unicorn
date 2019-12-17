@@ -81,21 +81,13 @@ Users/Travellers and Unicorns can register and log in to personal accounts (requ
 
 ---
 
-## Architecture
-
-```js
-
-```
-
----
-
 ## Challenges
 
 The challenges associated with this project were:
 
-* Working remotely as a team on the same branch
-* Creating such a large projet
-*
+* Working remotely as a team on the same git branch
+* Creating such a large project with so many routes and maintaining consitency.
+* Understanding React props
 
 ---
 
@@ -103,9 +95,40 @@ The challenges associated with this project were:
 
 The wins associated with this project were:
 
-*
-*
-*
+* Coding the JavaScript logic for filtering the Unicorns on the Unicorn show page
+
+```js
+filteredUnicorns() {
+    const city = this.props.location.state.from
+    const { gender, language } = this.state
+    if (!this.state.unicorns) return null
+    return this.state.unicorns.filter(unicorn => {
+      return (unicorn.city.name === city) &&
+        (unicorn.gender === gender || gender === 'All') &&
+        (unicorn.language.includes(language) || language === 'All')
+    })
+  }
+```
+* Adding little UX features to improve the user experience whilst navigating the site
+
+```js
+<Link className="btn btn-lg centre" disabled={!city} to={{ pathname: '/unicorns', state: { from: city } }}>
+  FIND MY UNICORN!
+</Link>
+```
+* Having the immersive gif background on the home page
+
+```css
+.homeTitle {
+background: url('https://media.giphy.com/media/l2YWALs1EJfoNaRK8/giphy.gif');
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 220px;
+    margin: 0;
+  }
+```
 
 ---
 
